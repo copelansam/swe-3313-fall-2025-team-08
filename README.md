@@ -5,12 +5,19 @@ Welcome to the project repository for <GROUP 8>. Here you will find all of the a
 
 We will create a small e-commerce website that sells (Product) using (Tools) to sel lone of a kind (Product)
 
-Meet our team:
+## Meet our team:
 
-Team Assignments:
+### Samuel Copelan:
+### Nylah Bennett:
+### Griffin Caraway:
+### Elijah Stults:
+### Bao Khang Tran:
 
-Technology Selection:
-
-Project Plan:
-
-Project Plan Video Presentation:
+## Team Assignments:
+Our team assignments can be found here:
+## Technology Selection:
+Our technology selection can be found here:
+## Project Plan:
+Our project plan can be found here:
+## Project Plan Video Presentation:
+Our project plan video presentation can be found here: 
