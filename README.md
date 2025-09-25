@@ -3,11 +3,11 @@ Repository for Fall 2025 SWE 3313 Section 04 Group Project for Team 8
 
 Welcome to the project repository for <GROUP 8>. Here you will find all of the artifacts, presentations, documentation, and source code for our SWE 3313 class project.
 
-We will create a small e-commerce website that sells (Product) using (Tools) to sel lone of a kind (Product)
+We will create a small e-commerce website that sells (Product) using (Tools) to sell one of a kind (Product)
 
 ### Meet our team:
 
- [**Samuel Copelan**](ProjectInfo/Resumes/SamuelCopelan.md)
+ [**Samuel Copelan**](project-plan/resumes/SamuelCopelan.md)
  
  [**Nylah Bennett**]() 
 
@@ -18,9 +18,9 @@ We will create a small e-commerce website that sells (Product) using (Tools) to 
  [**Bao Khang Tran**]()
 
 ## Team Assignments:
-Our team assignments can be found [**here**](ProjectInfo/TeamAssignments.md)
+Our team assignments can be found [**here**](project-plan/team-assignments/README.md)
 ## Technology Selection:
-Our technology selection can be found [**here**](ProjectInfo/TechnologySelection.md)
+Our technology selection can be found [**here**](project-plan/technology-selection/README.md)
 ## Project Plan:
 Our project plan can be found [**here**]()
 ## Project Plan Video Presentation:
