@@ -12,7 +12,7 @@ We will create a small e-commerce website that sells artwork using Java, Spring,
 
  [**Samuel Copelan**](project-plan/resumes/SamuelCopelan.md)
  
- [**Nylah Bennett**]() 
+ [**Nylah Bennett**](project-plan/resumes/NylahBennett.md) 
 
  [**Griffin Caraway**]()
 
