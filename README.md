@@ -1,11 +1,14 @@
 # swe-3313-fall-2025-team-08
-Repository for Fall 2025 SWE 3313 Section 04 Group Project for The Peanut Gallery
 
-Welcome to the project repository for The Peanut Gallery. Here you will find all of the artifacts, presentations, documentation, and source code for our SWE 3313 class project.
+## Introduction
+
+Repository for Fall 2025 SWE 3313 Section 04 Group Project for Team 8 - The Peanut Gallery
+
+Welcome to the project repository for Team 8 - The Peanut Gallery. Here you will find all of the artifacts, presentations, documentation, and source code for our SWE 3313 class project.
 
 We will create a small e-commerce website that sells artwork using Java, Spring, and SQLite to sell one of a kind artwork
 
-### Meet our team:
+## Meet our team:
 
  [**Samuel Copelan**](project-plan/resumes/SamuelCopelan.md)
  

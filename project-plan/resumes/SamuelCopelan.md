@@ -1,8 +1,8 @@
 # Samuel Copelan
 
 ### Technical Capabilities
-  - Taken multiple classes in Java
-  - Familiar with SQL
+  - I have taken multiple classes that have taught both fundamental and more advanced Java concepts
+  - I am familiar with SQL due to coursework and professional experiences
 
 ### Technical Experience
   - Interned at Uber over the summer where I used a lot of Java and SQL to update an internal metrics system
