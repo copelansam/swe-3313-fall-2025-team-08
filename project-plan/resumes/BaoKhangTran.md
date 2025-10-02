@@ -15,6 +15,7 @@
 GPA: 4.0 / 4.0
 
 
+
 ## Relevant Technical Capabilities
 ***
 - **Programming Languages:** Java, Python
