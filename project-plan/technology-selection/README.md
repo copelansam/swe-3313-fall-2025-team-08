@@ -17,3 +17,20 @@
 ***
  - We plan to use SQLite as our storage mechanism since SQL is taught by Kennesaw State University early on in its curriculum
  - The official documentation for SQLite can be found [here](https://www.sqlite.org/docs.html)
+
+## Required Specification
+***
+  - **Operating Systems:**
+    - Windows 10 or Later
+    - macOS Catalina or Later
+    - Linux or Ubuntu 18.04+
+  - **Java Version:**
+    - This program was created with Java 23, anything before version 23 may not be supported
+  - **Database:**
+    - SQLite is used as the program's database
+    - The database will be stored as a .sqlite3 file in the project directory.
+    
+  - **Memory:**
+    -  4 GB of RAM are required for this program to run smoothly
+  - **IDE Requirements:**
+    - IntelliJ Version 2024.2.2 or newer is recommended for importing or running this program
