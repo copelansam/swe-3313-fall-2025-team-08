@@ -3,7 +3,7 @@
 ***
 
 **GitHub:** [copelansam](https://github.com/copelansam) <br>
-**LinkedIn:**  [Samuel Copelan](www.linkedin.com/in/samuel-copelan)<br>
+**LinkedIn:**  [Samuel Copelan](https://www.linkedin.com/in/samuel-copelan-9994a7222/)<br>
 **Student Email:** scopel38@students.kennesaw.edu
 
 

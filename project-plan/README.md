@@ -1,4 +1,7 @@
 # Project Plan
+***
+## Project Timeline
+*** 
 
 A link to our project plan timeline can be found [here](project-plan/gantt-chart/ganttproject.gan)
 

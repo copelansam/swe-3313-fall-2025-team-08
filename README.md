@@ -25,6 +25,6 @@ Our team assignments can be found [**here**](project-plan/team-assignments/READM
 ## Technology Selection:
 Our technology selection can be found [**here**](project-plan/technology-selection/README.md)
 ## Project Plan:
-Our project plan can be found [**here**]()
+Our project plan can be found [**here**](project-plan/README.md)
 ## Project Plan Video Presentation:
 Our project plan video presentation can be found [**here**]() 
