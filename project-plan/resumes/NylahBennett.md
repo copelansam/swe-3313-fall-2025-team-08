@@ -25,9 +25,9 @@
 - **KSUA Community Engagement Associate**
 <br>August 2024 - May 2025
   - Managed four projects across our Atlanta and Florida offices
-  - Aquired CIK items for over 50 children
-  - Processed seven donation requests and researced affordable marterials for projects
+  - Acquired CIK items for over 50 children
+  - Processed seven donation requests and researched affordable materials for projects
 - **Wing Leader**
 <br> August 2025 - Present
-  - Mentor 14 first-year students by fostering community, answering questions, and providing guidence
+  - Mentor 14 first-year students by fostering community, answering questions, and providing guidance
   - Plan and facilitate group discussions, activities, and events to encourage student engagement
