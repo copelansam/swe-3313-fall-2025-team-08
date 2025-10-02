@@ -11,8 +11,9 @@
 ## Education
 ***
 **Kennesaw State University,** Kennesaw, GA <br>
-*Bachelor of Science in Software Engineering* August 2024 - May 2028 <br>
+*Bachelor of Science in Computer Science* August 2024 - May 2028 <br>
 GPA: 4.0 / 4.0
+
 
 
 ## Relevant Technical Capabilities
