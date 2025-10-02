@@ -7,7 +7,6 @@
 **Student Email:** scopel38@students.kennesaw.edu
 
 
-
 ## Education
 ***
 **Kennesaw State University,** Kennesaw, GA <br>
