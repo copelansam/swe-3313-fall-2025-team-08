@@ -16,7 +16,7 @@ We will create a small e-commerce website that sells artwork using Java, Spring,
 
  [**Griffin Caraway**]()
 
- [**Elijah Stults**]()
+ [**Elijah Stults**](project-plan/resumes/ElijahStults.md)
 
  [**Bao Khang Tran**]()
 
