@@ -18,7 +18,7 @@ We will create a small e-commerce website that sells artwork using Java, Spring,
 
  [**Elijah Stults**]()
 
- [**Bao Khang Tran**](project-plan/resumes/BaoKhangTran.md)
+ [**Bao Khang Tran**](project-plan/resumes/BaoKhangTran.md) 
 
 ## Team Assignments:
 Our team assignments can be found [**here**](project-plan/team-assignments/README.md)
