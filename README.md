@@ -27,4 +27,4 @@ Our technology selection can be found [**here**](project-plan/technology-selecti
 ## Project Plan:
 Our project plan can be found [**here**](project-plan/README.md)
 ## Project Plan Video Presentation:
-Our project plan video presentation can be found [**here**]() 
+Our project plan video presentation can be found [**here**](https://www.loom.com/share/508e17cd0d9044f592bbe22d860cd639) 
