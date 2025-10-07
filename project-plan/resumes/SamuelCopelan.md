@@ -32,7 +32,7 @@ GPA: 4.0 / 4.0
 - **UberStar Software Intern**
 <br>May 2025 - August 2025
     - Updated an internal metrics system to reduce the amount of outdated data to help enable support for additional services and use cases
-    - Updates resulted in a significant reduction of data stored (%99) leading to improved query performance that helped fix an error where queries were timing out, resulting in gaps in our metric system
+    - Updates resulted in a significant reduction of data stored (~99%) leading to improved query performance that helped fix an error where queries were timing out, resulting in gaps in our metric system
 - **Chick-fil-A BOH Director**
 <br> October 2023 - Present
   - Lead groups of up to 15 people in a fast-paced work environment
