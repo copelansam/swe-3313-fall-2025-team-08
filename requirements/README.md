@@ -7,141 +7,284 @@
          - Priority: Must Have
          - Effort: 0.5 Day
          - Type: Functional
-         - Users must be able to self-register by creating an account with a unique username and a password with at least 6 characters. Admins cannot self register.
+         - Users must be able to self-register by creating an account with a username and a password.
      - T8S-2
+       - Admins cannot self register
+         - Priority: Must Have
+         - Effort: 0.25 Day
+         - Type: Non-Functional
+         - To help enforce proper access control, it must not be possible for admins to self register
+     - T8S-3
        - Log in as a registered user
          - Priority: Must Have
          - Effort: 0.5 Day
          - Type: Functional
-         - Users must be able to log in using their credentials. Log in process must validate user credentials. Upon successfully logging in, the user must be directed to the main inventory screen which features all available items ordered by price from highest to lowest.
-     - T8S-3
+         - Users must be able to log in using their credentials. Log in process must validate user credentials.
+     - T8S-4
+       - Usernames are unique
+         - Priority: Must Have
+         - Effort: 0.25 Day
+         - Type: Non-Functional
+         - Each user must have a unique username to help enforce security.
+     - T8S-5
+       - Passwords must meet specific content requirements
+         - Priority: Must Have
+         - Effort: 0.25 Day
+         - Type: Non-Functional
+         - As a security measure, all passwords must be at least 6 characters long.
+     - T8S-6
        - Transform users into admins
          - Priority: Must Have
          - Effort: 0.5 Day
          - Type: Functional
          - Admin users must be able to transform regular users into admins. This is the only way that users can become admins.
    - **T8E-2: Shopping Experience**
-     - T8S-4
+     - T8S-7
+       - Display inventory upon login
+         - Priority: Must Have
+         - Effort: 0.25 Day
+         - Type: Functional
+         - Upon successfully logging in, the user must be directed to the main screen containing all inventory items in descending order based on their prices.
+     - T8S-8
        - Display inventory items properly
          - Priority: Must Have
          - Effort: 0.5 Day
          - Type: Functional
-         - All inventory items displayed on the main page must include a short name, picture, brief description, and an add to cart button
-     - T8S-5
+         - All inventory items displayed on the main page must include a short name, picture, price, brief description, and an add to cart button
+     - T8S-9
+       - Users add items to cart
+         - Priority: Must Have
+         - Effort: 0.25 Day
+         - Type: Functional
+         - Upon having a user click the add to cart button, the system must add the item to the user's cart
+     - T8S-10
        - Add multiple items to cart
          - Priority: Must Have
          - Effort: 0.5 Day
          - Type: Functional
-         - The user must be able to add multiple items to their cart.
-     - T8S-6
+         - The system must be able to handle users adding multiple items to their carts.
+     - T8S-11
        - Format prices properly
          - Priority: Must Have
          - Effort: 0.25 Day
-         - Type: Functional
+         - Type: Non-Functional
          - All inventory item prices must be properly formatted to include dollar signs, appropriate commas, and decimal points.
-     - T8S-7
+     - T8S-12
        - Store prices properly
          - Priority: Must Have
          - Effort: 0.25 Day
-         - Type: Functional
+         - Type: Non-Functional
          - Prices must be stored in a base-10 decimal/currency format, not floating point.
+     - T8S-13
+       - Search Inventory Items as User
+         - Priority: Must Have
+         - Effort: .5 Day
+         - Type: Functional
+         - Users must be able to type into a search box to search for products.
+     - T8S-14
+       - Search Inventory Items as System
+         - Priority: Must Have
+         - Effort: 0.5 Day
+         - Type: Functional
+         - When a user enters something into the search box, the system must try and match what was entered with inventory items' name or description.
    - **T8E-3: Checkout Process** 
-     - T8S-8
+     - T8S-15
+       - Conditions to begin checkout process
+         - Priority: Must Have
+         - Effort: 0.25 Day
+         - Type: Functional
+         - The user must not be able to begin the checkout process if their cart is empty.
+     - T8S-16
        - Begin checkout process
          - Priority: Must Have
          - Effort: 0.25 Day
          - Type: Functional
-         - Once the user is ready to check out, they must be able to click a button to begin the check out process. This button cannot be clicked if the user's cart is empty
-     - T8S-9
+         - Once the user has items in their cart and is ready to check out, they must be able to click a button to begin the checkout process.
+     - T8S-17
        - Display list of items in cart
          - Priority: Must Have
          - Effort: 0.25 Day
          - Type: Functional
-         - Once the user begins the checkout process, they must be directed to a screen where they can view a list of all the items in their cart.
-     - T8S-10
+         - Once the user begins the checkout process, they must be directed to a screen where they can view a list of all the items in their cart alongside the cart's subtotal in USD.
+     - T8S-18
        - Remove items from cart
          - Priority: Must Have
          - Effort: 0.25 Day
          - Type: Functional
          - From the checkout screen, users must be able to remove items from their cart. If everything is removed, then the user will be redirected back to the main screen.
-     - T8S-11
+     - T8S-19
+       - Redirect back to the main screen due to empty cart
+         - Priority: Must Have
+         - Effort: 0.25 Day
+         - Type: Functional
+         - In the event that the user removes every item from their cart, the system must redirect them back to the main screen
+     - T8S-20
        - Begin payment process
          - Priority: Must Have
          - Effort: 0.25 Day
          - Type: Functional
          - From the checkout screen, there must be an option to direct the user to the payment screen where they will being the payment process.
-     - T8S-12
+     - T8S-21
        - Return to shopping
          - Priority: Must Have
          - Effort: 0.25 Day
          - Type: Functional
-         - From the checkout screen, there must be a option that allows users to return to the main screen where they can continue shopping
-   - **T8E-3: Payment Process**
-     - T8S-13
+         - From the checkout screen, there must be an option that allows users to return to the main screen where they can continue shopping
+   - **T8E-4: Payment Process**
+     - T8S-22
        - Input user information
          - Priority: Must Have
          - Effort: 0.25 Day
          - Type: Functional
-         - Upon being directed to the payment screen, there must be fields that allow the user to enter information required to process their order. This includes the user's shipping address, credit card number, and phone number. All of these fields are required for the user to continue in the payment process.
-     - T8S-14
+         - Upon being directed to the payment screen, there must be fields that allow the user to enter information required to process their order. This includes the user's shipping address, credit card number, and phone number.
+     - T8S-23
+       - System checks that all fields are filled out
+         - Priority: Needs To
+         - Effort: 0.25 Day
+         - Type: Functional
+         - The system must check that all fields contain information before allowing the user to continue
+     - T8S-24
        - Display shipping options 
          - Priority: Must Have
          - Effort: 0.25 Day
          - Type: Functional
          - An option to select a shipping speed must be also be present with the shipping options being: Overnight for \$29, 3-Day for \$19, and Ground for $0. This is also required to continue in the payment process
-     - Continue to Order Confirmation
-       - Priority: Must Have
-       - Effort: 0.25 Day
-       - Type: Functional
-       - Once the user has entered all relevent information, and ensured that their order contains the items that they want to purchase, there must be an option to continue to the order confirmation. Ideally this would be a button.
-   - **T8E-4: Order Confirmation Process**
-     - T8S-15
+     - T8S-25
+       - Continue to Order Confirmation
+         - Priority: Must Have
+         - Effort: 0.25 Day
+         - Type: Functional
+         - Once the user has entered all relevant information, and ensured that their order contains the items that they want to purchase, there must be an option to continue to the order confirmation. Ideally this would be a button.
+   - **T8E-5: Order Confirmation Process**
+     - T8S-26
        - Display Order Details
          - Priority: Must Have
          - Effort: 0.5 Day
          - Type: Functional
          - Once the user begins the order confirmation process, they must be directed to a screen that will display a list of the items in their order, the order's subtotal, applicable taxes, and the order's grand total.
-     - T8S-16
+     - T8S-27
+       - Order confirmation item list properly formatted
+         - Priority: Needs
+         - Effort: 0.25 Day
+         - Type: Non-Functional
+         - The list of items in a users order on the order confirmation screen should only contain the items' name and price
+     - T8S-28
+       - Applicable taxes properly calculated
+         - Priority: Must Have
+         - Effort: 0.25 Day
+         - Type: Functional
+         - When calculating the amount of taxes to add to an order's total, the system must calculate it by multiplying the order's subtotal by 0.06.
+     - T8S-29
+       - System calculating the grand total
+         - Priority: Must Have
+         - Effort: 0.25 Day
+         - Type: Functional
+         - When calculating the grand total of an order, the system must add the subtotal and the amount of taxes together to get the grand total
+     - T8S-30
        - Confirm user order
          - Priority: Must Have
          - Effort: 0.25 Day
          - Type: Functional
          - Once the user is ready to confirm their order, there must be an option to finalize the order. This will process the order and direct them to their receipt
-     - T8S-17
-       - Display order receipt
+     - T8S-31
+       - Abandon user order
          - Priority: Must Have
          - Effort: 0.5 Day
          - Type: Functional
-         - Once the user's order has been confirmed, they must be redirected to a screen that contains their receipts. This receipt must include all the information from the order confirmation screen plus the last 4 digits of the credit card used for the order and the shipping address associated with the order.
-   - **T8E-5: Post Order Placement Actions**
-     - T8S-18
-       - Exit from receipt
+         - There must be an option for the user to back out of an order and return to the main screen from the order confirmation screen.
+     - T8S-32
+       - System handles order abandonment
+         - Priority: Must Have
+         - Effort: 0.25 Day
+         - Type: Functional 
+         - In the event that the user decides to back out of an order, the system must keep the items in the order in the user's cart.
+     - T8S-33
+       - System display order receipt
+         - Priority: Must Have
+         - Effort: 0.5 Day
+         - Type: Functional
+         - Once the user's order has been confirmed, the system must redirect the user to a screen that contains their receipts.
+     - T8S-34
+       - System properly formats receipts
          - Priority: Must Have
          - Effort: 0.25 Day
          - Type: Functional
-         - Once an order has been completed and the user has been directed to their receipt, the user must be able to return to the main page.
-     - T8S-19
+         - The receipt generated by the system must contain all of the information present on the order confirmation screen plus the last 4 digits of the user's credit card and shipping address.
+   - **T8E-6: Post Order Placement Actions**
+     - T8S-35
+       - System exit from receipt
+         - Priority: Must Have
+         - Effort: 0.25 Day
+         - Type: Functional
+         - Once an order has been completed and the user has been directed to their receipt, the system must be able to return to the main page.
+     - T8S-36
        - Remove purchased items from available inventory
          - Priority: Must Have
          - Effort: 0.25 Day
          - Type: Functional
-         - Once an order is completed and processed, an items purchased must be removed from the available inventory and no longer appear to users.
-     - T8S-20
+         - Once an order is completed and processed, any items purchased must be removed from the available inventory and no longer appear to users.
+     - T8S-37
+       - System removes purchased items from relevant databases
+         - Priority: Must Have
+         - Effort: 0.25 Day
+         - Type: Functional
+         - Upon an order being successfully processed, the system must update relevant database to remove the ordered items.
+     - T8S-38
        - Add purchased items to sales report
          - Priority: Must Have
          - Effort: 0.25 Day
          - Type: Functional
          - Once an item has been sold and removed from the available inventory, it must be added to the appropriate sales reports.
-   - **T8E-6: Admin User Capabilities**
-     - T8S-21
+   - **T8E-7: Admin User Capabilities**
+     - T8S-39
        - Run sales report
          - Priority: Must Have
          - Effort: 0.5 Day
          - Type: Functional
          - Admin users must be able to run sales reports that contain what items have been sold, and who bought them.
-     - T8S-22
+     - T8S-40
+       - Export sales data as admin
+         - Priority: Must Have
+         - Effort: 1 Day
+         - Type: Functional
+         - The system must be able to product a report that an admin could export
+     - T8S-41
+       - System creates CSV reports
+         - Priority: Must Have
+         - Effort: 1 Day
+         - Type: Non-Functional
+         - The report that the system needs to make must be of CSV
+     - T8S-42
        - Add inventory as admin
          - Priority: Must Have
          - Effort: 0.5 Day
          - Type: Functional
          - Admin users must be able to update and add items to available inventory. This will be performed by having admins enter them into the database manually.
+   - **T8E-8: Additional Customer Requirements**
+     - T8S-43
+       - High Fidelity Mockup
+         - Priority: Must Have
+         - Effort: 4 Day
+         - Type: Non-Functional
+         - The customer wants a high fidelity mockup that shows how the system will look and function. This will be created in Marvel.
+***
+ - **Version 2**
+   - **T8E-9: Additional Inventory Features** 
+     - T8S-44 
+       - Enable system support for multiple images for inventory items
+         - Priority: Customer Wants
+         - Effort: 0.5 Day
+         - Type: Non-Functional
+         - The system should be updated so that each inventory item can have more than one image visible.
+     - T8S-45
+       - System pulls receipts of sold items
+         - Priority: Customer Would Like
+         - Effort: 1 Day
+         - Type: Functional
+         - If an admin clicks on a sold item, the system should pull up the receipt from the order that the item was a part of.
+     - T8S-46
+       - UI for admins to add new inventory items
+         - Priority: Customer Would Like
+         - Effort: 1 Day
+         - Type: Functional
+         - There should be a user interface that allows admins to create new inventory items.
