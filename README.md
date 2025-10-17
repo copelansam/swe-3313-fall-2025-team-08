@@ -38,7 +38,7 @@ We defined the functionality for an online artwork store that supports account c
 <br><br>
 An overview of our project's requirements can be found [**here**](requirements/README.md)
 
-Our use case diagram can be found [**here**]()
+Our use case diagram can be found [**here**](requirements/use-case.md)
 
 Our decision table can be found [here]()
 
