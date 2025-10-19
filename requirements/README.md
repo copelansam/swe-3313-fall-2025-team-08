@@ -284,9 +284,16 @@
          - Effort: 1 Day
          - Type: Functional
          - If an admin clicks on a sold item, the system should pull up the receipt from the order that the item was a part of.
+   - **T8E-10: Additional User Features**
      - T8S-46
        - UI for admins to add new inventory items
          - Priority: Customer Would Like
          - Effort: 1 Day
          - Type: Functional
          - There should be a user interface that allows admins to create new inventory items.
+     - T8S-47
+       - Check order status as a user
+         - Priority: Nice to Have
+         - Effort: 2 Day
+         - Type: Functional
+         - Customers should be able to pull up a list of their existing orders and be able to select an order to see the status of.
