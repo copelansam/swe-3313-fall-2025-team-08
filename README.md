@@ -40,6 +40,6 @@ An overview of our project's requirements can be found [**here**](requirements/R
 
 Our use case diagram can be found [**here**](requirements/use-case.md)
 
-Our decision table can be found [here]()
+Our decision table can be found [**here**](requirements/decision-table.md)
 
-A presentation of our requirements can be found [here]()
+A presentation of our requirements can be found [**here**]()
