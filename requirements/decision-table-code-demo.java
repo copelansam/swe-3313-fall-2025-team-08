@@ -1,11 +1,33 @@
 import java.util.Scanner;
 
 public class decision-table-code-demo{
-    pulic static void main(String[] args){
-        boolean isLoggedIn, isAdmin, itemsInCart, shippingAndPaymentInfoPresent;
-        boolean browse, checkout, confirmOrder, runReport, promteAccount;
+    public static void main(String[] args){
+        boolean uniqueUsername = false;
+        boolean longPassword = false;
+        boolean isLoggedIn = false;
+        boolean isAdmin = false;
+        boolean itemsInCart = false;
+        boolean shippingAndPaymentInfoPresent = false;
+        boolean browse = false;
+        boolean confirmOrder = false;
+        boolean runReport = false;
+        boolean promoteAccount = false;
+        boolean login = false;
+        boolean checkout = false;
+
         Scanner scan = new Scanner(System.in);
         char input = ' ';
+
+        System.out.print("Is the user's username unique? (y/n): ");
+        input = scan.nextLine().charAt(0);
+        if (input == 'y' || input == 'Y'){
+            uniqueUsername = true;
+        }
+        System.out.print("Does the user's password have at least 6 characters? (y/n): ");
+        input = scan.nextLine().charAt(0);
+        if (input == 'y' || input == 'Y'){
+            longPassword = true;
+        }
         System.out.print("Is the user logged in? (y/n): ");
         input = scan.nextLine().charAt(0);
         if (input == 'y' || input == 'Y'){
@@ -27,37 +49,34 @@ public class decision-table-code-demo{
             shippingAndPaymentInfoPresent = true;
         }
 
-        if (!isLoggedIn){
-            browse = checkout = confirmOrder = runReport = promoteAccount = false;
+        if (!uniqueUsername || !longPassword){
+            login = false;
         }
-        else{
-            browse = true;
-            if (!itemsInCart){
-                checkout = confirmOrder = false;
-            }
-            else{
-                checkout = true
-                        if (!shippingAndPaymentInfoPresent){
-                            confirmOrder = false;
-                        }
-                        else{
-                            confirmOrder = true;
-                        }
-            }
-            if (!isAdmin){
-                runReport = promteAccount = false;
-            }
-            else {
-                runReport = promteAccount = true;
+        else {
+            login = true;
+            if (!isLoggedIn) {
+                browse = checkout = confirmOrder = runReport = promoteAccount = false;
+            } else {
+                browse = true;
+                if (itemsInCart) {
+                    checkout = true;
+                    if (shippingAndPaymentInfoPresent) {
+                        confirmOrder = true;
+                    }
+                }
+                if (isAdmin) {
+                    runReport = promoteAccount = true;
+                }
             }
         }
 
         System.out.println("The system will allow the user to perform the following tasks:\n" +
+                "Login: " + login + "\n" +
                 "Browse and Add Items to Cart: " + browse + "\n" +
                 "Checkout: " + checkout +"\n" +
                 "Confirm Order: " + confirmOrder + "\n" +
                 "Run and Export Sales Reports: " + runReport + "\n" +
-                "Promote User Accounts into Admin Accounts: " + promteAccount);
+                "Promote User Accounts into Admin Accounts: " + promoteAccount);
 
     }
 }
