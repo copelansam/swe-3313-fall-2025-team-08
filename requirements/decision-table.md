@@ -10,5 +10,5 @@ An image of our table can be found below:
 
 [Decision Table Code Demo](decision-table-code-demo.java)<br>
 A screenshot of our decision table code demo can be found below:
-![Decision Table Code Demo Image]()
+![Decision Table Code Demo Image](decision-table-code-demo.png)
 

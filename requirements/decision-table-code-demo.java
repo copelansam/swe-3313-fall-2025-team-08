@@ -49,22 +49,17 @@ public class decision-table-code-demo{
             shippingAndPaymentInfoPresent = true;
         }
 
-        if (!uniqueUsername || !longPassword){
-            login = false;
-        }
-        else {
+        if (uniqueUsername && longPassword){
             login = true;
-            if (!isLoggedIn) {
-                browse = checkout = confirmOrder = runReport = promoteAccount = false;
-            } else {
+            if (isLoggedIn){
                 browse = true;
-                if (itemsInCart) {
+                if (itemsInCart){
                     checkout = true;
-                    if (shippingAndPaymentInfoPresent) {
+                    if (shippingAndPaymentInfoPresent){
                         confirmOrder = true;
                     }
                 }
-                if (isAdmin) {
+                if (isAdmin){
                     runReport = promoteAccount = true;
                 }
             }
