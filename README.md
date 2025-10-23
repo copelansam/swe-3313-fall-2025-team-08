@@ -8,7 +8,7 @@ Welcome to the project repository for Team 8 - The Peanut Gallery. Here you will
 
 We will create a small e-commerce website that sells artwork using Java, Spring, and SQLite to sell one of a kind artwork
 
-## Meet our team:
+### Meet our team:
 
  [**Samuel Copelan**](project-plan/resumes/SamuelCopelan.md)
  
@@ -20,13 +20,13 @@ We will create a small e-commerce website that sells artwork using Java, Spring,
 
  [**Bao Khang Tran**](project-plan/resumes/BaoKhangTran.md) 
 
-## Team Assignments:
+### Team Assignments:
 Our team assignments can be found [**here**](project-plan/team-assignments/README.md)
-## Technology Selection:
+### Technology Selection:
 Our technology selection can be found [**here**](project-plan/technology-selection/README.md)
-## Project Plan:
+### Project Plan:
 Our project plan can be found [**here**](project-plan/README.md)
-## Project Plan Video Presentation:
+### Project Plan Video Presentation:
 Our project plan video presentation can be found [**here**](https://www.loom.com/share/508e17cd0d9044f592bbe22d860cd639) 
 
 ## Requirements
@@ -34,12 +34,17 @@ Our project plan video presentation can be found [**here**](https://www.loom.com
 
 Upon meeting with our client, we were able to define the functionalities, features, and processes required for the project to be successful.
 <br>
-We defined the functionality for an online artwork store that supports account creation and management, inventory searching, and secure checkout. Users can create accounts, log in to their accounts, add unique artwork to their carts, and complete purchases. Admins have additional permissions allowing them to add additional inventory to the site, run and export sales reports, and manage user accounts.
+We defined the functionality for an online artwork store that supports account creation and management, inventory searching, and secure checkout. Users can create and log into accounts, add unique artwork to their carts, and complete purchases. Admins have additional permissions allowing them to add additional inventory to the site, run and export sales reports, and manage user accounts.
 <br><br>
+
+### Requirements Overview
 An overview of our project's requirements can be found [**here**](requirements/README.md)
 
+### Use Case Diagram
 Our use case diagram can be found [**here**](requirements/use-case.md)
 
+### Decision Table
 Our decision table can be found [**here**](requirements/decision-table.md)
 
+### Requirements Video Presentation
 A presentation of our requirements can be found [**here**](https://www.loom.com/share/51992dae643b406289a7e835a14756d3)
