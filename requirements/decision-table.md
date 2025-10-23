@@ -8,7 +8,7 @@ Here you can find our decision table which describes the conditions required for
 An image of our table can be found below:
 ![Our Decision Table](DecisionTable.png)
 
-[Decision Table Code Demo](decision-table-code-demo.java)<br>
+A code demo of our decision table can be found here: [Decision Table Code Demo](decision-table-code-demo.java)<br>
 A screenshot of our decision table code demo can be found below:
 ![Decision Table Code Demo Image](decision-table-code-demo.png)
 

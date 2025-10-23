@@ -289,11 +289,17 @@
        - UI for admins to add new inventory items
          - Priority: Customer Would Like
          - Effort: 1 Day
-         - Type: Functional
+         - Type: Non-Functional
          - There should be a user interface that allows admins to create new inventory items.
      - T8S-47
        - Check order status as a user
          - Priority: Nice to Have
          - Effort: 2 Day
          - Type: Functional
-         - Customers should be able to pull up a list of their existing orders and be able to select an order to see the status of.
+         - Customers should be able to pull up a list of their existing orders and select an order to see the status of.
+     - T8S-48
+       - Log out of user account
+         - Priority: Needs to Have
+         - Effort: 1 Day
+         - Type: Functional
+         - There needs to be a way for users to log out of their accounts. Ideally, this would be done by clicking a button.
