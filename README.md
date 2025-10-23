@@ -42,4 +42,4 @@ Our use case diagram can be found [**here**](requirements/use-case.md)
 
 Our decision table can be found [**here**](requirements/decision-table.md)
 
-A presentation of our requirements can be found [**here**]()
+A presentation of our requirements can be found [**here**](https://www.loom.com/share/51992dae643b406289a7e835a14756d3)
