@@ -48,3 +48,10 @@ Our decision table can be found [**here**](requirements/decision-table.md)
 
 ### Requirements Video Presentation
 A presentation of our requirements can be found [**here**](https://www.loom.com/share/51992dae643b406289a7e835a14756d3)
+
+## User Interface Design
+***
+
+To help demonstrate what we are trying to make, we have created a high-fidelity mockup of our UI.<br> 
+A link to our mockup can be found here: [High Fidelity User Interface Design (Marvel)]() <br>
+A presentation that goes over the UI mockup can be found [**here**]()
