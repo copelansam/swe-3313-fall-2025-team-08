@@ -54,4 +54,4 @@ A presentation of our requirements can be found [**here**](https://www.loom.com/
 
 To help demonstrate what we are trying to make, we have created a high-fidelity mockup of our UI.<br> 
 A link to our mockup can be found here: [High Fidelity User Interface Design (Marvel)](https://marvelapp.com/prototype/11de22fh/screen/98008311) <br>
-A presentation that goes over the UI mockup can be found [**here**]()
+A presentation that goes over the UI mockup can be found [**here**](https://www.loom.com/share/eade212c70f94347bf63d2588882e579)
