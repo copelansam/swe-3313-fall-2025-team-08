@@ -71,6 +71,10 @@ erDiagram
     User ||--o{ Order : places
     Order ||--|{ Order_Line : contains
     Item ||--o| Order_Line : includes
+    Order ||--|| Order_Card : contains
+    Order_Card ||--|| Card : contains
+    Order_Address ||--|| Order : contians
+    Shipping_Address ||--|| Order_Address : contains
     User {
         int userId
         varchar100 name
@@ -89,15 +93,6 @@ erDiagram
         numeric taxes
         numeric grandTotal
         varchar100 shippingSelection
-        char16 creditCardNumber
-        char2 cardExpirationMonth
-        char2 cardExpirationYear
-        char3 cardSecurityCode
-        varchar100 shippingAddress
-        varchar50 city
-        char2 state
-        char5 zip
-
     }
     Item {
         int itemId
@@ -110,6 +105,29 @@ erDiagram
     Order_Line {
         int itemId
         int orderId
+    }
+    Card{
+        char16 creditCardNumber
+        char2 expirationMonth
+        char2 expirationYear
+        char3 securityCode
+    }
+    Shipping_Address{
+        varchar100 streetAddress
+        varchar50 city
+        char2 state
+        char5 zip
+    }
+
+    Order_Card{
+        int orderId
+        int creditCardNumber
+    }
+
+
+    Order_Address{
+        int orderId
+        int streetAddress
     }
 -->
 ## Entity/Field Descriptions
@@ -130,10 +148,14 @@ The descriptions can be found bellow:
 <br>![Image of Order Entity Description](order-entity-description.png)
 - **Card:**
 <br>![Image of Card Entity Description](card-entity-description.png)
-- **Shipping Address**
+- **Shipping_Address:**
 <br>![Image of Shipping Address Entity Description](shipping-address-entity-description.png)
-- **Order Line:**
-<br>![Image of Order Line Description](order-line-entity-description.png)
+- **Order_Line:**
+<br>![Image of Order Line Entity Description](order-line-entity-description.png)
+- **Order_Card:**
+<br>![Image of Order_Card Entity Description](order-card-entity-description.png)
+- **Order_Address:**
+<br>![Image of Order_Address Entity Description](order-address-entity-description.png)
 ## Data Examples
 ***
 This section contains some example data that you could potentially
