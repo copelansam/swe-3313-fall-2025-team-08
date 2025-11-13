@@ -11,6 +11,11 @@ import java.net.URISyntaxException;
 import java.io.IOException;
 import java.awt.*;
 
+
+// This is the main class that will run the program.
+// Running this file will result in the program being run at http://localhost:8080
+// To access the application, open http://localhost:8080 in your browser of choice after running it
+
 @SpringBootApplication
 public class EcommerceApplication {
     public static void main(String[] args){
