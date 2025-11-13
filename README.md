@@ -57,7 +57,7 @@ A link to our mockup can be found here: [**High Fidelity User Interface Design (
 A presentation that goes over the UI mockup can be found [**here**](https://www.loom.com/share/eade212c70f94347bf63d2588882e579)
 
 ## Technical Design
-
+***
 We have created a few artifacts that describe how we will build the system including the chosen language and framework, 
 the entities and classes present within our system, and the coding conventions that all programmers will follow.
 <br> A link to our Technical Design can be found bellow:
