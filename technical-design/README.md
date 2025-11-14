@@ -66,14 +66,14 @@ For our project, we plan to use SQLite as our storage mechanism and JDBC to comm
 Here you can see a diagram that visualizes the different entities, their attributes, and how they interact with each other
 ![Image of our entity relationship diagram](entity-relationship-diagram.png)
 <!--
-The code for the diagram in case i need to change it:
+The mermaid code for the diagram in case I need to change it:
 erDiagram
     User ||--o{ Order : places
     Order ||--|{ Order_Line : contains
     Item ||--o| Order_Line : includes
     Order ||--|| Order_Card : contains
     Order_Card ||--|| Card : contains
-    Order_Address ||--|| Order : contians
+    Order_Address ||--|| Order : contains
     Shipping_Address ||--|| Order_Address : contains
     User {
         int userId

@@ -1,16 +1,27 @@
 package com.example.ecommerce.controller;
 
+
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 
-
-// Passes the first screen that the user will encounter (login screen)
 @Controller
 public class HomeController {
 
-    @GetMapping("/")
-    public String home(){
+    @GetMapping("/home")
+    public String mainPage(){
 
-        return "index";
+        return "home";
+    }
+
+    @GetMapping("/search")
+    public String search(){
+
+        return "search";
+    }
+
+    @GetMapping("account")
+    public String account(){
+
+        return "account";
     }
 }
