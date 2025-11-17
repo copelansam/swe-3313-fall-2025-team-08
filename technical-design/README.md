@@ -227,7 +227,7 @@ Portions of this project were made with the assistance of an AI tool (ChatGPT).
  - "Create a User class for me with the following fields and functions: X, Y, Y"
  - "Create an HTML web page that contains the following elements: A, B, C"
 
-<br>AI tools will not be used for code generation. They can be used for 
+<br>AI tools will not be used for code generation. They will be used for assisting with research and explaining how the tools that we will use work.
 ## Technical Design Presentation
 ***
 A video presentation going over our technical design can be found [**here**]()
