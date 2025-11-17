@@ -2,6 +2,7 @@ package com.example.ecommerce.controller;
 
 import com.example.ecommerce.service.UserService;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -21,13 +22,13 @@ public class UserAuthPagesController {
 
     // directs the system to display the sign in screen
     @GetMapping("/")
-    public String signIn(){
+    public String signIn(Model model){
 
         return "index";
     }
 
     @PostMapping("/")
-    public String login(@RequestParam String username, @RequestParam String password){
+    public String login(@RequestParam String username, @RequestParam String password, Model model){
 
 
         return "redirect:/home";

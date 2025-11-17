@@ -6,22 +6,18 @@ import org.springframework.stereotype.Component;
 
 
 @Component
-public class DataBaseInitializer {
-
-    // initializes the database by creating all of the tables if they do not exist
+public class DatabaseInitializer {
 
     private final JdbcTemplate jdbc;
 
-
-
-    public DataBaseInitializer(JdbcTemplate jdbc) {
+    public DatabaseInitializer(JdbcTemplate jdbc) {
         this.jdbc = jdbc;
     }
 
+    // initializes the database by creating all of the tables if they do not already exist
     @PostConstruct
     public void init() {
 
         jdbc.execute();
     }
-
 }
