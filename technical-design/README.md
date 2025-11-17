@@ -188,7 +188,7 @@ This section will include the data in each that the program will come with upon 
   - When a user attempts to log in, we need to be able to determine who they are and retrieve the information relevant to their account.
   - This will be accomplished by running a SQL query to find the record that contains the provided username and password.
   - An instance of a User will then be created using the information retrieved form the query.
-- Authorization
+- **Authorization**
   - How will the system determine whether the user that just logged in is a regular user or an admin?
   - Within the User entity within our database, we will have a field called isAdmin. This field will track whether a specific user is an admin.
   - The Admin class within our program will use polymorphism to instantiate the current user as an instance of the Admin class instead of the User class.
@@ -198,7 +198,7 @@ This section will include the data in each that the program will come with upon 
 There are a series of styling choices that every engineer is expected to follow that will be listed below:
 <br>All engineers should follow the standard Java Style Guidelines which can be found [**here**](https://www.cs.cornell.edu/courses/JavaAndDS/JavaStyle.html)
 
-<br>All engineers should strive to create code that is easy to read and comprehend. This can be achieved by doing hte following:
+<br>All engineers should strive to create code that is easy to read and comprehend. This can be achieved by doing the following:
 - Use camelCase for method and attribute names, PascalCase for class names, and kebab-case for all other files.
 - Ensure that an appropriate amount of white space (1-2 lines) is included between chunks of code to help increase readability.
 - Opening braces "{" should come on the same line as the statement is a part of, with the closing bracket "}" being on its own line with nothing else.
@@ -210,7 +210,7 @@ There are a series of styling choices that every engineer is expected to follow 
     <br>statement;
     <br>}
 
-<br>These guidelines should be followed to ensure that our code is easy to read and understand.
+<br>These guidelines should be followed to ensure that our code is easy to read, understand, and maintain.
 
 ## AI Acknowledgement
 ***
