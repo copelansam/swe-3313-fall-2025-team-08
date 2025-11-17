@@ -15,6 +15,7 @@
 - [Authentication and Authorization Plan](#authentication-and-authorization-plan)
 - [Coding Style Guide](#coding-style-guide)
 - [Technical Design Presentation](#technical-design-presentation)
+- [AI Acknowledgement](#ai-acknowledgement)
 
 ## Languages
 ***
@@ -64,7 +65,7 @@ For our project, we plan to use SQLite as our storage mechanism and JDBC to comm
 ## Entity Relationship Diagram
 ***
 Here you can see a diagram that visualizes the different entities, their attributes, and how they interact with each other
-![Image of our entity relationship diagram](entity-relationship-diagram.png)
+![Image of our entity relationship diagram](images/entity-relationship-diagram.png)
 <!--
 The mermaid code for the diagram in case I need to change it:
 erDiagram
@@ -141,21 +142,21 @@ Here you can see descriptions for each of the attributes present within each tab
 
 The descriptions can be found bellow:
 - **User:**
-![Image of User Entity Description](user-entity-description.png)
+![Image of User Entity Description](images/user-entity-description.png)
 - **Item:**
-<br>![Image of Item Entity Description](item-entity-description.png)
+<br>![Image of Item Entity Description](images/item-entity-description.png)
 - **Order:**
-<br>![Image of Order Entity Description](order-entity-description.png)
+<br>![Image of Order Entity Description](images/order-entity-description.png)
 - **Card:**
-<br>![Image of Card Entity Description](card-entity-description.png)
+<br>![Image of Card Entity Description](images/card-entity-description.png)
 - **Shipping_Address:**
-<br>![Image of Shipping Address Entity Description](shipping-address-entity-description.png)
+<br>![Image of Shipping Address Entity Description](images/shipping-address-entity-description.png)
 - **Order_Line:**
-<br>![Image of Order Line Entity Description](order-line-entity-description.png)
+<br>![Image of Order Line Entity Description](images/order-line-entity-description.png)
 - **Order_Card:**
-<br>![Image of Order_Card Entity Description](order-card-entity-description.png)
+<br>![Image of Order_Card Entity Description](images/order-card-entity-description.png)
 - **Order_Address:**
-<br>![Image of Order_Address Entity Description](order-address-entity-description.png)
+<br>![Image of Order_Address Entity Description](images/order-address-entity-description.png)
 ## Data Examples
 ***
 This section contains some example data that you could potentially
@@ -163,21 +164,21 @@ see in each table to help give you an idea as to how each table
 should look and how they are related to each other.
 
 - **User:**
-![Image of example user data](user-entity-example-data.png)
+![Image of example user data](images/user-entity-example-data.png)
 - **Item:**
-<br>![Image of example item data](item-entity-example.png)
+<br>![Image of example item data](images/item-entity-example.png)
 -  **Order:**
-<br>![Image of example order data](order-entity-example-data.png)
+<br>![Image of example order data](images/order-entity-example-data.png)
 - **Card:**
-<br>![Image of example card data](card-entity-example.png)
+<br>![Image of example card data](images/card-entity-example.png)
 - **Shipping_Address:**
-<br>![Image of example shipping address data](shipping-address-entity-example-data.png)
+<br>![Image of example shipping address data](images/shipping-address-entity-example-data.png)
 - **Order_Line:**
-<br>![Image of example order line data](order-line-entity-example-data.png)
+<br>![Image of example order line data](images/order-line-entity-example-data.png)
 - **Order_Card:**
-<br>![Image of example order card data](order-card-entity-example-data.png)
+<br>![Image of example order card data](images/order-card-entity-example-data.png)
 - **Order_Address:**
-<br>![Image of example order address data](order-address-entity-example-data.png)
+<br>![Image of example order address data](images/order-address-entity-example-data.png)
 ## Database Seed Data
 ***
 This section will include the data in each that the program will come with upon initial setup
@@ -196,7 +197,37 @@ This section will include the data in each that the program will come with upon 
 ***
 There are a series of styling choices that every engineer is expected to follow that will be listed below:
 <br>All engineers should follow the standard Java Style Guidelines which can be found [**here**](https://www.cs.cornell.edu/courses/JavaAndDS/JavaStyle.html)
+
+<br>All engineers should strive to create code that is easy to read and comprehend. This can be achieved by doing hte following:
+- Use camelCase for method and attribute names, PascalCase for class names, and kebab-case for all other files.
+- Ensure that an appropriate amount of white space (1-2 lines) is included between chunks of code to help increase readability.
+- Opening braces "{" should come on the same line as the statement is a part of, with the closing bracket "}" being on its own line with nothing else.
+  - An example of proper braces would be:
+    <br>if (condition) {
+    <br>statement;
+    <br>}
+    <br>else {
+    <br>statement;
+    <br>}
+
 <br>These guidelines should be followed to ensure that our code is easy to read and understand.
+
+## AI Acknowledgement
+***
+Portions of this project were made with the assistance of an AI tool (ChatGPT). 
+<br>The AI was used to help us understand some of the more abstract concepts that were introduced to us as a part of the course and project.
+<br>Some examples of prompts that would have been used during this project include:
+ - "How does an MVC architecture work?"
+ - "I'm planning on creating a project with Spring Boot, using the initializer that can be found here: https://start.spring.io/, what dependencies should I add to my project?"
+ - "Where can I find good documentation regarding programming language X?"
+ - "What are Spring Boot annotations and how do they work?"
+
+<br>AI tools will only be used to help with outlining and research as we explore concepts that are brand new to us.
+<br>Some examples of prompts that will not be used in the project are:
+ - "Create a User class for me with the following fields and functions: X, Y, Y"
+ - "Create an HTML web page that contains the following elements: A, B, C"
+
+<br>AI tools will not be used for code generation. They can be used for 
 ## Technical Design Presentation
 ***
-A presentation going over our technical design can be found [**here**]()
+A video presentation going over our technical design can be found [**here**]()
