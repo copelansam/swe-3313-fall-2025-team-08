@@ -160,7 +160,24 @@ The descriptions can be found bellow:
 ***
 This section contains some example data that you could potentially
 see in each table to help give you an idea as to how each table
-should look and how they are related to each other
+should look and how they are related to each other.
+
+- **User:**
+![Image of example user data](user-entity-example-data.png)
+- **Item:**
+<br>![Image of example item data](item-entity-example.png)
+-  **Order:**
+<br>![Image of example order data](order-entity-example-data.png)
+- **Card:**
+<br>![Image of example card data](card-entity-example.png)
+- **Shipping_Address:**
+<br>![Image of example shipping address data](shipping-address-entity-example-data.png)
+- **Order_Line:**
+<br>![Image of example order line data](order-line-entity-example-data.png)
+- **Order_Card:**
+<br>![Image of example order card data](order-card-entity-example-data.png)
+- **Order_Address:**
+<br>![Image of example order address data](order-address-entity-example-data.png)
 ## Database Seed Data
 ***
 This section will include the data in each that the program will come with upon initial setup

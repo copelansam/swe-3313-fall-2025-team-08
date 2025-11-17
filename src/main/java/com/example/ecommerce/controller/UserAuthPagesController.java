@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 // Passes the create account screen to the view
 @Controller
-public class UserAuthController {
+public class UserAuthPagesController {
 
     // injects the user service
     public final UserService userService;
 
     // constructor for dependency injection
-    public UserAuthController(UserService userService){
+    public UserAuthPagesController(UserService userService){
         this.userService = userService;
     }
 
