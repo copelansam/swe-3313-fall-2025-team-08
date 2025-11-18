@@ -5,8 +5,32 @@
 .logo-display{
     background-color: #963640;
     color: white;
-    content-align: center;
+    text-align: center;
+    width:50%
 }
 body{
     background-color: #FFF5E4;
+}
+.user-in{
+    color: white;
+
+}
+.user-credentials{
+    display: flex;
+    width: 100%;
+    justify-content:center;
+    align-items:flex-start;
+}
+.input-credentials{
+    width:50%;
+    text-align:center;
+}
+.menu{
+    display:inline-flex;
+    flex-direction:row;
+    background-color: #963640;
+    width:100%;
+}
+.option{
+    width:10%;
 }
