@@ -12,5 +12,6 @@ public class UserEntityRepository {
     public UserEntityRepository(JdbcTemplate jdbc){
 
         this.jdbc = jdbc;
+
     }
 }
