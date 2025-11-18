@@ -13,4 +13,9 @@ public class OrderEntityRepository {
 
         this.jdbc = jdbc;
     }
+
+    public void addRow(int userid, String orderDate, int subtotal, int shippingPrice, int taxes, int grandTotal, String shippingSelection) {
+        String orderSql = "INSERT INTO 'Order'(userid, orderDate, subTotal, shippingPrice, taxes, GrandTotal, shippingSelection) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+        jdbc.update(orderSql, userid, orderDate, subtotal, shippingPrice, taxes, grandTotal);
+    }
 }

@@ -12,4 +12,9 @@ public class OrderAddressEntityRepository {
 
         this.jdbc = jdbc;
     }
+
+    public void addRow(int orderid, int streetAddress) {
+        String orderAddressSql = "INSERT INTO Order_Address (OrderId, StreetAddress) VALUES (?, ?)";
+        jdbc.update(orderAddressSql, orderid, streetAddress);
+    }
 }

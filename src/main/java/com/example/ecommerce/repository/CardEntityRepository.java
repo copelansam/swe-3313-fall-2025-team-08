@@ -12,4 +12,9 @@ public class CardEntityRepository {
 
         this.jdbc = jdbc;
     }
+
+    public void addRow(String creditCardNumber, String expirationMonth, String expirationYear, String securityCode) {
+        String cardSql = "INSERT INTO Card(creditCardNumber, expirationMonth, expirationYear, securityCode) VALUES(?, ?, ?, ?)";
+        jdbc.update(cardSql, creditCardNumber, expirationMonth, expirationYear, securityCode);
+    }
 }
