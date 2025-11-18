@@ -5,6 +5,7 @@
 .logo-display{
     background-color: #963640;
     color: white;
+    content-align: center;
 }
 body{
     background-color: #FFF5E4;

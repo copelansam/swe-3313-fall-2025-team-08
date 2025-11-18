@@ -37,7 +37,7 @@ public class DatabaseInitializer {
                 "zip           char(5) " +
                 ");");
 
-        jdbc.execute("CREATE TABLE IF NOT EXISTS \"Order\" ( " +
+        jdbc.execute("CREATE TABLE IF NOT EXISTS `Order` ( " +
                 "orderId           integer PRIMARY KEY, " +
                 "userId            int NOT NULL, " +
                 "orderDate         date, " +
@@ -67,17 +67,17 @@ public class DatabaseInitializer {
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Order_Address ( " +
                 "orderId               integer," +
-                "streetAddress         integer, " +
+                "streetAddress         varchar(100), " +
                 "PRIMARY KEY (orderId, streetAddress)," +
-                " FOREIGN KEY (orderId) references Order(orderId), " +
+                "FOREIGN KEY (orderId) references `Order`(orderId), " +
                 "FOREIGN KEY (streetAddress) references Shipping_Address(streetAddress) " +
                 ");");
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Order_Card  ( " +
                 "orderId               integer," +
-                " creditCardNumber      integer," +
-                " PRIMARY KEY (orderId, creditCardNumber), " +
-                "FOREIGN KEY (orderId) references Order(orderId), " +
+                "creditCardNumber      integer," +
+                "PRIMARY KEY (orderId, creditCardNumber), " +
+                "FOREIGN KEY (orderId) references `Order`(orderId), " +
                 "FOREIGN KEY (creditCardNumber) references Card(creditCardNumber) " +
                 ");");
 
@@ -86,7 +86,7 @@ public class DatabaseInitializer {
                 "orderId     integer, " +
                 "PRIMARY KEY (itemId, orderId), " +
                 "FOREIGN KEY (itemId) references Item(itemId), " +
-                "FOREIGN KEY (orderId) references Order(orderId) " +
+                "FOREIGN KEY (orderId) references `Order`(orderId) " +
                 ");");
     }
 }
