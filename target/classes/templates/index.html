@@ -1,11 +1,32 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>User Sign In</title>
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
+    >
+    <link rel="stylesheet" href="/css/style.css">
 </head>
+
 <body>
-<p>Welcome to the webpage!</p>
-<p><a href = "/create-account">Create an account</a></p>
+<div class = "logo-display">
+    <p>Welcome to the Peanut Gallery!</p>
+    <p>- Where Every Painting Tells a Story -</p>
+    <img src = "/images/home-page-logo.png" alt = "Peanut Gallery Logo" />
+</div>
+<div class = "input-credentials">
+    <p>Login to the Peanut Gallery</p>
+    <p>Access your gallery, orders, and favorites</p>
+    <form>
+        <input type = "text" >Enter your username
+        <br>
+        <input type = "text">Enter your password
+    </form>
+    <button type="button" class = "red-button">Log In</button>
+    <p>Don't have an account? <a href = "/create-account">Sign Up</a></p>
+</div>
 </body>
+
 </html>

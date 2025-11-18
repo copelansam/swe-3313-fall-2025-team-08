@@ -18,6 +18,6 @@ public class DatabaseInitializer {
     @PostConstruct
     public void init() {
 
-        jdbc.execute();
+       // jdbc.execute();
     }
 }
