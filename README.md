@@ -82,4 +82,4 @@ the entities and classes present within our system, and the coding conventions t
 <br>The AI was used for research regarding how an MVC program works and how it should be set up. 
 The folder structure under the 'src' folder was made under the suggestion of ChatGPT after being reviewed by the team. 
 Additional uses of AI will be cited in line as they occur.
-<br>**NOTE:** No line of code were written by AI tools.
+<br>**NOTE:** No lines of code were written by AI tools.
