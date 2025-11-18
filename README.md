@@ -62,3 +62,24 @@ We have created a few artifacts that describe how we will build the system inclu
 the entities and classes present within our system, and the coding conventions that all programmers will follow.
 <br> A link to our Technical Design can be found bellow:
 [**Technical Design**](/technical-design/README.md)
+
+## AI Acknowledgement
+***
+**NOTE:** Portions of this project were made with the assistance of an AI tool (ChatGPT).
+<br>The AI was used to help us understand some of the more abstract concepts that were introduced to us as a part of the course and project.
+<br>Some examples of prompts that would have been used during this project include:
+- "How does an MVC architecture work?"
+- "I'm planning on creating a project with Spring Boot, using the initializer that can be found here: https://start.spring.io/, what dependencies should I add to my project?"
+- "Where can I find good documentation regarding programming language X?"
+- "What are Spring Boot annotations and how do they work?"
+
+<br>AI tools will only be used to help with outlining and research as we explore concepts that are brand new to us.
+<br>Some examples of prompts that will not be used in the project are:
+- "Create a User class for me with the following fields and functions: X, Y, Y"
+- "Create an HTML web page that contains the following elements: A, B, C"
+
+<br>AI tools will not be used for code generation. They will be used for assisting with research and explaining how the tools that we will use work.
+<br>The AI was used for research regarding how an MVC program works and how it should be set up. 
+The folder structure under the 'src' folder was made under the suggestion of ChatGPT after being reviewed by the team. 
+Additional uses of AI will be cited in line as they occur.
+<br>**NOTE:** No line of code were written by AI tools.

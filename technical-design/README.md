@@ -15,7 +15,6 @@
 - [Authentication and Authorization Plan](#authentication-and-authorization-plan)
 - [Coding Style Guide](#coding-style-guide)
 - [Technical Design Presentation](#technical-design-presentation)
-- [AI Acknowledgement](#ai-acknowledgement)
 
 ## Languages
 ***
@@ -73,9 +72,9 @@ erDiagram
     Order ||--|{ Order_Line : contains
     Item ||--o| Order_Line : includes
     Order ||--|| Order_Card : contains
-    Order_Card ||--|| Card : contains
+    Order_Card }|--|| Card : contains
     Order_Address ||--|| Order : contains
-    Shipping_Address ||--|| Order_Address : contains
+    Shipping_Address ||--|{ Order_Address : contains
     User {
         int userId
         varchar100 name
@@ -181,7 +180,16 @@ should look and how they are related to each other.
 <br>![Image of example order address data](images/order-address-entity-example-data.png)
 ## Database Seed Data
 ***
-This section will include the data in each that the program will come with upon initial setup
+This section will include the data in each table that the program will come with upon initial setup.
+
+- **User:**
+<br>![An image of the User Entity Seed Data](images/user-entity-seed-data.png)
+- **Item:**
+<br>![An image of the Item Entity Seed Data](images/item-entity-seed-data.png)
+
+<br>**NOTE:** only the user and item tables will contain seed data. All other tables are related 
+to the ordering process, and we do not plan on having existing orders at the start. Any orders created after the
+initial run will be saved in the database and appear in subsequent runs of the program.
 ## Authentication and Authorization Plan
 ***
 - **Authentication**
@@ -201,6 +209,7 @@ There are a series of styling choices that every engineer is expected to follow 
 <br>All engineers should strive to create code that is easy to read and comprehend. This can be achieved by doing the following:
 - Use camelCase for method and attribute names, PascalCase for class names, and kebab-case for all other files.
 - Ensure that an appropriate amount of white space (1-2 lines) is included between chunks of code to help increase readability.
+- Lines should not exceed the length of the window in which they are written. If a line gets too long, then it should be spread across multiple lines.
 - Opening braces "{" should come on the same line as the statement is a part of, with the closing bracket "}" being on its own line with nothing else.
   - An example of proper braces would be:
     <br>if (condition) {
@@ -212,22 +221,6 @@ There are a series of styling choices that every engineer is expected to follow 
 
 <br>These guidelines should be followed to ensure that our code is easy to read, understand, and maintain.
 
-## AI Acknowledgement
-***
-Portions of this project were made with the assistance of an AI tool (ChatGPT). 
-<br>The AI was used to help us understand some of the more abstract concepts that were introduced to us as a part of the course and project.
-<br>Some examples of prompts that would have been used during this project include:
- - "How does an MVC architecture work?"
- - "I'm planning on creating a project with Spring Boot, using the initializer that can be found here: https://start.spring.io/, what dependencies should I add to my project?"
- - "Where can I find good documentation regarding programming language X?"
- - "What are Spring Boot annotations and how do they work?"
-
-<br>AI tools will only be used to help with outlining and research as we explore concepts that are brand new to us.
-<br>Some examples of prompts that will not be used in the project are:
- - "Create a User class for me with the following fields and functions: X, Y, Y"
- - "Create an HTML web page that contains the following elements: A, B, C"
-
-<br>AI tools will not be used for code generation. They will be used for assisting with research and explaining how the tools that we will use work.
 ## Technical Design Presentation
 ***
 A video presentation going over our technical design can be found [**here**]()

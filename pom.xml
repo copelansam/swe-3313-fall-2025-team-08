@@ -30,6 +30,7 @@
 		<java.version>23</java.version>
 	</properties>
 	<dependencies>
+        <!--NOTE: These dependencies were selected after consulting with ChatGPT to determine which ones would be useful for our use case.-->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter</artifactId>
