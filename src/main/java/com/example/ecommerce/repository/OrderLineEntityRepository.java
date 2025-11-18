@@ -13,4 +13,9 @@ public class OrderLineEntityRepository {
 
         this.jdbc = jdbc;
     }
+
+    public void addRow(int itemid, int orderid) {
+        String orderLineSql = "INSERT INTO Order_Line(itemid, orderid) VALUES(?,?)";
+        jdbc.update(orderLineSql, itemid, orderid);
+    }
 }

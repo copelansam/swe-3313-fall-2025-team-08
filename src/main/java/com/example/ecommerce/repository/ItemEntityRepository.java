@@ -12,4 +12,9 @@ public class ItemEntityRepository {
 
         this.jdbc = jdbc;
     }
+
+    public void addRow(String name, String description, String imagePath, int price, boolean inStock) {
+        String itemSql = "INSERT INTO Item(name, description, imagePath, price, inStock) VALUES(?, ?, ?, ?, ?)";
+        jdbc.update(itemSql, name, description, imagePath, price, inStock);
+    }
 }

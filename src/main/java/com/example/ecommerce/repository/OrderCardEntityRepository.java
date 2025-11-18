@@ -12,4 +12,9 @@ public class OrderCardEntityRepository {
 
         this.jdbc = jdbc;
     }
+
+    public void addRow(int orderid, int creditCardNumber) {
+        String orderCardSql = "INSERT INTO Order_Card(orderid,creditCardNumber) VALUES(?,?)";
+        jdbc.update(orderCardSql, orderid, creditCardNumber);
+    }
 }

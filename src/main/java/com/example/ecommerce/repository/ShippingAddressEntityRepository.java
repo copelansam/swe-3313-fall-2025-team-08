@@ -13,4 +13,9 @@ public class ShippingAddressEntityRepository {
 
         this.jdbc = jdbc;
     }
+
+    public void addRow(String shippingAddress, String city, String state, String zip) {
+        String shippingAddressSql = "INSERT INTO Shipping_Address(shipping_address, city, state, zip) VALUES(?,?,?,?)";
+        jdbc.update(shippingAddressSql, shippingAddress, city, state, zip);
+    }
 }
