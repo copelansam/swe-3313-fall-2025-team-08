@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>User Sign In</title>
+    <title>Account Overview</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -26,6 +26,11 @@
 
 </div>
 <div>
+    <p th:text="'Name: ' +${userSession.name}"></p>
+    <p th:text="'Username: ' + ${userSession.username}"></p>
+    <p th:text="'Email: ' + ${userSession.email}"></p>
+    <a href="/admin-actions"><p th:if="userSession.isAdmin" th:text="'Admin Actions'"></p></a>
+
     <p><a href="/">Logout</a></p>
 </div>
 </body>

@@ -21,6 +21,8 @@ public class DatabaseInitializer {
         // SQLite will treat integer primary key as an alias for autoincrement. Meaning that if it is not specified
         // then it will automatically assign it an unused value
 
+        jdbc.execute("DROP TABLE User");
+
         jdbc.execute( "CREATE TABLE IF NOT EXISTS User ( " +
                 "userId    integer PRIMARY KEY, " +
                 "name      varchar(100), " +

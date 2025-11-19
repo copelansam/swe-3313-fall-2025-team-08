@@ -15,8 +15,28 @@ public class UserEntityRepository {
 
     }
 
-    public void addRow(String name, String userName, String email, String password, boolean isAdmin) {
-        String userSql = "INSERT INTO User(name, userName, email, password, isAdmin) VALUES (?, ?, ?, ?, ?)";
-        jdbc.update(userSql, name, userName, email, password, isAdmin);
+    public void addRow(String name, String userName, String email, String password) {
+
+        String userSql = "INSERT INTO User(name, userName, email, password, isAdmin) VALUES (?, ?, ?, ?, FALSE)";
+
+        jdbc.update(userSql, name, userName, email, password);
+
+    }
+
+    public boolean usernameUnique(String userName){
+
+        String usernameUniqueSql = "SELECT Count(*) FROM User WHERE userName = ?";
+
+        int usernameOccurrence = jdbc.queryForObject(usernameUniqueSql, Integer.class, userName);
+
+        if (usernameOccurrence == 0){
+
+            return true;
+        }
+        else{
+
+            return false;
+        }
+
     }
 }
