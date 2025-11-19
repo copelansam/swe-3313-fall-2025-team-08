@@ -67,11 +67,23 @@ input.user-info{
     background-color: var(--creamy);
 }
 
+.menu-option a{
+    text-decoration:none;
+    color:inherit;
+}
+
 .menu-selected{
+    display:block;
     color: var(--mahogany);
     background-color: var(--creamy);
     width: 10%;
     text-align: center;
+    text-decoration:none;
+}
+
+.menu-selected a{
+    text-decoration: none;
+    color: inherit;
 }
 
 input.menu-search{

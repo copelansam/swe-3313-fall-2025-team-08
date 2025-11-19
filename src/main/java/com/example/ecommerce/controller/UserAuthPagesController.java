@@ -25,7 +25,7 @@ public class UserAuthPagesController {
     @GetMapping("/")
     public String signIn(Model model){
         User userSession = new User();
-        return "index";
+        return "login";
     }
 
     @PostMapping("/login")

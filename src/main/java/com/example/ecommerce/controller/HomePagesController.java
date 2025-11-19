@@ -19,7 +19,7 @@ public class HomePagesController {
         return "search";
     }
 
-    @GetMapping("account")
+    @GetMapping("/account")
     public String account(){
 
         return "account";
