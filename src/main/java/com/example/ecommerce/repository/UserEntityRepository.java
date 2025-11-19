@@ -16,7 +16,7 @@ public class UserEntityRepository {
     }
 
     public void addRow(String name, String userName, String email, String password, boolean isAdmin) {
-        String userSql = "INSERT INTO User(name, email, password, isAdmin) VALUES (?, ?, ?, ?)";
-        jdbc.update(userSql, name, userName, email, password);
+        String userSql = "INSERT INTO User(name, userName, email, password, isAdmin) VALUES (?, ?, ?, ?, ?)";
+        jdbc.update(userSql, name, userName, email, password, isAdmin);
     }
 }
