@@ -33,21 +33,22 @@
 
         </div>
 
-        <form>
+        <form th:action="@{/login}" method="post">
 
             <p>Username</p>
 
-            <input type = "text"  placeholder="Enter your username" class="user-info">
+            <input type = "text" name="username"  placeholder="Enter your username" class="user-info">
 
             <br>
 
             <p>Password</p>
 
-            <input type = "text" placeholder="Enter your password" class="user-info">
+            <input type = "text" name="password" placeholder="Enter your password" class="user-info">
+
+            <button type="submit" class = "red-button"><a href="/main" class="user-in">Log In</a></button>
 
         </form>
 
-        <button type="button" class = "red-button"><a href="/main" class="user-in">Log In</a></button>
 
         <p>Don't have an account? <a href = "/create-account">Sign Up</a></p>
 

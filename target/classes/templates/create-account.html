@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>User Sign Up</title>
@@ -29,31 +29,39 @@
 
         </div>
 
-        <form>
+        <form th:action="@{/register}" method="post">
 
             <p>Name</p>
 
-            <input type="text" placeholder="Enter your name" class="user-info">
+            <input type="text" name="name" placeholder="Enter your name" class="user-info">
+            <br><span th:if="${nameEmpty}" th:text="${nameEmpty}"></span>
 
             <p>Email Address</p>
 
-            <input type="text" placeholder="Enter your email address" class="user-info">
-
+            <input type="text" name="email" placeholder="Enter your email address" class="user-info">
+            <br><span th:if="${emailEmpty}" th:text="${emailEmpty}"></span>
             <p>Username</p>
 
-            <input type="text" placeholder="Enter a username" class="user-info">
-
+            <input type="text" name="username" placeholder="Enter a username" class="user-info">
+            <br><span th:if="${usernameInvalid}" th:text="${usernameInvalid}"></span>
+            <span th:if="${usernameEmpty}" th:text="${usernameEmpty}"></span>
             <p>Password</p>
 
-            <input type="text" placeholder="Enter a password" class="user-info">
+            <input type="password" name="password" placeholder="Enter a password" class="user-info">
+            <br><span th:if="${passwordLengthInvalid}" th:text="${passwordLengthInvalid}"></span>
+            <span th:if="${passwordEmpty}" th:text="${passwordEmpty}"></span>
+            <span th:if="${passwordMismatch}" th:text="${passwordMismatch}"></span>
 
             <p>Confirm Password</p>
 
-            <input type="text" placeholder="Confirm your password" class="user-info">
+            <input type="password" name="confirmPassword" placeholder="Confirm your password" class="user-info">
+            <br><span th:if="${confirmPasswordEmpty}" th:text="${confirmPasswordEmpty}"></span>
+
+            <button type="submit" class="red-button">Sign Up</button>
 
         </form>
 
-        <button type="button" class="red-button">Sign Up</button>
+
 
         <p>Already have an account? <a href="/">Log in</a></p>
 
