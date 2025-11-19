@@ -1,7 +1,7 @@
 package com.example.ecommerce.controller;
 
 import com.example.ecommerce.model.User;
-import com.example.ecommerce.service.UserService;
+import com.example.ecommerce.service.UserEntityService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -14,11 +14,11 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class UserAuthPagesController {
 
     // injects the user service
-    public final UserService userService;
+    public final UserEntityService userEntityService;
 
     // constructor for dependency injection
-    public UserAuthPagesController(UserService userService){
-        this.userService = userService;
+    public UserAuthPagesController(UserEntityService userEntityService){
+        this.userEntityService = userEntityService;
     }
 
     // directs the system to display the sign in screen

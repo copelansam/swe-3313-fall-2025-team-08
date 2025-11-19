@@ -1,4 +1,4 @@
 package com.example.ecommerce.service;
 
-public class ShippingAddressService {
+public class OrderCardEntityService {
 }

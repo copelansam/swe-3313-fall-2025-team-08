@@ -4,11 +4,11 @@ import com.example.ecommerce.repository.CardEntityRepository;
 import org.springframework.stereotype.Service;
 
 @Service
-public class CardService {
+public class CardEntityService {
 
     private final CardEntityRepository cardTable;
 
-    public CardService(CardEntityRepository cardTable){
+    public CardEntityService(CardEntityRepository cardTable){
 
         this.cardTable = cardTable;
     }
