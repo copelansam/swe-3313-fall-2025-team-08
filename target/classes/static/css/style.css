@@ -1,39 +1,88 @@
-.red-button{
-    background-color: #963640;
-    color: white;
+:root{
+    --creamy: #FFF5E4; /*This is the creamish color we will use mostly for the the background*/
+    --mahogany: #963640; /*This is the dark red color we will use for everything else*/
 }
-.logo-display{
-    background-color: #963640;
-    color: white;
-    text-align: center;
-    width:50%
-    height:100%;
-}
-body{
-    background-color: #FFF5E4;
-}
-.user-in{
-    color: white;
 
+body{
+    background-color: var(--creamy);
 }
+
+.red-button{
+    background-color: var(--mahogany);
+    color: white;
+    width: 300px;
+    font-size:16px;
+}
+/* user-credentials will hold all content in the sign in an sign up pages.
+ Will be used to horizontally align them */
 .user-credentials{
     display: flex;
     width: 100%;
+    height:100%;
     justify-content:center;
     align-items:flex-start;
-    height:100%;
+
 }
+
+.logo-display{
+    background-color: var(--mahogany);
+    color: white;
+    text-align: center;
+    width:50%;
+    height:100%;
+    font-family:'Dancing Script',cursive;
+}
+
 .input-credentials{
     width:50%;
     text-align:center;
     height:100%;
 }
-.menu{
-    display:inline-flex;
-    flex-direction:row;
-    background-color: #963640;
-    width:100%;
+
+input.user-info{
+    border: 2px solid #FFBA5C;
+    border-radius: 5px;
+    padding:5px;
+    width:400px;
+    font-size:16px;
 }
-.option{
+
+/* menu-bar will contain the menu that appears at the top of the screen*/
+.menu-bar{
+    display:flex;
+    background-color: var(--mahogany);
+    width:100%;
+    height:10%;
+    height:75px;
+    line-height:75px;
+}
+.menu-option{
     width:10%;
+    text-align:center;
+    color: var(--creamy);
+}
+
+.menu-option:hover{
+    color: var(--mahogany);
+    background-color: var(--creamy);
+}
+
+.menu-selected{
+    color: var(--mahogany);
+    background-color: var(--creamy);
+    width: 10%;
+    text-align: center;
+}
+
+input.menu-search{
+    background-color: #692A30;
+    color: white;
+    border-radius: 5px;
+    margin-left :auto;
+}
+
+#search-button{
+    color: var(--creamy);
+    background-color: var(--mahogany);
+    border: none;
 }
