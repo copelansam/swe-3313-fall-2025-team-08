@@ -223,4 +223,4 @@ There are a series of styling choices that every engineer is expected to follow 
 
 ## Technical Design Presentation
 ***
-A video presentation going over our technical design can be found [**here**]()
+A video presentation going over our technical design can be found [**here**](https://www.loom.com/share/940b1d1b9da146d5a1b9ff85b65855af)
