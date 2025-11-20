@@ -49,11 +49,11 @@ public class UserAuthPagesController {
     }
 
     @PostMapping("register")
-    public String registerUser(@RequestParam String name,
-                               @RequestParam String email,
-                               @RequestParam String username,
-                               @RequestParam String password,
-                               @RequestParam String confirmPassword,
+    public String registerUser(@RequestParam("name") String name,
+                               @RequestParam("email") String email,
+                               @RequestParam("username") String username,
+                               @RequestParam("password") String password,
+                               @RequestParam("confirmPassword") String confirmPassword,
                                HttpSession session,
                                Model model) {
 
