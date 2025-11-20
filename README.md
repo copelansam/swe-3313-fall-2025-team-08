@@ -60,7 +60,7 @@ A presentation that goes over the UI mockup can be found [**here**](https://www.
 ***
 We have created a few artifacts that describe how we will build the system including the chosen language and framework, 
 the entities and classes present within our system, and the coding conventions that all programmers will follow.
-<br> A link to our Technical Design can be found bellow:
+<br> A link to our Technical Design can be found below:<br>
 [**Technical Design**](/technical-design/README.md)
 
 ## AI Acknowledgement
