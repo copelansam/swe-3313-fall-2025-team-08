@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Sign Up</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+<div class="user-credentials">
+
+    <div class = "logo-display">
+
+        <p>Welcome to the Peanut Gallery!</p>
+
+        <p>- Where Every Painting Tells a Story -</p>
+
+        <img src = "/images/home-page-logo.png" alt = "Peanut Gallery Logo" />
+
+    </div>
+
+    <div class = "input-credentials">
+
+        <div class = text>
+
+            <p>Create Your Account</p>
+
+            <p>Access your gallery, orders, and favorites</p>
+            <p class="error-message" th:if="${errorMessage}" th:text="${errorMessage}"></p>
+
+        </div>
+
+        <form th:action="@{/register}" method="post">
+
+            <p>Name</p>
+
+            <input type="text" name="name" placeholder="Enter your name" class="user-info">
+
+            <p>Email Address</p>
+
+            <input type="text" name="email" placeholder="Enter your email address" class="user-info">
+
+            <p>Username</p>
+
+            <input type="text" name="username" placeholder="Enter a username" class="user-info">
+
+            <p>Password</p>
+
+            <input type="password" name="password" placeholder="Enter a password" class="user-info">
+
+            <p>Confirm Password</p>
+
+            <input type="password" name="confirmPassword" placeholder="Confirm your password" class="user-info">
+
+            <button type="submit" class="red-button">Sign Up</button>
+
+        </form>
+
+        <p>Already have an account? <a href="/">Log in</a></p>
+
+    </div>
+
+</div>
+
+</body>
+
+</html>
