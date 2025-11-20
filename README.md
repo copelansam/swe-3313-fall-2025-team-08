@@ -73,13 +73,7 @@ the entities and classes present within our system, and the coding conventions t
 - "Where can I find good documentation regarding programming language X?"
 - "What are Spring Boot annotations and how do they work?"
 
-<br>AI tools will only be used to help with outlining and research as we explore concepts that are brand new to us.
-<br>Some examples of prompts that will not be used in the project are:
-- "Create a User class for me with the following fields and functions: X, Y, Y"
-- "Create an HTML web page that contains the following elements: A, B, C"
-
-<br>AI tools will not be used for code generation. They will be used for assisting with research and explaining how the tools that we will use work.
-<br>The AI was used for research regarding how an MVC program works and how it should be set up. 
+<br>The  use of AI tools is encouraged more for assisting with the learning process and helping to explain abstract concepts.
+<br>In the event that an AI tool is used to generate something for this project, it should be properly cited.
 The folder structure under the 'src' folder was made under the suggestion of ChatGPT after being reviewed by the team. 
 Additional uses of AI will be cited in line as they occur.
-<br>**NOTE:** No lines of code were written by AI tools.
