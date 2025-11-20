@@ -26,7 +26,7 @@
             <p>Create Your Account</p>
 
             <p>Access your gallery, orders, and favorites</p>
-            <p th:if="${errorMessage}" th:text="${errorMessage}"></p>
+            <p class="error-message" th:if="${errorMessage}" th:text="${errorMessage}"></p>
 
         </div>
 
@@ -35,34 +35,26 @@
             <p>Name</p>
 
             <input type="text" name="name" placeholder="Enter your name" class="user-info">
-            <br><span th:if="${nameEmpty}" th:text="${nameEmpty}"></span>
 
             <p>Email Address</p>
 
             <input type="text" name="email" placeholder="Enter your email address" class="user-info">
-            <br><span th:if="${emailEmpty}" th:text="${emailEmpty}"></span>
+
             <p>Username</p>
 
             <input type="text" name="username" placeholder="Enter a username" class="user-info">
-            <br><span th:if="${usernameInvalid}" th:text="${usernameInvalid}"></span>
-            <span th:if="${usernameEmpty}" th:text="${usernameEmpty}"></span>
+
             <p>Password</p>
 
             <input type="password" name="password" placeholder="Enter a password" class="user-info">
-            <br><span th:if="${passwordLengthInvalid}" th:text="${passwordLengthInvalid}"></span>
-            <span th:if="${passwordEmpty}" th:text="${passwordEmpty}"></span>
-            <span th:if="${passwordMismatch}" th:text="${passwordMismatch}"></span>
 
             <p>Confirm Password</p>
 
             <input type="password" name="confirmPassword" placeholder="Confirm your password" class="user-info">
-            <br><span th:if="${confirmPasswordEmpty}" th:text="${confirmPasswordEmpty}"></span>
 
             <button type="submit" class="red-button">Sign Up</button>
 
         </form>
-
-
 
         <p>Already have an account? <a href="/">Log in</a></p>
 

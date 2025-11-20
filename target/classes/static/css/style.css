@@ -98,3 +98,7 @@ input.menu-search{
     background-color: var(--mahogany);
     border: none;
 }
+
+p.error-message{
+    color: red;
+}
