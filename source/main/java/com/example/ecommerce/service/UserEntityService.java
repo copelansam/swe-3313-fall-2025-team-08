@@ -14,10 +14,6 @@ public class UserEntityService {
 
         this.userTable = userTable;
 
-        //Seed Data for the userTable
-        userTable.addRow("elijah", "ElijahStults", "Elijah123@yahoo.com", "elijah1234$");
-        userTable.addRow("john", "JohnDoe", "JohnD@yahoo.com", "john1234$");
-        userTable.addRow("annie", "AnnieDoe", "AnnieD@yahoo.com", "annie1234$");
     }
 
     public UserRegistrationResult registerUser(String name, String username, String email, String password, String passwordConfirm){

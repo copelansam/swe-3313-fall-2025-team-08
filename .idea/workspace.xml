@@ -6,6 +6,8 @@
   <component name="ChangeListManager">
     <list default="true" id="71409db2-dd68-4da0-8241-dd53934bf512" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/main/java/com/example/ecommerce/repository/ItemEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/main/java/com/example/ecommerce/repository/ItemEntityRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/main/resources/database/ecommerce.db" beforeDir="false" afterPath="$PROJECT_DIR$/source/main/resources/database/ecommerce.db" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,6 +61,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "Spring Boot.EcommerceApplication.executor": "Run",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/copel/Documents/SWE3313/swe-3313-fall-2025-team-08",
@@ -121,7 +124,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1758827397597</updated>
-      <workItem from="1763682328640" duration="460000" />
+      <workItem from="1763682328640" duration="3137000" />
     </task>
     <servers />
   </component>

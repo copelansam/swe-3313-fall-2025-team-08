@@ -19,4 +19,26 @@ public class ItemEntityRepository {
         String itemSql = "INSERT INTO Item(name, description, imagePath, price, inStock) VALUES(?, ?, ?, ?, ?)";
         jdbc.update(itemSql, name, description, imagePath, price, inStock);
     }
+
+    public void retrieveItemInfo() {
+        jdbc.execute( "SELECT * FROM Item " +
+                "WHERE inStock = TRUE");
+    }
+
+    public void retrieveItemInfoInput(String userInputName, String userInputDescription) {
+        jdbc.execute("SELECT * FROM Item " +
+                "WHERE inStock = TRUE " +
+                "AND (name LIKE '%' || userInputName || '%' " +
+                "OR description LIKE '%' || userInputDescription || '%' )");
+    }
+
+    public void itemSoldWithinDays(String x) {
+        jdbc.execute("SELECT * FROM Item " +
+                "WHERE itemid IN (" +
+                "SELECT itemid FROM Order_Line " +
+                "WHERE orderid IN (" +
+                "SELECT orderid " +
+                "FROM 'Order' " +
+                "WHERE orderDate >= DATE('now', '-' || x || ' days'))");
+    }
 }

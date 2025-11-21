@@ -90,5 +90,10 @@ public class DatabaseInitializer {
                 "FOREIGN KEY (itemId) references Item(itemId), " +
                 "FOREIGN KEY (orderId) references `Order`(orderId) " +
                 ");");
+
+        //Seed Data for the userTable
+        //("elijah", "ElijahStults", "Elijah123@yahoo.com", "elijah1234$");
+        //("john", "JohnDoe", "JohnD@yahoo.com", "john1234$");
+        //("annie", "AnnieDoe", "AnnieD@yahoo.com", "annie1234$");
     }
 }
