@@ -31,7 +31,10 @@
     <p th:text="'Email: ' + ${userSession.email}"></p>
     <a href="/admin-actions"><p th:if="userSession.isAdmin" th:text="'Admin Actions'"></p></a>
 
-    <p><a href="/">Logout</a></p>
+
+    <form th:action="@{/log-out}" method="post">
+        <button>Log out</button>
+    </form>
 </div>
 </body>
 </html>

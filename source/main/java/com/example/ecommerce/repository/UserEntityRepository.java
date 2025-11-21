@@ -1,6 +1,8 @@
 package com.example.ecommerce.repository;
 
 
+import com.example.ecommerce.model.Admin;
+import com.example.ecommerce.model.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -23,20 +25,40 @@ public class UserEntityRepository {
 
     }
 
+    public User credentailsValid(String userName, String password){
+
+        String findUserSql = "SELECT * FROM User WHERE userName = ? AND password = ?";
+
+        try{
+            return jdbc.queryForObject(findUserSql,
+                    new Object[]{userName,password},
+                    (rs, rowNum) -> {
+                        boolean isAdmin = rs.getInt("isAdmin") != 0;
+                        String name = rs.getString("name");
+                        String username = rs.getString("userName");
+                        String email = rs.getString("email");
+
+                        if (isAdmin){
+                            return new Admin(name, username,email);
+                        }
+                        else{
+                            return new User(name,username,email);
+                        }
+                    }
+                    );
+        }
+        catch(Exception e){
+            return null;
+        }
+    }
+
     public boolean usernameUnique(String userName){
 
         String usernameUniqueSql = "SELECT Count(*) FROM User WHERE userName = ?";
 
         int usernameOccurrence = jdbc.queryForObject(usernameUniqueSql, Integer.class, userName);
 
-        if (usernameOccurrence == 0){
-
-            return true;
-        }
-        else{
-
-            return false;
-        }
+        return usernameOccurrence == 0;
 
     }
 }

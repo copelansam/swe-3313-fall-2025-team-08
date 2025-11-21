@@ -2,13 +2,12 @@ package com.example.ecommerce.controller;
 
 import com.example.ecommerce.model.User;
 import com.example.ecommerce.model.UserRegistrationResult;
+import com.example.ecommerce.model.UserSignInResult;
 import com.example.ecommerce.service.UserEntityService;
 import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 
 // Passes the create account screen to the view
@@ -31,12 +30,23 @@ public class UserAuthPagesController {
     }
 
     @PostMapping("/login")
-    public void login(@RequestParam String username,
-                      @RequestParam String password, Model model) {
+    public String login(@RequestParam String username,
+                      @RequestParam String password,
+                        Model model,
+                        HttpSession session) {
 
-        //   if (/*userService.(query that checks if a record exists with the specified username and password)*/){
+        UserSignInResult signIn = userEntityService.signIn(username, password);
 
-        // }
+        if (!signIn.getSuccess()){
+
+            model.addAttribute("errorMessage",signIn.getMessage());
+
+            return "login";
+        }
+
+        session.setAttribute("userSession",signIn.getUser());
+
+        return "redirect:/main";
 
     }
 
@@ -67,6 +77,13 @@ public class UserAuthPagesController {
         }
 
         session.setAttribute("userSession", registerUser.getUser());
+
         return "redirect:/main";
+    }
+
+    @RequestMapping(value = "/log-out", method = {RequestMethod.GET, RequestMethod.POST})
+    public String logout(HttpSession session){
+        session.invalidate();
+        return "redirect:/login";
     }
 }

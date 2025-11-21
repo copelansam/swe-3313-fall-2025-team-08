@@ -26,11 +26,23 @@ public class DatabaseInitializer {
         jdbc.execute( "CREATE TABLE IF NOT EXISTS User ( " +
                 "userId    integer PRIMARY KEY, " +
                 "name      varchar(100), " +
-                "userName  varchar(100), " +
+                "userName  varchar(100) UNIQUE, " +
                 "email     varchar(100), " +
                 "password  varchar(100), " +
                 "isAdmin   boolean " +
                 ");" );
+
+        jdbc.execute("INSERT OR IGNORE INTO User " +
+                "(userId,name,userName,email,password,isAdmin)" +
+                "VALUES (1,'PGAdmin','Admin','PGAdmin@yahoo.net','PGAdmin',true);");
+
+        jdbc.execute("INSERT OR IGNORE INTO User " +
+                "(userId,name,userName,email,password,isAdmin)" +
+                "VALUES (2,'Steve Man','c00lm4n','coolguy@gmail.com','123456',false);");
+
+        jdbc.execute("INSERT OR IGNORE INTO User " +
+                "(userId,name,userName,email,password,isAdmin)" +
+                "VALUES (3,'Professor Doctor','learning','1234learning@att.net','m4th1sfun',false);");
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Shipping_Address (" +
                 "streetAddress varchar(100) PRIMARY KEY, " +
@@ -95,5 +107,6 @@ public class DatabaseInitializer {
         //("elijah", "ElijahStults", "Elijah123@yahoo.com", "elijah1234$");
         //("john", "JohnDoe", "JohnD@yahoo.com", "john1234$");
         //("annie", "AnnieDoe", "AnnieD@yahoo.com", "annie1234$");
+
     }
 }

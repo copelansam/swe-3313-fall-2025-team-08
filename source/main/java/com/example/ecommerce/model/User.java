@@ -8,6 +8,8 @@ public class User {
 
     private String email;
 
+    private boolean isAdmin;
+
     public User(String name, String username, String email){
 
         this.name = name;
@@ -15,6 +17,8 @@ public class User {
         this.username = username;
 
         this.email = email;
+
+        isAdmin = false;
     }
 
     public String getName(){
