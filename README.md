@@ -63,6 +63,10 @@ the entities and classes present within our system, and the coding conventions t
 <br> A link to our Technical Design can be found below:<br>
 [**Technical Design**](/technical-design/README.md)
 
+## Implementation
+***
+To view the documentation regarding the implementation of this project including how to get it set up, click [**here**](implementation/README.md)
+
 ## AI Acknowledgement
 ***
 **NOTE:** Portions of this project were made with the assistance of an AI tool (ChatGPT).
