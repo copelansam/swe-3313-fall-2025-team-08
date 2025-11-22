@@ -4,8 +4,7 @@ import com.example.ecommerce.model.Item;
 import com.example.ecommerce.service.ItemEntityService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
@@ -19,7 +18,7 @@ public class InventoryController {
         this.itemEntityService = itemEntityService;
     }
 
-    @GetMapping("/load-inventory")
+    @RequestMapping(value = "/load-inventory", method = {RequestMethod.GET,RequestMethod.POST})
     public String browse(@RequestParam(required = false, defaultValue = "") String search, Model model) {
 
         List<Item> items = itemEntityService.loadInventory(search);
