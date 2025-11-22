@@ -1,5 +1,7 @@
 package com.example.ecommerce.repository;
 
+import com.example.ecommerce.model.Item;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
@@ -25,11 +27,17 @@ public class ItemEntityRepository {
                 "WHERE inStock = TRUE");
     }
 
-    public void retrieveItemInfoInput(String userInputName, String userInputDescription) {
-        jdbc.execute("SELECT * FROM Item " +
-                "WHERE inStock = TRUE " +
-                "AND (name LIKE '%' || userInputName || '%' " +
-                "OR description LIKE '%' || userInputDescription || '%' )");
+    public void inventorySearch(String search) {
+
+        String pattern = "%" + search + "%";
+
+        String query = "SELECT * FROM Item WHERE inStock = true " +
+                "AND (name LIKE ? OR description LIKE ?)" +
+                "ORDER BY price DESC";
+
+        jdbc.query(query,
+                new Object[]{pattern,pattern},
+                new BeanPropertyRowMapper<>(Item.class));
     }
 
     public void itemSoldWithinDays(String x) {

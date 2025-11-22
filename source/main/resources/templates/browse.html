@@ -10,7 +10,7 @@
 
 <div class="menu-bar">
 
-    <div class="menu-selected"><a href="/main">Home</a></div>
+    <div class="menu-selected"><a href="/browse">Home</a></div>
 
     <div class="menu-option"><a href="/cart">Cart</a></div>
 
@@ -26,7 +26,14 @@
 
 </div>
 
-<div>
+<div class="inventory-box">
+    <div class="container" th:each="item : ${items}">
+        <p th:text="${item.name}"></p>
+        <p th:text="${item.price}"></p>
+        <p th:text="${items.description}"></p>
+        <img th:src="${image.filePath}">
+
+    </div>
 
 </div>
 

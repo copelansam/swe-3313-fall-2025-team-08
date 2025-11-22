@@ -11,10 +11,10 @@ import org.springframework.ui.Model;
 @Controller
 public class HomePagesController {
 
-    @GetMapping("/main")
+    @GetMapping("/browse")
     public String mainPage(){
 
-        return "main";
+        return "browse";
     }
 
     @GetMapping("/search")

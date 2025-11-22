@@ -31,10 +31,11 @@
     <p th:text="'Email: ' + ${userSession.email}"></p>
     <a href="/admin-actions"><p th:if="userSession.isAdmin" th:text="'Admin Actions'"></p></a>
 
-
-    <form th:action="@{/log-out}" method="post">
-        <button>Log out</button>
+    <form th:action="@{/logout}" method="post">
+        <button type="submit">Log out</button>
     </form>
+
+
 </div>
 </body>
 </html>
