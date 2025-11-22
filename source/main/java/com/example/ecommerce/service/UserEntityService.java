@@ -71,7 +71,7 @@ public class UserEntityService {
 
         userTable.addRow(name, username, email, password);
 
-        User userSession = new User(name, username, email);
+        User userSession = new User(name, username, email,false);
 
         return new UserRegistrationResult(true,null, userSession);
 

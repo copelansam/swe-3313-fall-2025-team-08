@@ -36,7 +36,7 @@ public class UserAuthActionsController {
 
         session.setAttribute("userSession",signIn.getUser());
 
-        return "redirect:/browse";
+        return "redirect:/load-inventory";
 
     }
 
@@ -60,6 +60,6 @@ public class UserAuthActionsController {
 
         session.setAttribute("userSession", registerUser.getUser());
 
-        return "redirect:/browse";
+        return "redirect:/load-inventory";
     }
 }

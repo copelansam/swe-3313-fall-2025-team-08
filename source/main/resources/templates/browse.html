@@ -30,8 +30,8 @@
     <div class="container" th:each="item : ${items}">
         <p th:text="${item.name}"></p>
         <p th:text="${item.price}"></p>
-        <p th:text="${items.description}"></p>
-        <img th:src="${image.filePath}">
+        <p th:text="${item.description}"></p>
+        <img th:src="${item.imagePath}">
 
     </div>
 

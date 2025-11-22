@@ -32,6 +32,8 @@ public class DatabaseInitializer {
                 "isAdmin   boolean " +
                 ");" );
 
+        // User table seed data
+
         jdbc.execute("INSERT OR IGNORE INTO User " +
                 "(userId,name,userName,email,password,isAdmin)" +
                 "VALUES (1,'PGAdmin','Admin','PGAdmin@yahoo.net','PGAdmin',true);");
@@ -63,6 +65,8 @@ public class DatabaseInitializer {
                 "FOREIGN KEY (userid) references User(userid) " +
                 ");");
 
+        jdbc.execute("DROP TABLE Item");
+
         jdbc.execute("CREATE TABLE IF NOT EXISTS Item( " +
                 "itemId       integer PRIMARY KEY, " +
                 "name         varchar(100), " +
@@ -71,6 +75,25 @@ public class DatabaseInitializer {
                 "price        numeric, " +
                 "inStock      boolean " +
                 ");");
+
+        // Item table seed data
+
+        jdbc.execute("INSERT OR IGNORE INTO Item (itemId,name,description,imagePath,price,inStock)" +
+                "VALUES (1,'The Mona Lisa','The famous oil painting by Leonardo DiVinci. Her smile is the envy of the world'," +
+                "'/images/mona-lisa.png',10000.57,true)");
+
+        jdbc.execute("INSERT OR IGNORE INTO Item (itemId,name,description,imagePath,price,inStock)" +
+                "VALUES (2,'The Scream','The famous oil painting depicting true horror','/images/scream.png',234593.90,false)");
+
+        jdbc.execute("INSERT OR IGNORE INTO Item (itemId,name,description,imagePath,price,inStock)" +
+                "VALUES (3,'The Starry Night','The famous painting of a starry night sky','/images/starry-night.png',47.87,true)");
+
+        jdbc.execute("INSERT OR IGNORE INTO Item (itemId,name,description,imagePath,price,inStock)" +
+                "VALUES (4,'Girl With a Pearl Earring','A painting depicting a girl with a pearl earring','/images/pearl-earring.png',357.43,true)");
+
+        jdbc.execute("INSERT OR IGNORE INTO Item (itemId,name,description,imagePath,price,inStock)" +
+                "VALUES (5,'The Birth of Venus','A painting depicting the goddess Venus just after her birth'," +
+                "'/images/venus-birth.png',12345.67,false)");
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Card( " +
                 "creditCardNumber char(16) PRIMARY KEY, " +
@@ -102,11 +125,6 @@ public class DatabaseInitializer {
                 "FOREIGN KEY (itemId) references Item(itemId), " +
                 "FOREIGN KEY (orderId) references `Order`(orderId) " +
                 ");");
-
-        //Seed Data for the userTable
-        //("elijah", "ElijahStults", "Elijah123@yahoo.com", "elijah1234$");
-        //("john", "JohnDoe", "JohnD@yahoo.com", "john1234$");
-        //("annie", "AnnieDoe", "AnnieD@yahoo.com", "annie1234$");
 
     }
 }

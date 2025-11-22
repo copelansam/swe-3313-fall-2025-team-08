@@ -25,17 +25,26 @@
     </div>
 
 </div>
+
 <div>
+
     <p th:text="'Name: ' +${userSession.name}"></p>
+
     <p th:text="'Username: ' + ${userSession.username}"></p>
+
     <p th:text="'Email: ' + ${userSession.email}"></p>
-    <a href="/admin-actions"><p th:if="userSession.isAdmin" th:text="'Admin Actions'"></p></a>
+
+    <a href="/admin-actions" th:if="${userSession.isAdmin}">Admin Actions</a>
 
     <form th:action="@{/logout}" method="post">
+
         <button type="submit">Log out</button>
+
     </form>
 
 
 </div>
+
 </body>
+
 </html>

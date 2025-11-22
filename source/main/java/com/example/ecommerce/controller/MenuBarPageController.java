@@ -1,15 +1,13 @@
 package com.example.ecommerce.controller;
 
 
-import com.example.ecommerce.model.User;
-import jakarta.servlet.http.HttpSession;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.ui.Model;
+
 
 
 @Controller
-public class HomePagesController {
+public class MenuBarPageController {
 
     @GetMapping("/browse")
     public String mainPage(){
@@ -25,6 +23,7 @@ public class HomePagesController {
 
     @GetMapping("/account")
     public String account(){
+
         return "account";
     }
 }
