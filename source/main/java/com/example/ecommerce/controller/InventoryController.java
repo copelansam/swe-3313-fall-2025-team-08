@@ -18,8 +18,14 @@ public class InventoryController {
         this.itemEntityService = itemEntityService;
     }
 
-    @RequestMapping(value = "/load-inventory", method = {RequestMethod.GET,RequestMethod.POST})
-    public String browse(@RequestParam(required = false, defaultValue = "") String search, Model model) {
+    @RequestMapping(value = "/browse", method = {RequestMethod.GET,RequestMethod.POST})
+    public String browse(@RequestParam(required = false, defaultValue = "") String search,
+                         @RequestParam(required = false, defaultValue = "") String emptyCart, Model model) {
+
+        if (emptyCart != null){
+
+            model.addAttribute("popupMessage","Your cart is empty!");
+        }
 
         List<Item> items = itemEntityService.loadInventory(search);
 

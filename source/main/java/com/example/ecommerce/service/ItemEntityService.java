@@ -16,6 +16,12 @@ public class ItemEntityService {
         this.itemTable = itemTable;
     }
 
+    public Item findItemById(int itemId){
+
+        return itemTable.findItemById(itemId);
+
+    }
+
     public List<Item> loadInventory(String search){
 
         if (search == null || search == "") {

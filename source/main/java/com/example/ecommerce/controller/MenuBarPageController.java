@@ -20,11 +20,6 @@ public class MenuBarPageController {
         this.itemEntityService = itemEntityService;
     }
 
-    @GetMapping("/browse")
-    public String mainPage(Model model){
-
-        return "browse";
-    }
 
     @GetMapping("/search")
     public String search(){

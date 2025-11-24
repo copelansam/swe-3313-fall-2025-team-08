@@ -29,9 +29,10 @@ public class ItemEntityRepository {
 
         return jdbc.query(query,(rs,rowNum)->{
             Item item = new Item();
-            item.setItemName(rs.getString("name"));
+            item.setItemId(rs.getInt("itemId"));
+            item.setName(rs.getString("name"));
             item.setDescription(rs.getString("description"));
-            item.setFilepath(rs.getString("imagePath"));
+            item.setImagePath(rs.getString("imagePath"));
             item.setPrice(rs.getBigDecimal("price"));
             return item;
         });
@@ -45,9 +46,24 @@ public class ItemEntityRepository {
 
         return jdbc.query(query, new Object[]{pattern,pattern},(rs,rowNum)->{
             Item item = new Item();
-            item.setItemName(rs.getString("name"));
+            item.setItemId(rs.getInt("itemId"));
+            item.setName(rs.getString("name"));
             item.setDescription(rs.getString("description"));
-            item.setFilepath(rs.getString("imagePath"));
+            item.setImagePath(rs.getString("imagePath"));
+            item.setPrice(rs.getBigDecimal("price"));
+            return item;
+        });
+    }
+
+    public Item findItemById(int itemId){
+
+        String query = "SELECT * FROM Item WHERE itemId = ?";
+
+        return jdbc.queryForObject(query,new Object[] {itemId}, (rs,rowNum)->{
+            Item item = new Item();
+            item.setItemId(rs.getInt("itemId"));
+            item.setName(rs.getString("name"));
+            item.setImagePath(rs.getString("imagePath"));
             item.setPrice(rs.getBigDecimal("price"));
             return item;
         });

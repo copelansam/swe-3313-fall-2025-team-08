@@ -43,12 +43,23 @@ public class Cart {
         recalculateTotals();
     }
 
-    public void removeItem(Item item) {
-        if (item == null) {
-            return;
-        }
-        items.remove(item);
+    public void removeItemById(int itemId) {
+
+        items.removeIf(item -> item.getItemId() == itemId);
         recalculateTotals();
+    }
+
+    public boolean itemPresentInCart(int itemId){
+
+        for (Item item : items){
+
+            if (item.getItemId() == itemId){
+
+                return true;
+            }
+        }
+
+        return false;
     }
 
     public void clear() {

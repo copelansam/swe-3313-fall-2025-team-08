@@ -68,7 +68,7 @@ public class DatabaseInitializer {
         jdbc.execute("DROP TABLE Item");
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Item( " +
-                "itemId       integer PRIMARY KEY, " +
+                "itemId       integer PRIMARY KEY AUTOINCREMENT, " +
                 "name         varchar(100), " +
                 "description  varchar(1000), " +
                 "imagePath    varchar(50), " +
@@ -78,22 +78,27 @@ public class DatabaseInitializer {
 
         // Item table seed data
 
-        jdbc.execute("INSERT OR IGNORE INTO Item (itemId,name,description,imagePath,price,inStock)" +
-                "VALUES (1,'The Mona Lisa','The famous oil painting by Leonardo DiVinci. Her smile is the envy of the world'," +
+        jdbc.execute("INSERT OR IGNORE INTO Item (name,description,imagePath,price,inStock)" +
+                "VALUES ('The Mona Lisa','The famous oil painting by Leonardo DiVinci. Her smile is the envy of the world'," +
                 "'/images/mona-lisa.png',10000.57,true)");
 
-        jdbc.execute("INSERT OR IGNORE INTO Item (itemId,name,description,imagePath,price,inStock)" +
-                "VALUES (2,'The Scream','The famous oil painting depicting true horror','/images/scream.png',234593.90,false)");
+        jdbc.execute("INSERT OR IGNORE INTO Item (name,description,imagePath,price,inStock)" +
+                "VALUES ('The Scream','The famous oil painting depicting true horror','/images/scream.png',234593.90,false)");
 
-        jdbc.execute("INSERT OR IGNORE INTO Item (itemId,name,description,imagePath,price,inStock)" +
-                "VALUES (3,'The Starry Night','The famous painting of a starry night sky','/images/starry-night.png',47.87,true)");
+        jdbc.execute("INSERT OR IGNORE INTO Item (name,description,imagePath,price,inStock)" +
+                "VALUES ('The Starry Night','The famous painting of a starry night sky','/images/starry-night.png',47.87,true)");
 
-        jdbc.execute("INSERT OR IGNORE INTO Item (itemId,name,description,imagePath,price,inStock)" +
-                "VALUES (4,'Girl With a Pearl Earring','A painting depicting a girl with a pearl earring','/images/pearl-earring.png',357.43,true)");
+        jdbc.execute("INSERT OR IGNORE INTO Item (name,description,imagePath,price,inStock)" +
+                "VALUES ('Girl With a Pearl Earring','A painting depicting a girl with a pearl earring','/images/pearl-earring.png',357.43,true)");
 
-        jdbc.execute("INSERT OR IGNORE INTO Item (itemId,name,description,imagePath,price,inStock)" +
-                "VALUES (5,'The Birth of Venus','A painting depicting the goddess Venus just after her birth'," +
+        jdbc.execute("INSERT OR IGNORE INTO Item (name,description,imagePath,price,inStock)" +
+                "VALUES ('The Birth of Venus','A painting depicting the goddess Venus just after her birth'," +
                 "'/images/venus-birth.png',12345.67,false)");
+
+        jdbc.query("SELECT * FROM Item", (rs, rowNum) -> {
+            System.out.println("Row " + rowNum + " itemId = " + rs.getInt("itemId"));
+            return null;
+        });
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Card( " +
                 "creditCardNumber char(16) PRIMARY KEY, " +
