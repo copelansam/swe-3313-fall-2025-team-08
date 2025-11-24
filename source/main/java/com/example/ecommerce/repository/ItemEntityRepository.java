@@ -1,9 +1,12 @@
 package com.example.ecommerce.repository;
 
+import com.example.ecommerce.model.Item;
+import org.springframework.jdbc.core.BeanPropertyRowMapper;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
+import java.util.List;
 
 @Repository
 public class ItemEntityRepository {
@@ -20,16 +23,34 @@ public class ItemEntityRepository {
         jdbc.update(itemSql, name, description, imagePath, price, inStock);
     }
 
-    public void retrieveItemInfo() {
-        jdbc.execute( "SELECT * FROM Item " +
-                "WHERE inStock = TRUE");
+    public List<Item> retrieveAvailableItems() {
+
+        String query = "SELECT * FROM Item WHERE inStock = TRUE";
+
+        return jdbc.query(query,(rs,rowNum)->{
+            Item item = new Item();
+            item.setItemName(rs.getString("name"));
+            item.setDescription(rs.getString("description"));
+            item.setFilepath(rs.getString("imagePath"));
+            item.setPrice(rs.getBigDecimal("price"));
+            return item;
+        });
     }
 
-    public void retrieveItemInfoInput(String userInputName, String userInputDescription) {
-        jdbc.execute("SELECT * FROM Item " +
-                "WHERE inStock = TRUE " +
-                "AND (name LIKE '%' || userInputName || '%' " +
-                "OR description LIKE '%' || userInputDescription || '%' )");
+    public List<Item> inventorySearch(String pattern){
+
+        String query = "SELECT * FROM Item WHERE inStock = true " +
+                "AND (name LIKE ? OR description LIKE ?)" +
+                " ORDER BY price DESC";
+
+        return jdbc.query(query, new Object[]{pattern,pattern},(rs,rowNum)->{
+            Item item = new Item();
+            item.setItemName(rs.getString("name"));
+            item.setDescription(rs.getString("description"));
+            item.setFilepath(rs.getString("imagePath"));
+            item.setPrice(rs.getBigDecimal("price"));
+            return item;
+        });
     }
 
     public void itemSoldWithinDays(String x) {

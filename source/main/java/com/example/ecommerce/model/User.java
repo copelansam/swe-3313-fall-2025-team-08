@@ -10,7 +10,7 @@ public class User {
 
     private boolean isAdmin;
 
-    public User(String name, String username, String email){
+    public User(String name, String username, String email, boolean isAdmin){
 
         this.name = name;
 
@@ -18,7 +18,7 @@ public class User {
 
         this.email = email;
 
-        isAdmin = false;
+        this.isAdmin = isAdmin;
     }
 
     public String getName(){
@@ -34,5 +34,10 @@ public class User {
     public String getEmail(){
 
         return this.email;
+    }
+
+    public boolean getIsAdmin(){
+
+        return this.isAdmin;
     }
 }

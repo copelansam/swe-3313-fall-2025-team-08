@@ -10,7 +10,7 @@
 
 <div class="menu-bar">
 
-    <div class="menu-option"><a href="/main">Home</a></div>
+    <div class="menu-option"><a href="/browse">Home</a></div>
 
     <div class="menu-option"><a href="/cart">Cart</a></div>
 
@@ -25,16 +25,26 @@
     </div>
 
 </div>
+
 <div>
+
     <p th:text="'Name: ' +${userSession.name}"></p>
+
     <p th:text="'Username: ' + ${userSession.username}"></p>
+
     <p th:text="'Email: ' + ${userSession.email}"></p>
-    <a href="/admin-actions"><p th:if="userSession.isAdmin" th:text="'Admin Actions'"></p></a>
 
+    <a href="/admin-actions" th:if="${userSession.isAdmin}">Admin Actions</a>
 
-    <form th:action="@{/log-out}" method="post">
-        <button>Log out</button>
+    <form th:action="@{/logout}" method="post">
+
+        <button type="submit">Log out</button>
+
     </form>
+
+
 </div>
+
 </body>
+
 </html>

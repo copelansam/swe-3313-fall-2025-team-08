@@ -42,7 +42,7 @@ public class UserEntityRepository {
                             return new Admin(name, username,email);
                         }
                         else{
-                            return new User(name,username,email);
+                            return new User(name,username,email,false);
                         }
                     }
                     );

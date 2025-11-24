@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Sign In</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="menu-bar">
+
+    <div class="menu-selected"><a href="/browse">Home</a></div>
+
+    <div class="menu-option"><a href="/cart">Cart</a></div>
+
+    <div class="menu-option"><a href="/account">Account</a></div>
+
+    <div class="menu-search">
+
+        <form th:action="@{/load-inventory}" method="post">
+
+            <input type="text" placeholder="Search" class="menu-search"/>
+
+            <button type="submit" id="search-button">Search</button>
+
+        </form>
+
+
+
+    </div>
+
+</div>
+
+<div class="inventory-box">
+    <div class="container" th:each="item : ${items}">
+        <p th:text="${item.name}"></p>
+        <p th:text="${item.price}"></p>
+        <p th:text="${item.description}"></p>
+        <img th:src="${item.imagePath}">
+
+    </div>
+
+</div>
+
+</body>
