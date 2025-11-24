@@ -19,8 +19,7 @@ public class InventoryController {
     }
 
     @RequestMapping(value = "/browse", method = {RequestMethod.GET,RequestMethod.POST})
-    public String browse(@RequestParam(required = false, defaultValue = "") String search,
-                         @RequestParam(required = false, defaultValue = "") String emptyCart, Model model) {
+    public String browse(@RequestParam(required = false, defaultValue = "") String search, Model model) {
 
         List<Item> items = itemEntityService.loadInventory(search);
 
