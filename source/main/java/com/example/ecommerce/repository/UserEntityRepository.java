@@ -6,6 +6,8 @@ import com.example.ecommerce.model.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
+
 @Repository
 public class UserEntityRepository {
 
@@ -60,5 +62,38 @@ public class UserEntityRepository {
 
         return usernameOccurrence == 0;
 
+    }
+
+    public List<User> nonAdminUsers(){
+
+        String query = "SELECT username, name FROM User WHERE isAdmin = false";
+
+        return jdbc.query(query, ((rs, rowNum) -> {
+            User user = new User();
+            user.setName(rs.getString("name"));
+            user.setUsername(rs.getString("username"));
+            return user;
+        }));
+    }
+
+    public void promoteUser(String username){
+
+        System.out.println("Promoting: " + username);
+
+        jdbc.query("SELECT * FROM User", (rs, rowNum) -> {
+            System.out.println("Row " + rowNum + " name = " + rs.getInt("name") + " isAdmin " + rs.getBoolean("isAdmin"));
+            return null;
+        });
+
+        String query = "UPDATE User SET isAdmin = true WHERE userName = ?";
+
+
+
+        jdbc.update(query, username);
+
+        jdbc.query("SELECT * FROM User", (rs, rowNum) -> {
+            System.out.println("Row " + rowNum + " name = " + rs.getInt("name") + " isAdmin " + rs.getBoolean("isAdmin"));
+            return null;
+        });
     }
 }

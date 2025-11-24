@@ -77,7 +77,7 @@ To view the documentation regarding the implementation of this project including
 - "Where can I find good documentation regarding programming language X?"
 - "What are Spring Boot annotations and how do they work?"
 
-<br>The  use of AI tools is encouraged more for assisting with the learning process and helping to explain abstract concepts.
+<br>The  use of AI tools is encouraged more for assisting with the learning process and helping to explain abstract concepts than for the actual coding effort.
 <br>In the event that an AI tool is used to generate something for this project, it should be properly cited.
 The folder structure under the 'src' folder was made under the suggestion of ChatGPT after being reviewed by the team. 
 Additional uses of AI will be cited in line as they occur.

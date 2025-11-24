@@ -22,11 +22,6 @@ public class InventoryController {
     public String browse(@RequestParam(required = false, defaultValue = "") String search,
                          @RequestParam(required = false, defaultValue = "") String emptyCart, Model model) {
 
-        if (emptyCart != null){
-
-            model.addAttribute("popupMessage","Your cart is empty!");
-        }
-
         List<Item> items = itemEntityService.loadInventory(search);
 
         model.addAttribute("items",items);

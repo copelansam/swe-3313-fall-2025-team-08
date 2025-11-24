@@ -21,6 +21,13 @@ public class User {
         this.isAdmin = isAdmin;
     }
 
+    public User(){}
+
+    public void setName(String name){
+
+        this.name = name;
+    }
+
     public String getName(){
 
         return this.name;
@@ -29,6 +36,11 @@ public class User {
     public String getUsername(){
 
         return this.username;
+    }
+
+    public void setUsername(String username){
+
+        this.username = username;
     }
 
     public String getEmail(){

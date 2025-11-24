@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Sign In</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="menu-bar">
+
+    <div class="menu-selected"><a href="/browse">Home</a></div>
+
+    <div class="menu-option"><a href="/cart">Cart</a></div>
+
+    <div class="menu-option"><a href="/account">Account</a></div>
+
+    <div class="menu-search">
+
+        <form th:action="@{/browse}" method="post">
+
+            <input type="text" placeholder="Search" class="menu-search"/>
+
+            <button type="submit" id="search-button">Search</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<a href="/admin-actions"><- Return to Admin Actions</a>
+
+<div class="user-select-body">
+    <p>Select a User to Promote:</p>
+
+    <form th:action="@{/promote}" method="post">
+
+        <div th:each="user : ${users}">
+
+            <input type="radio" th:value="${user.username}" name="selectedUser" th:text="'Name:' + ${user.name}">
+
+        </div>
+
+        <button type="submit">Promote User</button>
+    </form>
+
+</div>
+
+</body>
+
+</html>

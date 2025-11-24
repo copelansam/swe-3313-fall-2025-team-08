@@ -95,10 +95,6 @@ public class DatabaseInitializer {
                 "VALUES ('The Birth of Venus','A painting depicting the goddess Venus just after her birth'," +
                 "'/images/venus-birth.png',12345.67,false)");
 
-        jdbc.query("SELECT * FROM Item", (rs, rowNum) -> {
-            System.out.println("Row " + rowNum + " itemId = " + rs.getInt("itemId"));
-            return null;
-        });
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Card( " +
                 "creditCardNumber char(16) PRIMARY KEY, " +
