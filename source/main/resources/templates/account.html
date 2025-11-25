@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>Account Overview</title>
+    <title>User Sign In</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -18,9 +18,13 @@
 
     <div class="menu-search">
 
-        <input type="text" placeholder="Search" class="menu-search"/>
+        <form th:action="@{/browse}" method="post">
 
-        <button id="search-button">Search</button>
+            <input type="text" placeholder="Search" name="search" class="menu-search"/>
+
+            <button type="submit" class="search-button">Search</button>
+
+        </form>
 
     </div>
 

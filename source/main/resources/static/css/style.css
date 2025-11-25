@@ -55,7 +55,20 @@ input.user-info{
     height:10%;
     height:75px;
     line-height:75px;
+    align-items:center;
 }
+
+.menu-bar .menu-search{
+    margin-left:auto;
+    margin-right:25px;
+}
+
+.search-button{
+    background-color:--var(mahogany);
+    color:white;
+    border-radius:5px;
+}
+
 .menu-option{
     width:10%;
     text-align:center;
@@ -91,12 +104,6 @@ input.menu-search{
     color: white;
     border-radius: 5px;
     margin-left :auto;
-}
-
-#search-button{
-    color: var(--creamy);
-    background-color: var(--mahogany);
-    border: none;
 }
 
 p.error-message{
