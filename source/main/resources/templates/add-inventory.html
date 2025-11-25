@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Sign In</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="menu-bar">
+
+    <div class="menu-option"><a href="/browse">Home</a></div>
+
+    <div class="menu-option"><a href="/cart">Cart</a></div>
+
+    <div class="menu-selected"><a href="/account">Account</a></div>
+
+    <div class="menu-search">
+
+        <form th:action="@{/browse}" method="post">
+
+            <input type="text" placeholder="Search" class="menu-search"/>
+
+            <button type="submit" id="search-button">Search</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<a href="/admin-actions"><- Return to Admin Actions</a>
+
+<form th:action="@{/create-inventory}" method="post" enctype="multipart/form-data">
+
+    <input type="text" name="name" placeholder="Item Name">
+
+    <input type="text" name="description" placeholder="Item Description">
+
+    <input type="text" name="price" placeholder="Item Price">
+
+    <input type="file" name="fileName" placeholder="Upload an Image">
+
+    <button type="submit">Add Inventory Item</button>
+
+</form>
+
+<p th:if="${inventoryMessage}" th:text="${inventoryMessage}"></p>
+
+
+</body>
+</html>
