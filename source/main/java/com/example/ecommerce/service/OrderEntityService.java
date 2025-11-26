@@ -15,8 +15,8 @@ public class OrderEntityService {
         this.orderTable = orderTable;
     }
 
-    public ValidateOrderCredentials validateOrderInput(String city, String state, String zip,
-                                                       String creditCardNumber, String expirationMonth, String expirationYear, String securityCode, String shippingType) {
+    public ValidateOrderCredentials validateOrderInput(String city, String state, String zip, String streetAddress,
+                                                       String creditCardNumber, String expirationMonth, String expirationYear, String securityCode, String shippingName, String shippingType) {
         if(city.isEmpty()) {
             return new ValidateOrderCredentials(false, "Please enter a City", null);
 
@@ -26,6 +26,9 @@ public class OrderEntityService {
         }
         if(zip.isEmpty()) {
             return new ValidateOrderCredentials(false, "Please enter a ZipCode", null);
+        }
+        if(streetAddress.isEmpty()) {
+            return new ValidateOrderCredentials(false, "Please enter a Street Address", null);
         }
         if(creditCardNumber.isEmpty()) {
             return new ValidateOrderCredentials(false, "Please enter the CreditCard Number", null);
@@ -38,6 +41,9 @@ public class OrderEntityService {
         }
         if(securityCode.isEmpty()) {
             return new ValidateOrderCredentials(false, "Please enter the Security Code", null);
+        }
+        if(shippingName.isEmpty()) {
+            return new ValidateOrderCredentials(false, "Please enter a Shipping Name", null);
         }
         if(shippingType.isEmpty()) {
             return new ValidateOrderCredentials(false, "Please enter a Shipping Type", null);
@@ -54,7 +60,7 @@ public class OrderEntityService {
         if(!creditCardNumber.matches("\\d")) {
             return new ValidateOrderCredentials(false, "Please enter a valid CreditCard Number", null);
         }
-        OrderInfo orderInfoSession = new OrderInfo(city, state, zip, creditCardNumber, expirationMonth, expirationYear, securityCode, shippingType);
+        OrderInfo orderInfoSession = new OrderInfo(city, state, zip, streetAddress, creditCardNumber, expirationMonth, expirationYear, securityCode, shippingName, shippingType);
         return new ValidateOrderCredentials(true, null, orderInfoSession);
     }
 }
