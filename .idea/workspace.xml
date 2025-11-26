@@ -5,9 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="71409db2-dd68-4da0-8241-dd53934bf512" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/source/main/java/com/example/ecommerce/model/OrderInfo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/main/java/com/example/ecommerce/repository/ItemEntityRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/main/java/com/example/ecommerce/repository/ItemEntityRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/source/main/resources/database/ecommerce.db" beforeDir="false" afterPath="$PROJECT_DIR$/source/main/resources/database/ecommerce.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/main/java/com/example/ecommerce/model/Order.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/main/java/com/example/ecommerce/model/ValidateOrderCredentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/source/main/java/com/example/ecommerce/service/OrderEntityService.java" beforeDir="false" afterPath="$PROJECT_DIR$/source/main/java/com/example/ecommerce/service/OrderEntityService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -25,18 +26,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "Elijah-Stults"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Elijah-Stults&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/copelansam/swe-3313-fall-2025-team-08.git",
-    "accountId": "e6d64da6-9fc0-4f42-9655-80dbd2e07e72"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/copelansam/swe-3313-fall-2025-team-08.git&quot;,
+    &quot;accountId&quot;: &quot;e6d64da6-9fc0-4f42-9655-80dbd2e07e72&quot;
   }
-}]]></component>
+}</component>
   <component name="MavenImportPreferences">
     <option name="generalSettings">
       <MavenGeneralSettings>
@@ -52,31 +53,35 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Application.DemoApplication.executor": "Run",
-    "Application.EcommerceApplication.executor": "Run",
-    "DefaultHtmlFileTemplate": "HTML File",
-    "JUnit.DemoApplicationTests.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "Spring Boot.EcommerceApplication.executor": "Run",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/copel/Documents/SWE3313/swe-3313-fall-2025-team-08",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "reference.settingsdialog.project.gradle",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Application.DemoApplication.executor&quot;: &quot;Run&quot;,
+    &quot;Application.EcommerceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
+    &quot;JUnit.DemoApplicationTests.executor&quot;: &quot;Run&quot;,
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;Spring Boot.EcommerceApplication.executor&quot;: &quot;Run&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/copel/Documents/SWE3313/swe-3313-fall-2025-team-08&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\copel\Documents\SWE3313\swe-3313-fall-2025-team-08" />
@@ -124,7 +129,9 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1758827397597</updated>
-      <workItem from="1763682328640" duration="3137000" />
+      <workItem from="1763682328640" duration="3587000" />
+      <workItem from="1763691119293" duration="91000" />
+      <workItem from="1764115068881" duration="4165000" />
     </task>
     <servers />
   </component>
