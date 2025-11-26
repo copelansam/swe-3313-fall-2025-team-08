@@ -109,7 +109,7 @@ input.menu-search{
     margin-left :auto;
 }
 
-p.error-message{
+.error-message{
     color: red;
 }
 
