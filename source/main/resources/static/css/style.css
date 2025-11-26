@@ -1,6 +1,7 @@
 :root{
     --creamy: #FFF5E4; /*This is the creamish color we will use mostly for the the background*/
     --mahogany: #963640; /*This is the dark red color we will use for everything else*/
+    --grey: #47525E /*This is the light grey color we will use for some text*/
 }
 
 * {
@@ -160,4 +161,44 @@ p.error-message{
     align-items:center;
     justify-content:center;
     text-align:center;
+}
+
+.cart-info{
+    display:flex;
+    width:90%;
+    gap: 20px;
+    justify-content:center;
+    width:100%;
+}
+
+.cart-items-container{
+    border-radius:10px;
+    background-color:white;
+    width:65%
+}
+
+.cart-items-container img{
+    margin:15px;
+}
+
+.cart-items-container p{
+    font-size:20px;
+}
+
+.cart-details{
+    display:flex;
+    flex-direction:column;
+    width:30%;
+    height:15%;
+    background-color:white;
+    justify-content:center;
+    text-align:center;
+    padding:10px;
+    border-radius:15px;
+}
+
+.cart-item{
+    display:flex;
+    margin:5px;
+    color:var(--grey);
 }
