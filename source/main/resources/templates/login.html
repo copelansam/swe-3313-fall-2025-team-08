@@ -30,6 +30,7 @@
             <p style="font-size:40px; color: #963640;">Log in to the Peanut Gallery</p>
 
             <p>Access your gallery, orders, and favorites</p>
+            <p class="error-message" th:if="${errorMessage}" th:text="${errorMessage}"></p>
 
         </div>
 
@@ -43,9 +44,9 @@
 
             <p>Password</p>
 
-            <input type = "text" name="password" placeholder="Enter your password" class="user-info">
+            <input type = "password" name="password" placeholder="Enter your password" class="user-info">
 
-            <button type="submit" class = "red-button"><a href="/main" class="user-in">Log In</a></button>
+            <button type="submit" class = "red-button">Log In</button>
 
         </form>
 

@@ -20,7 +20,7 @@
 
         <form th:action="@{/browse}" method="post">
 
-            <input type="text" placeholder="Search" name="search" class="menu-search"/>
+            <input type="text" placeholder="Search" class="menu-search"/>
 
             <button type="submit" class="search-button">Search</button>
 
@@ -30,25 +30,24 @@
 
 </div>
 
-<div>
+<a href="/admin-actions"><- Return to Admin Actions</a>
 
-    <p th:text="'Name: ' +${userSession.name}"></p>
+<form th:action="@{/create-inventory}" method="post" enctype="multipart/form-data">
 
-    <p th:text="'Username: ' + ${userSession.username}"></p>
+    <input type="text" name="name" placeholder="Item Name">
 
-    <p th:text="'Email: ' + ${userSession.email}"></p>
+    <input type="text" name="description" placeholder="Item Description">
 
-    <a href="/admin-actions" th:if="${userSession.isAdmin}">Admin Actions</a>
+    <input type="text" name="price" placeholder="Item Price">
 
-    <form th:action="@{/logout}" method="post">
+    <input type="file" name="fileName" placeholder="Upload an Image">
 
-        <button type="submit">Log out</button>
+    <button type="submit">Add Inventory Item</button>
 
-    </form>
+</form>
 
+<p th:if="${inventoryMessage}" th:text="${inventoryMessage}"></p>
 
-</div>
 
 </body>
-
 </html>

@@ -26,11 +26,25 @@ public class DatabaseInitializer {
         jdbc.execute( "CREATE TABLE IF NOT EXISTS User ( " +
                 "userId    integer PRIMARY KEY, " +
                 "name      varchar(100), " +
-                "userName  varchar(100), " +
+                "userName  varchar(100) UNIQUE, " +
                 "email     varchar(100), " +
                 "password  varchar(100), " +
                 "isAdmin   boolean " +
                 ");" );
+
+        // User table seed data
+
+        jdbc.execute("INSERT OR IGNORE INTO User " +
+                "(userId,name,userName,email,password,isAdmin)" +
+                "VALUES (1,'PGAdmin','Admin','PGAdmin@yahoo.net','PGAdmin',true);");
+
+        jdbc.execute("INSERT OR IGNORE INTO User " +
+                "(userId,name,userName,email,password,isAdmin)" +
+                "VALUES (2,'Steve Man','c00lm4n','coolguy@gmail.com','123456',false);");
+
+        jdbc.execute("INSERT OR IGNORE INTO User " +
+                "(userId,name,userName,email,password,isAdmin)" +
+                "VALUES (3,'Professor Doctor','learning','1234learning@att.net','m4th1sfun',false);");
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Shipping_Address (" +
                 "streetAddress varchar(100) PRIMARY KEY, " +
@@ -51,14 +65,36 @@ public class DatabaseInitializer {
                 "FOREIGN KEY (userid) references User(userid) " +
                 ");");
 
+        jdbc.execute("DROP TABLE Item");
+
         jdbc.execute("CREATE TABLE IF NOT EXISTS Item( " +
-                "itemId       integer PRIMARY KEY, " +
+                "itemId       integer PRIMARY KEY AUTOINCREMENT, " +
                 "name         varchar(100), " +
                 "description  varchar(1000), " +
                 "imagePath    varchar(50), " +
                 "price        numeric, " +
                 "inStock      boolean " +
                 ");");
+
+        // Item table seed data
+
+        jdbc.execute("INSERT OR IGNORE INTO Item (name,description,imagePath,price,inStock)" +
+                "VALUES ('The Mona Lisa','The famous oil painting by Leonardo DiVinci. Her smile is the envy of the world'," +
+                "'/images/mona-lisa.png',10000.57,true)");
+
+        jdbc.execute("INSERT OR IGNORE INTO Item (name,description,imagePath,price,inStock)" +
+                "VALUES ('The Scream','The famous oil painting depicting true horror','/images/scream.png',234593.90,false)");
+
+        jdbc.execute("INSERT OR IGNORE INTO Item (name,description,imagePath,price,inStock)" +
+                "VALUES ('The Starry Night','The famous painting of a starry night sky','/images/starry-night.png',47.87,true)");
+
+        jdbc.execute("INSERT OR IGNORE INTO Item (name,description,imagePath,price,inStock)" +
+                "VALUES ('Girl With a Pearl Earring','A painting depicting a girl with a pearl earring','/images/pearl-earring.png',357.43,true)");
+
+        jdbc.execute("INSERT OR IGNORE INTO Item (name,description,imagePath,price,inStock)" +
+                "VALUES ('The Birth of Venus','A painting depicting the goddess Venus just after her birth'," +
+                "'/images/venus-birth.png',12345.67,false)");
+
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Card( " +
                 "creditCardNumber char(16) PRIMARY KEY, " +
@@ -91,9 +127,5 @@ public class DatabaseInitializer {
                 "FOREIGN KEY (orderId) references `Order`(orderId) " +
                 ");");
 
-        //Seed Data for the userTable
-        //("elijah", "ElijahStults", "Elijah123@yahoo.com", "elijah1234$");
-        //("john", "JohnDoe", "JohnD@yahoo.com", "john1234$");
-        //("annie", "AnnieDoe", "AnnieD@yahoo.com", "annie1234$");
     }
 }

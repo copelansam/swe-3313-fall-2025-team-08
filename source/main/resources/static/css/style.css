@@ -3,6 +3,10 @@
     --mahogany: #963640; /*This is the dark red color we will use for everything else*/
 }
 
+* {
+    box-sizing: border-box;
+}
+
 body{
     background-color: var(--creamy);
 }
@@ -20,8 +24,6 @@ body{
     width: 100%;
     height:100%;
     justify-content:center;
-    align-items:flex-start;
-
 }
 
 .logo-display{
@@ -55,7 +57,20 @@ input.user-info{
     height:10%;
     height:75px;
     line-height:75px;
+    align-items:center;
 }
+
+.menu-bar .menu-search{
+    margin-left:auto;
+    margin-right:25px;
+}
+
+.search-button{
+    background-color:--var(mahogany);
+    color:white;
+    border-radius:5px;
+}
+
 .menu-option{
     width:10%;
     text-align:center;
@@ -93,12 +108,56 @@ input.menu-search{
     margin-left :auto;
 }
 
-#search-button{
-    color: var(--creamy);
-    background-color: var(--mahogany);
-    border: none;
-}
-
 p.error-message{
     color: red;
+}
+
+/*The inventory classes will be responsible for styling the items in the browse screen*/
+
+.inventory-box{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:20px;
+    width:100%;
+    padding:10px;
+}
+
+.container{
+    content-justify:center;
+    border:black 5px solid;
+    border-radius:15px;
+    background-color:white;
+    padding:15px;
+    min-width:40%;
+    display:flex;
+    flex-direction:column;
+}
+
+.inventory-main{
+    display:flex;
+    align-items:center;
+}
+
+.inventory-image{
+    max-width:250px;
+    height:auto;
+    width:auto;
+}
+
+.inventory-main img{
+    max-width:250px;
+    width:auto;
+    height:auto;
+    display:block;
+}
+
+.inventory-info{
+    flex: 1;
+    width:auto;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
 }

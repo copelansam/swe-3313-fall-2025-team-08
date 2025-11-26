@@ -2,6 +2,7 @@ package com.example.ecommerce.service;
 
 import com.example.ecommerce.model.User;
 import com.example.ecommerce.model.UserRegistrationResult;
+import com.example.ecommerce.model.UserSignInResult;
 import com.example.ecommerce.repository.UserEntityRepository;
 import org.springframework.stereotype.Service;
 
@@ -14,6 +15,19 @@ public class UserEntityService {
 
         this.userTable = userTable;
 
+    }
+
+    public UserSignInResult signIn(String username, String password){
+
+        User signInResult = userTable.credentailsValid(username,password);
+
+        if (signInResult == null){
+
+            return new UserSignInResult(false, "The provided username or password is incorrect. Please try again");
+        }
+        else{
+            return new UserSignInResult(true,null,signInResult);
+        }
     }
 
     public UserRegistrationResult registerUser(String name, String username, String email, String password, String passwordConfirm){
@@ -40,7 +54,7 @@ public class UserEntityService {
         }
         if (passwordConfirm.isEmpty()){
 
-            return new UserRegistrationResult(false,"PLease enter the same password again");
+            return new UserRegistrationResult(false,"Please enter the same password again");
         }
         if (!password.equals(passwordConfirm)){
 
@@ -54,8 +68,11 @@ public class UserEntityService {
 
             return new UserRegistrationResult(false, "That username is already taken. Please choose another one", null);
         }
+
         userTable.addRow(name, username, email, password);
-        User userSession = new User(name, username, email);
+
+        User userSession = new User(name, username, email,false);
+
         return new UserRegistrationResult(true,null, userSession);
 
         }

@@ -20,7 +20,7 @@
 
         <form th:action="@{/browse}" method="post">
 
-            <input type="text" placeholder="Search" name="search" class="menu-search"/>
+            <input type="text" placeholder="Search" class="menu-search"/>
 
             <button type="submit" class="search-button">Search</button>
 
@@ -30,22 +30,21 @@
 
 </div>
 
-<div>
+<a href="/admin-actions"><- Return to Admin Actions</a>
 
-    <p th:text="'Name: ' +${userSession.name}"></p>
+<div class="user-select-body">
+    <p>Select a User to Promote:</p>
 
-    <p th:text="'Username: ' + ${userSession.username}"></p>
+    <form th:action="@{/promote}" method="post">
 
-    <p th:text="'Email: ' + ${userSession.email}"></p>
+        <div th:each="user : ${users}">
 
-    <a href="/admin-actions" th:if="${userSession.isAdmin}">Admin Actions</a>
+            <input type="radio" th:value="${user.username}" name="selectedUser" th:text="'Name:' + ${user.name}">
 
-    <form th:action="@{/logout}" method="post">
+        </div>
 
-        <button type="submit">Log out</button>
-
+        <button type="submit">Promote User</button>
     </form>
-
 
 </div>
 

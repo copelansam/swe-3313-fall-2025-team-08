@@ -10,7 +10,7 @@
 
 <div class="menu-bar">
 
-    <div class="menu-option"><a href="/main">Home</a></div>
+    <div class="menu-option"><a href="/browse">Home</a></div>
 
     <div class="menu-option"><a href="/cart">Cart</a></div>
 
@@ -20,7 +20,7 @@
 
         <input type="text" placeholder="Search" class="menu-search"/>
 
-        <button id="search-button">Search</button>
+        <button type="submit" class="search-button">Search</button>
 
     </div>
 
@@ -30,9 +30,9 @@
 
     <h1>Admin Actions</h1>
 
-    <p>Promote User</p>
+    <a th:href="@{/display-user}">Promote User</a>
 
-    <p>Add Inventory</p>
+    <a th:href="@{/add-inventory}">Add Inventory</a>
 
     <p>Run Sales Report</p>
 

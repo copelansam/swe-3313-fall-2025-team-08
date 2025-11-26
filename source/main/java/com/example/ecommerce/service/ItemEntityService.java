@@ -1,7 +1,12 @@
 package com.example.ecommerce.service;
 
+import com.example.ecommerce.model.Item;
 import com.example.ecommerce.repository.ItemEntityRepository;
+import org.springframework.stereotype.Service;
 
+import java.util.List;
+
+@Service
 public class ItemEntityService {
 
     public final ItemEntityRepository itemTable;
@@ -9,5 +14,25 @@ public class ItemEntityService {
     public ItemEntityService(ItemEntityRepository itemTable){
 
         this.itemTable = itemTable;
+    }
+
+    public Item findItemById(int itemId){
+
+        return itemTable.findItemById(itemId);
+
+    }
+
+    public List<Item> loadInventory(String search){
+
+        if (search == null || search == "") {
+
+            return itemTable.retrieveAvailableItems();
+        }
+        else{
+
+            String pattern = "%" + search + "%";
+
+            return itemTable.inventorySearch(pattern);
+        }
     }
 }

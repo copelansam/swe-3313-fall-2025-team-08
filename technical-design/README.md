@@ -141,7 +141,7 @@ Here you can see descriptions for each of the attributes present within each tab
 
 The descriptions can be found bellow:
 - **User:**
-![Image of User Entity Description](images/user-entity-description.png)
+<br>![Image of User Entity Description](images/user-entity-description.png)
 - **Item:**
 <br>![Image of Item Entity Description](images/item-entity-description.png)
 - **Order:**
@@ -163,7 +163,7 @@ see in each table to help give you an idea as to how each table
 should look and how they are related to each other.
 
 - **User:**
-![Image of example user data](images/user-entity-example-data.png)
+<br>![Image of example user data](images/user-entity-example-data.png)
 - **Item:**
 <br>![Image of example item data](images/item-entity-example.png)
 -  **Order:**

@@ -1,8 +1,12 @@
 package com.example.ecommerce.repository;
 
 
+import com.example.ecommerce.model.Admin;
+import com.example.ecommerce.model.User;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 @Repository
 public class UserEntityRepository {
@@ -23,20 +27,73 @@ public class UserEntityRepository {
 
     }
 
+    public User credentailsValid(String userName, String password){
+
+        String findUserSql = "SELECT * FROM User WHERE userName = ? AND password = ?";
+
+        try{
+            return jdbc.queryForObject(findUserSql,
+                    new Object[]{userName,password},
+                    (rs, rowNum) -> {
+                        boolean isAdmin = rs.getInt("isAdmin") != 0;
+                        String name = rs.getString("name");
+                        String username = rs.getString("userName");
+                        String email = rs.getString("email");
+
+                        if (isAdmin){
+                            return new Admin(name, username,email);
+                        }
+                        else{
+                            return new User(name,username,email,false);
+                        }
+                    }
+                    );
+        }
+        catch(Exception e){
+            return null;
+        }
+    }
+
     public boolean usernameUnique(String userName){
 
         String usernameUniqueSql = "SELECT Count(*) FROM User WHERE userName = ?";
 
         int usernameOccurrence = jdbc.queryForObject(usernameUniqueSql, Integer.class, userName);
 
-        if (usernameOccurrence == 0){
+        return usernameOccurrence == 0;
 
-            return true;
-        }
-        else{
+    }
 
-            return false;
-        }
+    public List<User> nonAdminUsers(){
 
+        String query = "SELECT username, name FROM User WHERE isAdmin = false";
+
+        return jdbc.query(query, ((rs, rowNum) -> {
+            User user = new User();
+            user.setName(rs.getString("name"));
+            user.setUsername(rs.getString("username"));
+            return user;
+        }));
+    }
+
+    public void promoteUser(String username){
+
+        System.out.println("Promoting: " + username);
+
+        jdbc.query("SELECT * FROM User", (rs, rowNum) -> {
+            System.out.println("Row " + rowNum + " name = " + rs.getInt("name") + " isAdmin " + rs.getBoolean("isAdmin"));
+            return null;
+        });
+
+        String query = "UPDATE User SET isAdmin = true WHERE userName = ?";
+
+
+
+        jdbc.update(query, username);
+
+        jdbc.query("SELECT * FROM User", (rs, rowNum) -> {
+            System.out.println("Row " + rowNum + " name = " + rs.getInt("name") + " isAdmin " + rs.getBoolean("isAdmin"));
+            return null;
+        });
     }
 }
