@@ -38,7 +38,7 @@
 
     <h1>Sales Report</h1>
 
-    <form>
+    <form th:action="@{/run-report}" method="post">
 
         <p>Please Select How Far Back You Would Like to See the Sales of:</p>
 
@@ -46,7 +46,7 @@
 
             <div class="input-days">
 
-                <input type="text" style="width:50px;">   Day(s)
+                <input type="text" name="time" style="width:50px;">   Day(s)
 
             </div>
 

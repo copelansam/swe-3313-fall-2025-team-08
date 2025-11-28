@@ -35,15 +35,21 @@ public class UserEntityRepository {
             return jdbc.queryForObject(findUserSql,
                     new Object[]{userName,password},
                     (rs, rowNum) -> {
+
                         boolean isAdmin = rs.getInt("isAdmin") != 0;
+
                         String name = rs.getString("name");
+
                         String username = rs.getString("userName");
+
                         String email = rs.getString("email");
 
                         if (isAdmin){
+
                             return new Admin(name, username,email);
                         }
                         else{
+
                             return new User(name,username,email,false);
                         }
                     }
@@ -69,31 +75,21 @@ public class UserEntityRepository {
         String query = "SELECT username, name FROM User WHERE isAdmin = false";
 
         return jdbc.query(query, ((rs, rowNum) -> {
+
             User user = new User();
+
             user.setName(rs.getString("name"));
+
             user.setUsername(rs.getString("username"));
+
             return user;
         }));
     }
 
     public void promoteUser(String username){
 
-        System.out.println("Promoting: " + username);
-
-        jdbc.query("SELECT * FROM User", (rs, rowNum) -> {
-            System.out.println("Row " + rowNum + " name = " + rs.getInt("name") + " isAdmin " + rs.getBoolean("isAdmin"));
-            return null;
-        });
-
         String query = "UPDATE User SET isAdmin = true WHERE userName = ?";
 
-
-
         jdbc.update(query, username);
-
-        jdbc.query("SELECT * FROM User", (rs, rowNum) -> {
-            System.out.println("Row " + rowNum + " name = " + rs.getInt("name") + " isAdmin " + rs.getBoolean("isAdmin"));
-            return null;
-        });
     }
 }

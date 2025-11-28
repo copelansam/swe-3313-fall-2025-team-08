@@ -19,6 +19,8 @@ public class ReportItem {
 
     private String imagePath;
 
+    private String purchasedBy;
+
     public void setName(String name){
 
         this.name = name;
@@ -81,5 +83,15 @@ public class ReportItem {
         NumberFormat currency = NumberFormat.getCurrencyInstance();
 
         return currency.format(price);
+    }
+
+    public void setPurchasedBy(String purchasedBy){
+
+        this.purchasedBy = purchasedBy;
+    }
+
+    public String getPurchasedBy(){
+
+        return this.purchasedBy;
     }
 }

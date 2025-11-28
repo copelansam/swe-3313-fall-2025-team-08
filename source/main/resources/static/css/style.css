@@ -224,3 +224,9 @@ input.menu-search{
 .input-days{
     display:flex;
 }
+
+.sales-report-window{
+    background-color:white;
+    border: solid black 10px;
+    border-radius:15px;
+}
