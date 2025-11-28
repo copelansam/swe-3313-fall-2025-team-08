@@ -5,9 +5,11 @@ import com.example.ecommerce.model.Order;
 import com.example.ecommerce.model.ReportResult;
 import com.example.ecommerce.repository.OrderEntityRepository;
 import com.example.ecommerce.repository.SalesReportRepository;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class SalesReportService {
 
     private final SalesReportRepository orderTables;
