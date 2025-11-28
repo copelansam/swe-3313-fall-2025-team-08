@@ -83,7 +83,7 @@ public class DatabaseInitializer {
                 "'/images/mona-lisa.png',10000.57,true)");
 
         jdbc.execute("INSERT OR IGNORE INTO Item (name,description,imagePath,price,inStock)" +
-                "VALUES ('The Scream','The famous oil painting depicting true horror','/images/scream.png',234593.90,false)");
+                "VALUES ('The Scream','The famous oil painting depicting true horror','/images/scream.png',234593.90, true)");
 
         jdbc.execute("INSERT OR IGNORE INTO Item (name,description,imagePath,price,inStock)" +
                 "VALUES ('The Starry Night','The famous painting of a starry night sky','/images/starry-night.png',47.87,true)");
@@ -93,7 +93,7 @@ public class DatabaseInitializer {
 
         jdbc.execute("INSERT OR IGNORE INTO Item (name,description,imagePath,price,inStock)" +
                 "VALUES ('The Birth of Venus','A painting depicting the goddess Venus just after her birth'," +
-                "'/images/venus-birth.png',12345.67,false)");
+                "'/images/venus-birth.png',12345.67,true)");
 
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Card( " +

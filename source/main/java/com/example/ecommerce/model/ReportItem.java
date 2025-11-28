@@ -3,6 +3,7 @@ package com.example.ecommerce.model;
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 
+// Objects of this class will contain the information that we want to display in our sales reports
 
 public class ReportItem {
 
@@ -24,6 +25,7 @@ public class ReportItem {
     }
 
     public String getName(){
+
         return this.name;
     }
 

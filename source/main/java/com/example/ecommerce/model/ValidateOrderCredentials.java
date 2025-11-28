@@ -1,5 +1,7 @@
 package com.example.ecommerce.model;
 
+// This class will track the success of a user entering their payment and shipping info
+
 public class ValidateOrderCredentials {
 
     private boolean isValid;
