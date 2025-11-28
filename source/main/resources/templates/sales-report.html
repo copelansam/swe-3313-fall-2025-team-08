@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User Sign In</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="menu-bar">
+
+    <div class="menu-option"><a href="/browse">Home</a></div>
+
+    <div class="menu-option"><a href="/cart">Cart</a></div>
+
+    <div class="menu-selected"><a href="/account">Account</a></div>
+
+    <div class="menu-search">
+
+        <form th:action="@{/browse}" method="post">
+
+            <input type="text" placeholder="Search" class="menu-search"/>
+
+            <button type="submit" class="search-button">Search</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<a href="/admin-actions"><- Return to Admin Actions</a>
+
+<p class="error-message" th:if="${errorMessage}" th:text="${errorMessage}"></p>
+
+<div class="sales-report-body">
+
+    <h1>Sales Report</h1>
+
+    <div class="sales-report-window">
+
+        <div class="report-items-container">
+
+            <div class="report-item" th:each="item : reportItem.items">
+
+                <img th:src="${item.imagePath}">
+
+                <p th:text="'Name: ' + ${iem.name}"></p>
+
+                <p th:text="'Price: ' + ${item.price}"></p>
+
+                <p th:text="'Date Sold: ' + ${item.dateSold}"></p>
+
+                <p th:text="'Order Number: ' + item.orderNumber"></p>
+
+                <p th:text="'Purchased By: ' + item.purchasedBy"></p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <form>
+
+        <button>Export Report</button>
+
+    </form>
+
+</div>
+
+</body>
+
+</html>

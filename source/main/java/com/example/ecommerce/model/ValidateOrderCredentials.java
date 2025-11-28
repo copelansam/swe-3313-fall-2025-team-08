@@ -1,13 +1,19 @@
 package com.example.ecommerce.model;
 
 public class ValidateOrderCredentials {
+
     private boolean isValid;
+
     private String message;
+
     private OrderInfo orderInfo;
 
     public ValidateOrderCredentials(boolean isValid, String message, OrderInfo orderInfo) {
+
         this.isValid = isValid;
+
         this.message = message;
+
         this.orderInfo = orderInfo;
     }
 

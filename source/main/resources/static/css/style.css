@@ -203,6 +203,8 @@ input.menu-search{
     color:var(--grey);
 }
 
+/*  Report classes will stylize the admin reports*/
+
 .report-body{
     display:flex;
     align-items:center;
