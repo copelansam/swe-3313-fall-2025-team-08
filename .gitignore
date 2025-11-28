@@ -5,3 +5,8 @@ target/
 # IntelliJ stuff
 .idea/
 *.iml
+source/.idea/
+
+# IDE specific compiled classes
+bin/
+out/
