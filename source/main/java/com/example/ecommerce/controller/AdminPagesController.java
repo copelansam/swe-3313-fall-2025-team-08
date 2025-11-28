@@ -63,4 +63,10 @@ public class AdminPagesController {
 
         return "redirect:/sales-report";
     }
+
+    @GetMapping("/sales-report")
+    public String showReport(){
+
+        return "sales-report";
+    }
 }

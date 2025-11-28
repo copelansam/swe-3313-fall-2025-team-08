@@ -22,7 +22,7 @@ public class SalesReportRepository {
     public List<ReportItem> salesReport(int timeDay){
 
         String query = "SELECT [Order].orderId," +
-                                "[Order].date," +
+                                "[Order].orderDate," +
                                 "Item.price, " +
                                 "Item.name AS [itemName]," +
                                 "Item.imagePath," +
@@ -31,7 +31,7 @@ public class SalesReportRepository {
                                 "JOIN User ON [Order].userId = User.userId " +
                                 "JOIN Order_Line ON [Order].orderId = Order_Line.orderId " +
                                 "JOIN Item ON Item.itemId = Order_Line.itemId " +
-                                "WHERE (julianday('now') - julianday([Order].date) <= ?)";
+                                "WHERE (julianday('now') - julianday([Order].orderDate) <= ?)";
 
         return jdbc.query(query, new Object[]{timeDay},(rs,rowNum)->{
 

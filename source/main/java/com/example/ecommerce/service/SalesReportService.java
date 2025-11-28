@@ -25,14 +25,16 @@ public class SalesReportService {
 
         String message = " ";
 
+        System.out.println("Time: " + time + " length: " + time.length());
+
         try {
-            int timeDay = Integer.parseInt(time);
+            int timeDay = Integer.parseInt(time.trim());
 
             return new ReportResult(true, null, orderTables.salesReport(timeDay));
         }
         catch (Exception e){
 
-            System.out.println("Incorrect data type entered");
+            System.out.println("Incorrect data type entered" + e.getMessage());
 
             message = "Please enter a whole number";
 
