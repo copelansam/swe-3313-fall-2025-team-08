@@ -202,3 +202,19 @@ input.menu-search{
     margin:5px;
     color:var(--grey);
 }
+
+.report-body{
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+}
+
+.report-input{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.input-days{
+    display:flex;
+}
