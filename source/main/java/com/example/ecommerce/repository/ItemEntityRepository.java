@@ -63,6 +63,7 @@ public class ItemEntityRepository {
             Item item = new Item();
             item.setItemId(rs.getInt("itemId"));
             item.setName(rs.getString("name"));
+            item.setDescription(rs.getString("description"));
             item.setImagePath(rs.getString("imagePath"));
             item.setPrice(rs.getBigDecimal("price"));
             return item;

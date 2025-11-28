@@ -20,27 +20,66 @@
 
         <input type="text" placeholder="Search" class="menu-search"/>
 
-        <button id="search-button">Search</button>
+        <button type="submit" class="search-button">Search</button>
 
     </div>
 
 </div>
+
 <div>
-    <p>Cart</p>
 
-    <div class="cart-items" th:each="item : ${cart.items}">
-        <img src="${item.imagePath}">
-        <p th:text="${item.name}"></p>
-        <p th:text="${item.price}"></p>
-        <form th:action="@{/removeItemFromCart}" method="post">
-            <button type="submit" name="itemId" th:value="${item.itemId}">X</button>
-        </form>
+    <h1>Shopping Cart</h1>
 
-    </div>
+    <div class="cart-info">
 
-    <div class="cart-details">
-        <p th:text="'Subtotal: ' + ${cart.subtotal}"></p>
-    </div>
+        <div class="cart-items-container">
+
+            <div class="cart-item" th:each="item : ${cart.items}">
+
+                <img th:src="${item.imagePath}">
+
+                <div class="cart-item-info">
+
+                    <h1 th:text="${item.name}"></h1>
+
+                    <p th:text="${item.description}"></p>
+
+                    <p th:text="${item.price}"></p>
+
+                </div>
+
+                <div class="cart-item-delete">
+
+                    <form th:action="@{/removeItemFromCart}" method="post">
+
+                        <button type="submit" name="itemId" th:value="${item.itemId}">X</button>
+
+                    </form>
+
+                </div>
+
+            </div>
+
+        </div>
+
+            <div class="cart-details">
+
+                <h2>Cart Summary</h2>
+
+                <p th:text="'Estimated Price: ' + ${cart.subtotal}"></p>
+
+                <form th:action="@{/input-info}" method="get">
+
+
+                    <button>Proceed to Checkout</button>
+                </form>
+
+            </div>
+
+        </div>
+
 </div>
+
 </body>
+
 </html>

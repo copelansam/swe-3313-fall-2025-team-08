@@ -18,35 +18,47 @@
 
     <div class="menu-search">
 
-        <form th:action="@{/browse}" method="post">
+            <form th:action="@{/browse}" method="post">
 
-            <input type="text" placeholder="Search" name="search" class="menu-search"/>
+                <input type="text" placeholder="Search" name="search" class="menu-search"/>
 
-            <button type="submit">Search</button>
+                <button type="submit" class="search-button">Search</button>
 
-        </form>
+            </form>
 
     </div>
 
 </div>
 
+<p class="error-message" th:if="${errorMessage}" th:text="${errorMessage}"></p>
+
 <div class="inventory-box">
     <div class="container" th:each="item : ${items}">
 
-        <p th:text="${item.name}"></p>
+        <div class="inventory-main">
 
-        <p th:text="${item.price}"></p>
+        <div class="inventory-image">
+
+            <img th:src="${item.imagePath}">
+
+        </div>
+
+        <div class="inventory-info">
+
+            <p th:text="${item.name}"></p>
+
+            <p th:text="${item.price}"></p>
+
+            <form th:action="@{/addToCart}" method="post">
+                <input type="hidden" name="itemId" th:value="${item.itemId}" />
+                <button type="submit">Add to Cart</button>
+            </form>
+
+        </div>
+
+        </div>
 
         <p th:text="${item.description}"></p>
-
-        <p th:text="${item.itemId}"></p>
-
-        <img th:src="${item.imagePath}">
-
-        <form th:action="@{/addToCart}" method="post">
-            <input type="hidden" name="itemId" th:value="${item.itemId}" />
-            <button type="submit">Add to Cart</button>
-        </form>
 
     </div>
 
