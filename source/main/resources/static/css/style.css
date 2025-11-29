@@ -124,13 +124,17 @@ input.menu-search{
     padding:10px;
 }
 
+.inventory-box> * {
+    flex: 0 0 48%;
+    max-width: 48%;
+}
+
 .container{
     content-justify:center;
     border:black 5px solid;
     border-radius:15px;
     background-color:white;
     padding:15px;
-    min-width:40%;
     display:flex;
     flex-direction:column;
 }
@@ -201,4 +205,28 @@ input.menu-search{
     display:flex;
     margin:5px;
     color:var(--grey);
+}
+
+/*  Report classes will stylize the admin reports*/
+
+.report-body{
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+}
+
+.report-input{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.input-days{
+    display:flex;
+}
+
+.sales-report-window{
+    background-color:white;
+    border: solid black 10px;
+    border-radius:15px;
 }

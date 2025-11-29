@@ -15,7 +15,7 @@ import java.awt.*;
 // This is the main class that will run the program.
 // Running this file will result in the program being run at http://localhost:8080
 // To access the application, open http://localhost:8080 in your browser of choice after running it
-
+// This class was created by ChatGPT to help us get to a starting place where we could run the program
 @SpringBootApplication
 public class EcommerceApplication {
     public static void main(String[] args){

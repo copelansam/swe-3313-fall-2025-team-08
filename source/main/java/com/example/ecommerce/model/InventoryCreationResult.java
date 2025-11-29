@@ -1,5 +1,7 @@
 package com.example.ecommerce.model;
 
+// This class will track the success of an attempt to create a new inventory item
+
 public class InventoryCreationResult {
 
     private boolean success;

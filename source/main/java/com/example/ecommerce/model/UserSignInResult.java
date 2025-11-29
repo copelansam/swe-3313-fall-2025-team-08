@@ -1,5 +1,8 @@
 package com.example.ecommerce.model;
 
+// This class will track the success of a users attempt to sign in,
+// the message field will be assigned with an error message to match what went wrong
+
 public class UserSignInResult {
 
     private boolean success;
