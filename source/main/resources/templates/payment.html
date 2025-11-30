@@ -32,33 +32,52 @@
 
 <div class="payment-info">
 
-    <br>
     <div class="payment-half">
-        <div class="shipping-address">
+
+        <div class="headers">
+            <h1 class="page-header">Shopping Cart</h1>
+            <a class="return-link" href="/browse">Return to Shopping</a>
+        </div>
+
+        <div class="shipping-address-box">
+
+            <h2>Shipping Address</h2>
+
+                <div class="shipping-info-box">
+
+                    <form>
+
+                        <label for="name">Name: </label>
+                        <input type="text" id="name" name="name" required> <br>
+
+                        <label for="street-address">Street Address: </label>
+                        <input type="text" id="street-address" name="street-address" required> <br>
+
+                        <label for="city">City: </label>
+                        <input type="text" id="city" name="city" required>
+
+                        <label for="state">State: </label>
+                        <select id="state" name="state" required>
+
+                        </select>
+
+                        <label for="zip-code">Zipcode: </label>
+                        <input type="text" id="zip-code" name="zip-code" required> <br>
+
+                        <br>
+
+                    </form>
+
+                </div>
+
+        </div>
+
+        <div class="shipping-options-box">
 
             <form>
 
-                <label for="name">Name: </label>
-                <input type="text" id="name" name="name" required> <br>
-
-                <label for="street-address">Street Address: </label>
-                <input type="text" id="street-address" name="street-address" required> <br>
-
-                <label for="city">City: </label>
-                <input type="text" id="city" name="city" required>
-
-                <label for="state">State: </label>
-                <select id="state" name="state" required>
-
-                </select>
-
-                <label for="zip-code">Zipcode: </label>
-                <input type="text" id="zip-code" name="zip-code" required> <br>
-
-                <br>
-
                 <label for="shipping">Shipping: </label>
-                <select id="shipping" name="shipping" required>
+                <select class=shipping-options id="shipping" name="shipping" required>
                     <option value="ground">Ground $0.00</option>
                     <option value="3day">3 - Day $19</option>
                     <option value="overnight">Overnight $29</option>
@@ -68,36 +87,64 @@
 
         </div>
 
-        <br>
+        <div class="card-information-box">
 
-        <div class="card-information">
+            <h2>Card Information</h2>
 
-            <form>
+            <div class="card-information">
 
-                <label for="card-number">Card Number *</label> <br>
-                <input type="text" id="card-number" placeholder="Please enter card number." name="card-number" required> <br>
+                <form>
 
-                <label for="expiration-date">Expiration Date *</label> <br>
-                <select id="expiration-date" name="month" required>
-                    <option value="" disabled selected>Month</option>
-                </select>
+                    <label for="card-number">Card Number *</label> <br>
+                    <input class="card-number" type="text" id="card-number" placeholder="Please enter card number." name="card-number" required>
 
-                <label for="expiration-date-year"></label>
-                <select id="expiration-date-year" name="Year" required>
-                    <option value="" disabled selected>Year</option>
-                </select> <br>
+                    <label for="security-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Security Code *</label>
+                    <input class="security-code" type="text" id="security-code" placeholder="3-4 Digits" name="security-code" required> <br>
 
-                <br>
+                    <label for="expiration-date">Expiration Date *</label> <br>
+                    <select class="exp-date-month" id="expiration-date" name="month" required>
+                        <option value="" disabled selected>Month</option>
+                    </select>
 
-                <label for="security-code">Security Code *</label>
-                <input type="text" id="security-code" placeholder="3-4 Digits" name="security-code" required>
+                    <label for="expiration-date-year"></label>
+                    <select class="exp-date-year" id="expiration-date-year" name="Year" required>
+                        <option value="" disabled selected>Year</option>
+                    </select> <br>
 
-            </form>
+                </form>
+
+            </div>
+
         </div>
 
     </div>
 
     <div class="cart-summary-half">
+
+        <div class="cart-summary">
+
+            <h2>Cart Summary</h2>
+            <p>Subtotal: <br>
+            Shipping Fee: <br>
+            Sales Tax</p>
+
+        </div>
+
+        <div class="checkout-button-box">
+
+            <button class="checkout-button">Continue to Order Confirmation</button>
+
+        </div>
+
+        <div class="cart-window-box">
+
+            <h2>Item(s)</h2>
+
+            <div class="cart-window">
+
+            </div>
+
+        </div>
 
     </div>
 

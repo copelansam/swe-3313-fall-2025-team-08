@@ -207,6 +207,212 @@ input.menu-search{
     color:var(--grey);
 }
 
+.payment-info{
+    display: flex;
+    padding-top: 60px;
+    gap: 30px;
+}
+.payment-half{
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    gap: 30px;
+}
+.cart-summary-half{
+    display: flex;
+    flex-direction: column;
+
+    width: 30%;
+    gap: 10px;
+}
+
+.headers{
+    display: flex;
+    align-items: center;
+
+    margin-top: -20px;
+    margin-bottom: -20px;
+}
+
+.page-header{
+    display: flex;
+    flex-direction: column;
+
+    margin-top: -40px;
+    margin-bottom: -10px;
+    margin-right: 40px;
+
+    font-size: 40px;
+    color: var(--mahogany);
+}
+.return-link{
+    margin-bottom: 25px;
+    font-size: 26px;
+}
+
+.shipping-address-box{
+    display: flex;
+    flex-direction: column;
+
+    width: 90%;
+    padding: 30px;
+    gap: 30px;
+
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #969FAA
+}
+.shipping-info-box{
+    display: flex;
+    flex-direction: column;
+
+    font-size: 26px;
+
+    margin-top: -30px;
+    padding: 20px;
+    gap: 30px;
+    width: 100%;
+
+    background: white;
+    border: 2px solid #969FAA
+}
+.shipping-options-box{
+    display: flex;
+    flex-direction: column;
+
+    width: 90%;
+    padding: 30px;
+    gap: 30px;
+
+    font-size: 26px;
+
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #969FAA
+}
+
+.shipping-options{
+    width: 360px;
+    height: 48px;
+    margin-left: 20px;
+
+    font-size: 17px;
+}
+
+.card-information-box{
+    display: flex;
+    flex-direction: column;
+
+    width: 90%;
+    padding: 30px;
+    gap: 30px;
+
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #969FAA
+}
+.card-information{
+    display: flex;
+    flex-direction: column;
+
+    margin-top: -30px;
+    padding-top: 20px;
+    padding-left: 20px;
+    gap: 30px;
+    width: 100%;
+
+    font-size: 20px;
+
+    background: white;
+    border: 2px solid #969FAA
+}
+.card-number{
+    margin-left: 20px;
+
+    width: 397px;
+    height: 45px;
+}
+.exp-date-month{
+    margin-left: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+
+    width: 207px;
+    height: 39px;
+}
+.exp-date-year{
+    margin-top: 10px;
+
+    width: 207px;
+    height: 39px;
+}
+.security-code{
+    margin-left: 20px;
+    margin-top: 10px;
+
+    width: 168px;
+    height: 45px;
+}
+
+.cart-summary{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 30px;
+    margin-top: 40px;
+
+    background: white;
+}
+
+.checkout-button-box{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 10px;
+    gap: 30px;
+
+    background: white;
+    border-radius: 10px;
+    border: 2px solid #969FAA
+}
+
+.checkout-button{
+    width: 405px;
+    height: 51px;
+    margin-left: 20px;
+
+    background-color: var(--mahogany);
+    font-size: 26px;
+    color: var(--creamy);
+
+    border-radius: 10px;
+}
+
+.cart-window-box{
+    display: flex;
+    flex-direction: column;
+
+    width: 100%;
+    padding: 10px;
+
+    background: white;
+
+
+}
+.cart-window{
+    display: flex;
+    flex-direction: column;
+
+    margin-left: 20px;
+    width: 415px;
+    height: 467px;
+
+    justify-content: center;
+    background: #F2F2F2;
+}
+
 /*  Report classes will stylize the admin reports*/
 
 .report-body{
