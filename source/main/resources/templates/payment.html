@@ -10,25 +10,23 @@
 
 <div class="menu-bar">
 
-    <div class="menu-selected"><a href="/browse">Home</a></div>
+    <div class="menu-option"><a href="/browse">Home</a></div>
 
-    <div class="menu-option"><a href="/cart">Cart</a></div>
+    <div class="menu-selected"><a href="/cart">Cart</a></div>
 
     <div class="menu-option"><a href="/account">Account</a></div>
 
     <div class="menu-search">
 
-        <form th:action="@{/browse}" method="post">
+        <input type="text" placeholder="Search" class="menu-search"/>
 
-            <input type="text" placeholder="Search" name="search" class="menu-search"/>
-
-            <button type="submit">Search</button>
-
-        </form>
+        <button type="submit" class="search-button">Search</button>
 
     </div>
 
 </div>
+
+<form th:action="process-payment" method="post">
 
 <div class="payment-info">
 
@@ -45,7 +43,6 @@
 
                 <div class="shipping-info-box">
 
-                    <form>
 
                         <label for="name">Name: </label>
                         <input type="text" id="name" name="name" required> <br>
@@ -57,16 +54,14 @@
                         <input type="text" id="city" name="city" required>
 
                         <label for="state">State: </label>
-                        <select id="state" name="state" required>
+                        <input id="state" name="state" required>
 
-                        </select>
 
                         <label for="zip-code">Zipcode: </label>
                         <input type="text" id="zip-code" name="zip-code" required> <br>
 
                         <br>
 
-                    </form>
 
                 </div>
 
@@ -74,16 +69,14 @@
 
         <div class="shipping-options-box">
 
-            <form>
-
                 <label for="shipping">Shipping: </label>
                 <select class=shipping-options id="shipping" name="shipping" required>
+                    <option disabled selected></option>
                     <option value="ground">Ground $0.00</option>
                     <option value="3day">3 - Day $19</option>
                     <option value="overnight">Overnight $29</option>
                 </select>
 
-            </form>
 
         </div>
 
@@ -93,12 +86,11 @@
 
             <div class="card-information">
 
-                <form>
 
                     <label for="card-number">Card Number *</label> <br>
                     <input class="card-number" type="text" id="card-number" placeholder="Please enter card number." name="card-number" required>
 
-                    <label for="security-code">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Security Code *</label>
+                    <label for="security-code">Security Code *</label>
                     <input class="security-code" type="text" id="security-code" placeholder="3-4 Digits" name="security-code" required> <br>
 
                     <label for="expiration-date">Expiration Date *</label> <br>
@@ -107,11 +99,54 @@
                     </select>
 
                     <label for="expiration-date-year"></label>
+
                     <select class="exp-date-year" id="expiration-date-year" name="Year" required>
+
                         <option value="" disabled selected>Year</option>
+
                     </select> <br>
 
-                </form>
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="cart-summary-half">
+
+            <div class="cart-summary">
+
+                <h2>Cart Summary</h2>
+                <p th:text="'Subtotal: ' + ${cart.formattedSubtotal}"></p>
+                <p th:text="'Taxes: ' + ${cart.formattedTaxes}"></p>
+                <p th:text="'Estimated Grand Total: ' + ${cart.formattedGrandTotal}"></p>
+
+            </div>
+
+            <div class="checkout-button-box">
+
+                <button class="checkout-button">Continue to Order Confirmation</button>
+
+            </div>
+
+          <div class="cart-window-box">
+
+                <h2>Item(s)</h2>
+
+                <div class="cart-window">
+
+                    <div class="payment-cart-item" th:each="item : ${cart.items}">
+
+                        <img th:src="${item.imagePath}">
+
+                        <p th:text="${item.name}"></p>
+
+                        <p th:text="${item.formattedPrice}"></p>
+
+
+                    </div>
+
+                </div>
 
             </div>
 
@@ -119,36 +154,7 @@
 
     </div>
 
-    <div class="cart-summary-half">
-
-        <div class="cart-summary">
-
-            <h2>Cart Summary</h2>
-            <p>Subtotal: <br>
-            Shipping Fee: <br>
-            Sales Tax</p>
-
-        </div>
-
-        <div class="checkout-button-box">
-
-            <button class="checkout-button">Continue to Order Confirmation</button>
-
-        </div>
-
-        <div class="cart-window-box">
-
-            <h2>Item(s)</h2>
-
-            <div class="cart-window">
-
-            </div>
-
-        </div>
-
-    </div>
-
-</div>
+</form>
 
 </body>
 </html>

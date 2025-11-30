@@ -18,6 +18,9 @@ body{
     width: 300px;
     font-size:16px;
 }
+.error-message{
+        color: red;
+}
 /* user-credentials will hold all content in the sign in an sign up pages.
  Will be used to horizontally align them */
 .user-credentials{
@@ -107,10 +110,6 @@ input.menu-search{
     color: white;
     border-radius: 5px;
     margin-left :auto;
-}
-
-.error-message{
-    color: red;
 }
 
 /*The inventory classes will be responsible for styling the items in the browse screen*/
@@ -403,7 +402,7 @@ input.menu-search{
 }
 .cart-window{
     display: flex;
-    flex-direction: column;
+    flex-wrap:wrap;
 
     margin-left: 20px;
     width: 415px;
@@ -411,6 +410,12 @@ input.menu-search{
 
     justify-content: center;
     background: #F2F2F2;
+}
+
+.payment-cart-item{
+    display:flex;
+    flex-direction:column;
+
 }
 
 /*  Report classes will stylize the admin reports*/
