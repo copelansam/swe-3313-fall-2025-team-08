@@ -27,6 +27,8 @@ public class OrderInfo {
 
     String shippingName;
 
+    String shippingType;
+
     String shippingCost;
 
     String formattedShippingCost;
@@ -41,7 +43,7 @@ public class OrderInfo {
 
     }
 
-    public OrderInfo(String city, String state, String zip, String streetAddress, String creditCardNumber, String expirationMonth, String expirationYear, String securityCode,String shippingName, String shippingCost, BigDecimal subTotal) {
+    public OrderInfo(String city, String state, String zip, String streetAddress, String creditCardNumber, String expirationMonth, String expirationYear, String securityCode,String shippingName, String shippingType, String shippingCost, BigDecimal subTotal) {
 
         this.city = city;
 
@@ -60,6 +62,8 @@ public class OrderInfo {
         this.securityCode = securityCode;
 
         this.shippingName = shippingName;
+
+        this.shippingType = shippingType;
 
         this.shippingCost = shippingCost;
 

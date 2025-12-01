@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <title>Your Receipt</title>
@@ -63,7 +63,7 @@
 
     <div class="item-summary-container">
 
-        <div class="payment-cart-item" th:each="item : ${cart.items}">
+        <div class="payment-confirmation-cart-item" th:each="item : ${cart.items}">
 
             <img th:src="${item.imagePath}">
 
