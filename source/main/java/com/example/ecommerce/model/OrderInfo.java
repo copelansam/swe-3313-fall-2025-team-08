@@ -79,4 +79,62 @@ public class OrderInfo {
 
     }
 
+    public String getShippingName(){
+
+        return this.shippingName;
+    }
+
+    public String getStreetAddress(){
+
+        return this.streetAddress;
+    }
+
+    public String getCity(){
+
+        return this.city;
+    }
+
+    public String getState(){
+
+        return this.state;
+    }
+
+    public String getZip(){
+
+        return this.zip;
+    }
+
+    public String getShippingType(){
+        return this.shippingType;
+    }
+
+    public String getFormattedShippingCost(){
+
+        return this.formattedShippingCost;
+    }
+
+    public String getCreditCardNumber(){
+        return this.creditCardNumber;
+    }
+
+    public String getExpirationMonth(){
+
+        return this.expirationMonth;
+    }
+
+    public String getExpirationYear(){
+
+        return this.expirationYear;
+    }
+
+    public String getSecurityCode(){
+
+        return this.securityCode;
+    }
+
+    public  String getFormattedGrandTotal(){
+
+        return this.formattedGrandTotal;
+    }
+
 }

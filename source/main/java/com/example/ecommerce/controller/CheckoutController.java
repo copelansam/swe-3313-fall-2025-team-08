@@ -44,7 +44,7 @@ public class CheckoutController {
                                  @RequestParam("cardNumber") String cardNumber,
                                  @RequestParam("expirationMonth") String expirationMonth,
                                  @RequestParam("expirationYear") String expirationYear,
-                                 @RequestParam("securityYear") String securityCode){
+                                 @RequestParam("securityCode") String securityCode){
 
         Cart cart = (Cart) session.getAttribute("cart");
 
@@ -60,7 +60,9 @@ public class CheckoutController {
 
         model.addAttribute("cart",cart);
 
-        return "confirm";
+        model.addAttribute("orderInfo", orderInfo.getOrderInfo());
+
+        return "confirm-order";
     }
 
     @GetMapping("/confirm")
