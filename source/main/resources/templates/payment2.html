@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
-    <title>User Sign In</title>
+    <title>Enter Order Info</title>
     <link rel="stylesheet" href="/css/style.css">
 </head>
 
@@ -18,25 +18,33 @@
 
     <div class="menu-search">
 
-        <input type="text" placeholder="Search" class="menu-search"/>
+        <form th:action="@{/browse}" method="post">
 
-        <button type="submit" class="search-button">Search</button>
+            <input type="text" placeholder="Search" name="search" class="menu-search"/>
+
+            <button type="submit" class="search-button">Search</button>
+
+        </form>
 
     </div>
 
 </div>
 
-<h1>Shopping Cart</h1> <a href="/browse"></a>
+<h1>Shopping Cart</h1>
+
+<a href="/browse">Return to Shopping</a>
 
 <form th:action="process-payment" method="post">
 
     <div class="input-screen-box">
 
+        <p th:if="${errorMessage}" th:text="${errorMessage}" class="error-message"></p>
+
         <div class="input-box">
 
-            Shipping Address
-
             <div class="address">
+
+                Shipping Address
 
                 <label for="name">
 
@@ -94,11 +102,11 @@
 
                     <select id="shipping" name="shipping">
 
-                        <option value="0">Ground $0</option>
+                        <option value="Ground 0">Ground $0</option>
 
-                        <option value="19">3-Day $19</option>
+                        <option value="3-Day 19">3-Day $19</option>
 
-                        <option value="29">Overnight $29</option>
+                        <option value="Overnight 29">Overnight $29</option>
 
                     </select>
 
@@ -186,9 +194,9 @@
 
                     </div>
 
-                    Security Code
-
                     <label for="security-code">
+
+                        Security Code
 
                         <input id="security-code" name="securityCode" type="text">
 

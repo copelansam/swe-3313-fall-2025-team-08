@@ -4,6 +4,9 @@ package com.example.ecommerce.model;
 // They will be stored in the session upon being entered, and will be pulled to create
 // the necessary entities in the database
 
+import java.math.BigDecimal;
+import java.text.NumberFormat;
+
 public class OrderInfo {
 
     String city;
@@ -16,21 +19,29 @@ public class OrderInfo {
 
     String creditCardNumber;
 
-    String ExpirationMonth;
+    String expirationMonth;
 
-    String ExpirationYear;
+    String expirationYear;
 
     String securityCode;
 
     String shippingName;
 
-    String shippingType;
+    String shippingCost;
+
+    String formattedShippingCost;
+
+    BigDecimal grandTotal;
+
+    BigDecimal subTotal;
+
+    String formattedGrandTotal;
 
     public OrderInfo() {
 
     }
 
-    public OrderInfo(String city, String state, String zip, String streetAddress, String creditCardNumber, String ExpirationMonth, String ExpirationYear, String securityCode,String shippingName, String shippingType) {
+    public OrderInfo(String city, String state, String zip, String streetAddress, String creditCardNumber, String expirationMonth, String expirationYear, String securityCode,String shippingName, String shippingCost, BigDecimal subTotal) {
 
         this.city = city;
 
@@ -42,14 +53,26 @@ public class OrderInfo {
 
         this.creditCardNumber = creditCardNumber;
 
-        this.ExpirationMonth = ExpirationMonth;
+        this.expirationMonth = expirationMonth;
 
-        this.ExpirationYear = ExpirationYear;
+        this.expirationYear = expirationYear;
 
         this.securityCode = securityCode;
 
         this.shippingName = shippingName;
 
-        this.shippingType = shippingType;
+        this.shippingCost = shippingCost;
+
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+
+        this.formattedShippingCost = currency.format(Integer.parseInt(shippingCost));
+
+        this.subTotal = subTotal;
+
+        grandTotal = this.subTotal.add(new BigDecimal(shippingCost));
+
+        this.formattedGrandTotal = currency.format(grandTotal);
+
     }
+
 }

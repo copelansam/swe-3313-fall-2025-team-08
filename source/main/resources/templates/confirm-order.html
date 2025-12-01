@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Confirm Your Order</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+
+<body>
+
+<div class="menu-bar">
+
+    <div class="menu-option"><a href="/browse">Home</a></div>
+
+    <div class="menu-selected"><a href="/cart">Cart</a></div>
+
+    <div class="menu-option"><a href="/account">Account</a></div>
+
+    <div class="menu-search">
+
+        <form th:action="@{/browse}" method="post">
+
+            <input type="text" placeholder="Search" name="search" class="menu-search"/>
+
+            <button type="submit" class="search-button">Search</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+<h1>Order Summary</h1>
+
+<a href="/browse">Return to Shopping</a>
+
+<form th:action="@{/confirm-order}" method="post">
+
+    <div class="input-screen-box">
+
+        <p th:if="${errorMessage}" th:text="${errorMessage}" class="error-message"></p>
+
+        <div class="input-box">
+
+            <div class="address">
+
+                Shipping Address
+
+                <p th:text="${orderInfo.shippingName}"></p>
+
+                <p th:text="${orderInfo.streetAddress}"></p>
+
+                <p th:text="${orderInfo.city} + ', ' + ${orderInfo.state} + ' ' + ${orderInfo.zip}"></p>
+
+            </div>
+
+            <br>
+
+            <div class="card-info">
+
+                Payment
+
+                <p th:text="${orderInfo.creditCardNumber}"></p>
+
+                <p th:text="'Expiration Date: ' + ${orderInfo.expirationMonth} + '/' + ${orderInfo.expirationYear}"></p>
+
+                <p th:text="'Security Code: ' + ${orderInfo.securityCode}"></p>
+
+            </div>
+
+        </div>
+
+        <div class="cart-summary-box">
+
+            <div class="cart-summary">
+
+                Cart Summary
+
+                <p th:text="'Subtotal: ' + ${cart.formattedSubtotal}"></p>
+
+                <p th:text="'Shipping: ' + ${orderInfo.formattedShippingCost}"></p>
+
+                <p th:text="'Taxes: ' + ${cart.formattedTaxes}"></p>
+
+                <p th:text="'Grand Total: ' + ${orderInfo.formattedGrandTotal}"></p>
+
+            </div>
+
+            <br>
+
+            <div class="place-order-button">
+
+                <button type="submit" class ="red-button">Place Order</button>
+
+            </div>
+
+            <br>
+
+            <div class="payment-cart-items-container">
+
+                Item(s)
+
+                <div class="payment-cart-items">
+
+                    <div class="payment-item" th:each="item : ${cart.items}">
+
+                        <img th:src="${item.imagePath}">
+
+                        <p th:text="${item.name}"></p>
+
+                        <p th:text="${item.formattedPrice}"></p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</form>
+

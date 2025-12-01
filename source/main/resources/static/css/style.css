@@ -457,7 +457,7 @@ input.menu-search{
 
 .input-box{
     display:flex;
-    width:80%;
+    width:70%;
     flex-direction:column;
     border-radius:10px;
 }
@@ -470,15 +470,35 @@ input.menu-search{
 .address{
     display:flex;
     flex-direction:column;
+    height:35%;
+    justify-content:space-between;
+    padding:10px;
 }
 
 .address-lower{
     display:flex;
 }
 
+.shipping{
+    display:flex;
+    flex-direction:column;
+    height:15%;
+    justify-content:center;
+    padding:5px;
+}
+
 .card-info{
     display:flex;
     flex-direction:column;
+    height:35%;
+    padding:5px;
+}
+
+.card-info-input{
+    display:flex;
+    flex-direction:column;
+    justify-content:space-evenly;
+    height:100%;
 }
 
 .expiration{
@@ -505,7 +525,7 @@ input.menu-search{
 }
 
 .payment-cart-items{
-    background-color:gainsboro;
+    background-color:#dbd7d7;
     display:flex;
     flex-wrap:wrap;
     padding:5px;
