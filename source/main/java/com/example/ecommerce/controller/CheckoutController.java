@@ -2,6 +2,8 @@ package com.example.ecommerce.controller;
 
 
 import com.example.ecommerce.model.Cart;
+import com.example.ecommerce.model.OrderInfo;
+import com.example.ecommerce.model.User;
 import com.example.ecommerce.model.ValidateOrderCredentials;
 import com.example.ecommerce.service.OrderEntityService;
 import jakarta.servlet.http.HttpSession;
@@ -10,6 +12,7 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @Controller
 public class CheckoutController {
@@ -34,7 +37,7 @@ public class CheckoutController {
     }
 
     @PostMapping("/process-payment")
-    public String processPayment(Model model, HttpSession session,
+    public String processPayment(Model model, HttpSession session, RedirectAttributes redirectAttributes,
                                  @RequestParam("name") String shippingName,
                                  @RequestParam("street") String streetAddress,
                                  @RequestParam("city") String city,
@@ -48,11 +51,13 @@ public class CheckoutController {
 
         Cart cart = (Cart) session.getAttribute("cart");
 
-        ValidateOrderCredentials orderInfo = orderEntityService.validateOrderInput(city,state,zip,streetAddress,cardNumber,expirationMonth,expirationYear,securityCode,shippingName,shipping, cart);
+        User user = (User) session.getAttribute("userSession");
+
+        ValidateOrderCredentials orderInfo = orderEntityService.validateOrderInput(city,state,zip,streetAddress,cardNumber,expirationMonth,expirationYear,securityCode,shippingName,shipping, cart, user.getUserId());
 
         if (!orderInfo.isValid()){
 
-            model.addAttribute("errorMessage",orderInfo.getMessage());
+            redirectAttributes.addFlashAttribute("errorMessage",orderInfo.getMessage());
 
             return "redirect:/payment";
 
@@ -60,26 +65,32 @@ public class CheckoutController {
 
         model.addAttribute("cart",cart);
 
+        session.setAttribute("orderInfo",orderInfo.getOrderInfo());
+
         model.addAttribute("orderInfo", orderInfo.getOrderInfo());
 
         return "confirm-order";
     }
 
-    @GetMapping("/confirm")
-    public String confirm(){
-
-        return "confirm";
-    }
-
     @PostMapping("/confirm-order")
     public String displayReceipt(Model model, HttpSession session){
 
+
+        OrderInfo orderInfo = (OrderInfo) session.getAttribute("orderInfo");
+
+        Cart cart = (Cart) session.getAttribute("cart");
+
+        User user = (User) session.getAttribute("userSession");
+
+        orderInfo.setOrderId(orderEntityService.createOrder(orderInfo,cart));
+
+        model.addAttribute("cart",cart);
+
+        model.addAttribute("orderInfo",orderInfo);
+
+        model.addAttribute("user",user);
+
         return "receipt";
 
-    }
-
-    @GetMapping("/receipt")
-    public String receipt(){
-        return "receipt";
     }
 }

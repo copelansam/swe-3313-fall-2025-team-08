@@ -106,6 +106,7 @@ public class DatabaseInitializer {
         jdbc.execute("CREATE TABLE IF NOT EXISTS Order_Address ( " +
                 "orderId               integer," +
                 "streetAddress         varchar(100), " +
+                "deliveryName          varchar(100)," +
                 "PRIMARY KEY (orderId, streetAddress)," +
                 "FOREIGN KEY (orderId) references [Order](orderId), " +
                 "FOREIGN KEY (streetAddress) references Shipping_Address(streetAddress) " +
@@ -113,7 +114,7 @@ public class DatabaseInitializer {
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Order_Card  ( " +
                 "orderId               integer," +
-                "creditCardNumber      integer," +
+                "creditCardNumber      char(16)," +
                 "PRIMARY KEY (orderId, creditCardNumber), " +
                 "FOREIGN KEY (orderId) references [Order](orderId), " +
                 "FOREIGN KEY (creditCardNumber) references Card(creditCardNumber) " +

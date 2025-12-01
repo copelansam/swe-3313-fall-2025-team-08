@@ -19,11 +19,15 @@ public class UserEntityRepository {
 
     }
 
-    public void addRow(String name, String userName, String email, String password) {
+    public int addRow(String name, String userName, String email, String password) {
 
         String userSql = "INSERT INTO User(name, userName, email, password, isAdmin) VALUES (?, ?, ?, ?, FALSE)";
 
         jdbc.update(userSql, name, userName, email, password);
+
+        String getUserId = "SELECT userID FROM User WHERE userName = ?";
+
+        return jdbc.queryForObject(getUserId,Integer.class,userName);
 
     }
 
@@ -44,13 +48,15 @@ public class UserEntityRepository {
 
                         String email = rs.getString("email");
 
+                        int userId = rs.getInt("userId");
+
                         if (isAdmin){
 
-                            return new Admin(name, username,email);
+                            return new Admin(userId,name, username,email);
                         }
                         else{
 
-                            return new User(name,username,email,false);
+                            return new User(userId,name,username,email,false);
                         }
                     }
                     );

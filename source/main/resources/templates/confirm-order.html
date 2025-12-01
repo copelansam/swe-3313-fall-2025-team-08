@@ -60,7 +60,7 @@
 
                 Payment
 
-                <p th:text="${orderInfo.creditCardNumber}"></p>
+                <p th:text="'Card Number: ' + ${orderInfo.creditCardNumber}"></p>
 
                 <p th:text="'Expiration Date: ' + ${orderInfo.expirationMonth} + '/' + ${orderInfo.expirationYear}"></p>
 

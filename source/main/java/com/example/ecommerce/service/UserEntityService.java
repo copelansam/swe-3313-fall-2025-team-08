@@ -69,9 +69,9 @@ public class UserEntityService {
             return new UserRegistrationResult(false, "That username is already taken. Please choose another one", null);
         }
 
-        userTable.addRow(name, username, email, password);
+        int userId = userTable.addRow(name, username, email, password);
 
-        User userSession = new User(name, username, email,false);
+        User userSession = new User(userId,name, username, email,false);
 
         return new UserRegistrationResult(true,null, userSession);
 

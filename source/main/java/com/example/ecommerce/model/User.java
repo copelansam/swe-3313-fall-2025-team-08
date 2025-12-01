@@ -2,6 +2,8 @@ package com.example.ecommerce.model;
 
 public class User {
 
+    private int userId;
+
     private String name;
 
     private String username;
@@ -10,7 +12,9 @@ public class User {
 
     private boolean isAdmin;
 
-    public User(String name, String username, String email, boolean isAdmin){
+    public User(int userId, String name, String username, String email, boolean isAdmin){
+
+        this.userId = userId;
 
         this.name = name;
 
@@ -51,5 +55,15 @@ public class User {
     public boolean getIsAdmin(){
 
         return this.isAdmin;
+    }
+
+    public void setUserId(int userId){
+
+        this.userId = userId;
+    }
+
+    public int getUserId(){
+
+        return this.userId;
     }
 }

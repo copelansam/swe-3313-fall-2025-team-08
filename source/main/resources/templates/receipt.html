@@ -35,11 +35,7 @@
 
     <h2 class="thanks">Thank You For Your Order</h2>
 
-    <p class="paragraph1">
-        An email confirmation and a copy of this
-        receipt have been sent to *pull email from db*.
-        If you haven't received the email in a few minutes,
-        please refresh your inbox and check your spam/junk folder.
+    <p class="paragraph1" th:text="'An email confirmation and a copy of this receipt have been sent to ' + ${user.email} + '. If you have not received the email in a few minutes, please refresh your inbox and check your spam/junk folder.'">
     </p>
 
     <br>
@@ -50,14 +46,18 @@
         handed over to the courier service.
     </p>
 
-    <button class="continue-shopping">Continue Shopping</button>
+    <form th:action="@{/browse}" method="get">
+
+        <button class="continue-shopping" >Continue Shopping</button>
+
+    </form>
 </div>
 
 <div class="order-summary">
 
     <h2 class="summary-header">Order Summary</h2>
 
-    <h3 class="order-number">Order # *pull order #*</h3>
+    <h3 class="order-number" th:text="'Order # ' + ${orderInfo.orderId}"></h3>
 
     <h3 class="item-summary">Item(s)</h3>
 
@@ -87,11 +87,13 @@
 
         <h3 class="shipping-header">Shipping</h3>
 
-        <p>*pull shipping type*</p>
+        <p th:text="${orderInfo.shippingType}"></p>
 
         <br>
 
-        <p>*pull shipping address*</p>
+        <p th:text="${orderInfo.streetAddress}"></p>
+
+        <p th:text="${orderInfo.city} + ', ' + ${orderInfo.state.toUpperCase()} + ' ' + ${orderInfo.zip}"></p>
 
     </div>
 
@@ -99,15 +101,15 @@
 
         <h3 class="payment-header">Payment & Contact</h3>
 
-        <p>*pull name*</p>
+        <p th:text="${user.name}"></p>
 
         <br>
 
-        <p>*pull email*</p>
+        <p th:text="${user.email}"></p>
 
         <br>
 
-        <p>*pull & censor card info*</p>
+        <p th:text="'Card ************' + ${orderInfo.creditCardNumber.substring(orderInfo.creditCardNumber.length()-4)}"></p>
     </div>
 
 </div>

@@ -9,41 +9,45 @@ import java.text.NumberFormat;
 
 public class OrderInfo {
 
-    String city;
+    private int orderId;
 
-    String state;
+    private String city;
 
-    String zip;
+    private String state;
 
-    String streetAddress;
+    private String zip;
 
-    String creditCardNumber;
+    private String streetAddress;
 
-    String expirationMonth;
+    private String creditCardNumber;
 
-    String expirationYear;
+    private String expirationMonth;
 
-    String securityCode;
+    private String expirationYear;
 
-    String shippingName;
+    private String securityCode;
 
-    String shippingType;
+    private String shippingName;
 
-    String shippingCost;
+    private String shippingType;
 
-    String formattedShippingCost;
+    private String shippingCost;
 
-    BigDecimal grandTotal;
+    private String formattedShippingCost;
 
-    BigDecimal subTotal;
+    private BigDecimal grandTotal;
 
-    String formattedGrandTotal;
+    private BigDecimal subTotal;
+
+    private String formattedGrandTotal;
+
+    private int userId;
 
     public OrderInfo() {
 
     }
 
-    public OrderInfo(String city, String state, String zip, String streetAddress, String creditCardNumber, String expirationMonth, String expirationYear, String securityCode,String shippingName, String shippingType, String shippingCost, BigDecimal subTotal) {
+    public OrderInfo(String city, String state, String zip, String streetAddress, String creditCardNumber, String expirationMonth, String expirationYear, String securityCode,String shippingName, String shippingType, String shippingCost, BigDecimal subTotal, int userId) {
 
         this.city = city;
 
@@ -77,6 +81,8 @@ public class OrderInfo {
 
         this.formattedGrandTotal = currency.format(grandTotal);
 
+        this.userId = userId;
+
     }
 
     public String getShippingName(){
@@ -108,6 +114,11 @@ public class OrderInfo {
         return this.shippingType;
     }
 
+    public String getShippingCost(){
+
+        return this.shippingCost;
+    }
+
     public String getFormattedShippingCost(){
 
         return this.formattedShippingCost;
@@ -132,9 +143,29 @@ public class OrderInfo {
         return this.securityCode;
     }
 
-    public  String getFormattedGrandTotal(){
+    public BigDecimal getGrandTotal(){
+
+        return this.grandTotal;
+    }
+
+    public String getFormattedGrandTotal(){
 
         return this.formattedGrandTotal;
+    }
+
+    public int getUserId(){
+
+        return this.userId;
+    }
+
+    public void setOrderId(int orderId){
+
+        this.orderId = orderId;
+    }
+
+    public int getOrderId(){
+
+        return orderId;
     }
 
 }
