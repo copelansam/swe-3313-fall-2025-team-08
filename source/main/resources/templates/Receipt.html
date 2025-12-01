@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="/css/style.css">
+
+</head>
+
+<body>
+
+<div class="menu-bar">
+
+    <div class="menu-option"><a href="/browse">Home</a></div>
+
+    <div class="menu-selected"><a href="/cart">Cart</a></div>
+
+    <div class="menu-option"><a href="/account">Account</a></div>
+
+    <div class="menu-search">
+
+        <input type="text" placeholder="Search" class="menu-search"/>
+
+        <button type="submit" class="search-button">Search</button>
+
+    </div>
+
+</div>
+
+<div class="thank-you-message">
+
+    <h2 class="thanks">Thank You For Your Order</h2>
+
+    <p class="paragraph1">
+        An email confirmation and a copy of this
+        receipt have been sent to *pull email from db*.
+        If you haven't received the email in a few minutes,
+        please refresh your inbox and check your spam/junk folder.
+    </p>
+
+    <br>
+
+    <p class="paragraph2">
+        We will provide you with a follow-up email containing
+        your tracking number when your order has been
+        handed over to the courier service.
+    </p>
+
+    <button class="continue-shopping">Continue Shopping</button>
+</div>
+
+<div class="order-summary">
+
+    <h2 class="summary-header">Order Summary</h2>
+
+    <h3 class="order-number">Order # *pull order #*</h3>
+
+    <h3 class="item-summary">Item(s)</h3>
+
+    <div class="item-summary-container">
+
+        <div class="payment-cart-item" th:each="item : ${cart.items}">
+
+            <img th:src="${item.imagePath}">
+
+            <p th:text="${item.name}"></p>
+
+            <p th:text="${item.formattedPrice}"></p>
+
+        </div>
+
+    </div>
+
+    <div class="pricing-summary">
+
+        <p th:text="'Subtotal: ' + ${cart.formattedSubtotal}"></p>
+        <p th:text="'Taxes: ' + ${cart.formattedTaxes}"></p>
+        <p th:text="'Estimated Grand Total: ' + ${cart.formattedGrandTotal}"></p>
+
+    </div>
+
+    <div class="shipping">
+
+        <h3 class="shipping-header">Shipping</h3>
+
+        <p>*pull shipping type*</p>
+
+        <br>
+
+        <p>*pull shipping address*</p>
+
+    </div>
+
+    <div class="payment-contact">
+
+        <h3 class="payment-header">Payment & Contact</h3>
+
+        <p>*pull name*</p>
+
+        <br>
+
+        <p>*pull email*</p>
+
+        <br>
+
+        <p>*pull & censor card info*</p>
+    </div>
+
+</div>
+
+</body>
+
+</html>
