@@ -85,9 +85,6 @@
             <div class="cart-summary">
 
                 <h2>Order Summary</h2>
-                <p th:text="'Subtotal: ' + ${cart.formattedSubtotal}"></p>
-                <p th:text="'Taxes: ' + ${cart.formattedTaxes}"></p>
-                <p th:text="'Estimated Grand Total: ' + ${cart.formattedGrandTotal}"></p>
 
             </div>
 
@@ -103,16 +100,6 @@
 
                 <div class="cart-window">
 
-                    <div class="payment-cart-item" th:each="item : ${cart.items}">
-
-                        <img th:src="${item.imagePath}">
-
-                        <p th:text="${item.name}"></p>
-
-                        <p th:text="${item.formattedPrice}"></p>
-
-
-                    </div>
 
                 </div>
 
@@ -121,6 +108,8 @@
         </div>
 
     </div>
+
+</div>
 
 </body>
 
