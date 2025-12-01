@@ -39,15 +39,7 @@ public class SalesReportRepository {
 
             item.setName(rs.getString("itemName"));
 
-            // date formatting code below provided by ChatGPT
-
-            Date date = rs.getDate("date");
-
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-
-            String formattedDate = dateFormat.format(date);
-
-            item.setDatePurchased(formattedDate);
+            item.setDatePurchased(rs.getString("orderDate"));
 
             item.setImagePath(rs.getString("imagePath"));
 
@@ -59,7 +51,6 @@ public class SalesReportRepository {
 
             return item;
         });
-
 
     }
 }

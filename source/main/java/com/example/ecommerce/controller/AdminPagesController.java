@@ -55,18 +55,13 @@ public class AdminPagesController {
 
             model.addAttribute("errorMessage",result.getMessage());
 
-            return "redirect:/run-report";
+            return "run-report";
 
         }
 
         model.addAttribute("items",result.getReportItems());
 
-        return "redirect:/sales-report";
-    }
-
-    @GetMapping("/sales-report")
-    public String showReport(){
-
         return "sales-report";
     }
+
 }

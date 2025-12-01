@@ -42,19 +42,19 @@
 
         <div class="report-items-container">
 
-            <div class="report-item" th:each="item : reportItem.items">
+            <div class="report-item" th:each="item : ${items}">
 
                 <img th:src="${item.imagePath}">
 
-                <p th:text="'Name: ' + ${iem.name}"></p>
+                <p th:text="'Name: ' + ${item.name}"></p>
 
-                <p th:text="'Price: ' + ${item.price}"></p>
+                <p th:text="'Price: ' + ${item.formattedPrice}"></p>
 
-                <p th:text="'Date Sold: ' + ${item.dateSold}"></p>
+                <p th:text="'Date Sold: ' + ${item.datePurchased}"></p>
 
-                <p th:text="'Order Number: ' + item.orderNumber"></p>
+                <p th:text="'Order Number: ' + ${item.orderNumber}"></p>
 
-                <p th:text="'Purchased By: ' + item.purchasedBy"></p>
+                <p th:text="'Purchased By: ' + ${item.purchasedBy}"></p>
 
             </div>
 

@@ -53,16 +53,18 @@ public class DatabaseInitializer {
                 "zip           char(5) " +
                 ");");
 
+        jdbc.execute("DROP TABLE [Order]");
+
         jdbc.execute("CREATE TABLE IF NOT EXISTS [Order] ( " +
                 "orderId           integer PRIMARY KEY, " +
                 "userId            int NOT NULL, " +
-                "orderDate         date, " +
+                "orderDate         text DEFAULT (DATE('now')), " +
                 "subTotal          numeric, " +
                 "shippingPrice     numeric, " +
                 "taxes             numeric, " +
                 "grandTotal        numeric, " +
                 "shippingSelection varchar(100), " +
-                "FOREIGN KEY (userid) references User(userid) " +
+                "FOREIGN KEY (userId) references User(userId) " +
                 ");");
 
         jdbc.execute("DROP TABLE Item");
@@ -95,6 +97,7 @@ public class DatabaseInitializer {
                 "VALUES ('The Birth of Venus','A painting depicting the goddess Venus just after her birth'," +
                 "'/images/venus-birth.png',12345.67,true)");
 
+        jdbc.execute("DROP TABLE Card");
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Card( " +
                 "creditCardNumber char(16) PRIMARY KEY, " +
@@ -102,6 +105,8 @@ public class DatabaseInitializer {
                 "expirationYear   char(2), " +
                 "securityCode     char(3) " +
                 ");");
+
+        jdbc.execute("DROP TABLE Order_Address");
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Order_Address ( " +
                 "orderId               integer," +
@@ -112,6 +117,8 @@ public class DatabaseInitializer {
                 "FOREIGN KEY (streetAddress) references Shipping_Address(streetAddress) " +
                 ");");
 
+        jdbc.execute("DROP TABLE Order_Card");
+
         jdbc.execute("CREATE TABLE IF NOT EXISTS Order_Card  ( " +
                 "orderId               integer," +
                 "creditCardNumber      char(16)," +
@@ -119,6 +126,8 @@ public class DatabaseInitializer {
                 "FOREIGN KEY (orderId) references [Order](orderId), " +
                 "FOREIGN KEY (creditCardNumber) references Card(creditCardNumber) " +
                 ");");
+
+        jdbc.execute("DROP TABLE Order_Line");
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Order_Line ( " +
                 "itemId      integer, " +

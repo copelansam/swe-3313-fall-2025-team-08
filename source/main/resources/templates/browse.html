@@ -50,8 +50,11 @@
             <p th:text="${item.formattedPrice}"></p>
 
             <form th:action="@{/addToCart}" method="post">
+
                 <input type="hidden" name="itemId" th:value="${item.itemId}" />
+
                 <button type="submit">Add to Cart</button>
+
             </form>
 
         </div>
