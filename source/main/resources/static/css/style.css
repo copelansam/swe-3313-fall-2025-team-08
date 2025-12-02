@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+
+
 :root{
     --creamy: #FFF5E4; /*This is the creamish color we will use mostly for the the background*/
     --mahogany: #963640; /*This is the dark red color we will use for everything else*/
@@ -9,8 +12,13 @@
     box-sizing: border-box;
 }
 
+html{
+    height:100%;
+}
+
 body{
     background-color: var(--creamy);
+    height:100%;
 }
 
 p,div {
@@ -51,7 +59,11 @@ p,div {
     text-align: center;
     width:50%;
     height:100%;
-    font-family:'Dancing Script',cursive;
+    font-family:'Berkshire Swash',cursive;
+}
+
+.logo-display img{
+    max-height:50%;
 }
 
 .input-credentials{
@@ -435,14 +447,14 @@ logout-button{
     flex-direction:column;
     align-items:center;
     height:100%;
-    border:black solid 5px;
 }
 
-admin-actions-body{
+.admin-actions-body{
     display:flex;
     flex-direction:column;
-    height:60%;
+    height:50%;
     justify-content:space-between;
+    align-items:center;
 }
 
 .admin-actions-body a{

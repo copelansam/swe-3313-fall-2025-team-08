@@ -94,6 +94,10 @@ public class CheckoutController {
 
         model.addAttribute("user",user);
 
+        cart.clear();
+
+        session.setAttribute("cart",cart);
+
         return "receipt";
 
     }
