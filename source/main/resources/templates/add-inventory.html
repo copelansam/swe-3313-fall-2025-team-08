@@ -32,22 +32,26 @@
 
 <a href="/admin-actions"><- Return to Admin Actions</a>
 
-<form th:action="@{/create-inventory}" method="post" enctype="multipart/form-data">
-
-    <input type="text" name="name" placeholder="Item Name">
-
-    <input type="text" name="description" placeholder="Item Description">
-
-    <input type="text" name="price" placeholder="Item Price">
-
-    <input type="file" name="fileName" placeholder="Upload an Image">
-
-    <button type="submit">Add Inventory Item</button>
-
-</form>
-
 <p th:if="${inventoryMessage}" th:text="${inventoryMessage}"></p>
 
+<div class="admin-actions">
+
+    <form th:action="@{/create-inventory}" method="post" enctype="multipart/form-data">
+
+        <input type="text" name="name" placeholder="Item Name">
+
+        <input type="text" name="description" placeholder="Item Description">
+
+        <input type="text" name="price" placeholder="Item Price">
+
+        <input type="file" name="fileName" placeholder="Upload an Image">
+
+        <button type="submit">Add Inventory Item</button>
+
+    </form>
+
+</div>
 
 </body>
+
 </html>

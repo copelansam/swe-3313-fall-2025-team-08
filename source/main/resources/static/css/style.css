@@ -4,6 +4,7 @@
     --grey: #47525E /*This is the light grey color we will use for some text*/
 }
 
+/* styling for elements across the site */
 * {
     box-sizing: border-box;
 }
@@ -29,6 +30,11 @@ p,div {
 }
 .error-message{
         color: red;
+}
+
+.flex-column{
+    display:flex;
+    flex-direction:column;
 }
 /* user-credentials will hold all content in the sign in an sign up pages.
  Will be used to horizontally align them */
@@ -74,7 +80,7 @@ input.user-info{
 }
 
 .menu-bar .menu-search{
-    margin-left:auto;
+    margin-left:auto; /* Used to make the search field appear on the right side of the menu bar */
     margin-right:25px;
 }
 
@@ -90,7 +96,7 @@ input.user-info{
     color: var(--creamy);
 }
 
-.menu-option:hover{
+.menu-option:hover{ /* Invert menu option colors when the user hovers over it*/
     color: var(--mahogany);
     background-color: var(--creamy);
 }
@@ -122,10 +128,9 @@ input.menu-search{
 }
 
 /*The inventory classes will be responsible for styling the items in the browse screen*/
-
 .inventory-box{
     display:flex;
-    flex-wrap:wrap;
+    flex-wrap:wrap; /* Makes it so that if there are too many elements (exceeds window size) they will wrap onto a new row*/
     justify-content:center;
     gap:20px;
     width:100%;
@@ -133,7 +138,7 @@ input.menu-search{
 }
 
 .inventory-box> * {
-    flex: 0 0 48%;
+    flex: 0 0 48%; /* Used to make it so that there will be no more than 2 items per row */
     max-width: 48%;
 }
 
@@ -175,6 +180,7 @@ input.menu-search{
     text-align:center;
 }
 
+/* The cart classes will be responsible for styling the cart page */
 .cart-info{
     display:flex;
     width:90%;
@@ -191,10 +197,6 @@ input.menu-search{
 
 .cart-items-container img{
     margin:15px;
-}
-
-.cart-items-container p{
-    font-size:20px;
 }
 
 .cart-details{
@@ -219,8 +221,11 @@ input.menu-search{
 .cart-item-delete{
     margin-left:auto;
     margin-right:20px;
+    background-color:white;
+    border: none;
 }
 
+/* the payment classes will stylize the elements on the input payment and order confirmation pages */
 .payment-info{
     display: flex;
     padding-top: 60px;
@@ -232,145 +237,12 @@ input.menu-search{
     width: 65%;
     gap: 30px;
 }
-.cart-summary-half{
-    display: flex;
-    flex-direction: column;
 
-    width: 30%;
-    gap: 10px;
-}
-
-
-
-
-
-
-.card-information-box{
-    display: flex;
-    flex-direction: column;
-
-    width: 90%;
-    padding: 30px;
-    gap: 30px;
-
-    background: white;
-    border-radius: 10px;
-    border: 2px solid #969FAA
-}
-/*
-.cart-summary{
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-    padding: 30px;
-    margin-top: 40px;
-
-    background: white;
-}
-
-*/
-.checkout-button-box{
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-    padding: 10px;
-    gap: 30px;
-
-    background: white;
-    border-radius: 10px;
-    border: 2px solid #969FAA
-}
-
-.checkout-button{
-    width: 405px;
-    height: 51px;
-    margin-left: 20px;
-
-    background-color: var(--mahogany);
-    font-size: 26px;
-    color: var(--creamy);
-
-    border-radius: 10px;
-}
-
-.cart-window-box{
-    display: flex;
-    flex-direction: column;
-
-    width: 100%;
-    padding: 10px;
-
-    background: white;
-
-
-}
-.cart-window{
-    display: flex;
-    flex-wrap:wrap;
-
-    margin-left: 20px;
-    width: 415px;
-    height: 467px;
-
-    justify-content: center;
-    background: #F2F2F2;
+.payment-cart-items{
+    border-radius:7px;
 }
 
 .payment-cart-item{
-    display:flex;
-    flex-direction:column;
-
-}
-
-/*  Report classes will stylize the admin reports*/
-
-.report-body{
-    display:flex;
-    align-items:center;
-    flex-direction:column;
-}
-
-.report-input{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-.input-days{
-    display:flex;
-}
-
-.sales-report-body{
-    display:flex;
-    flex-direction:column;
-    align-items:center;
-}
-
-.sales-report-window{
-    background-color:white;
-    border: solid black 10px;
-    border-radius:15px;
-    display:flex;
-    justify-content:center;
-}
-
-.report-item{
-    display:flex;
-    gap:30px;
-}
-
-.report-info{
-    display:flex;
-    flex-direction:column;
-}
-
-.report-info p{
-    margin:5px;
-}
-
-.report-items-container{
     display:flex;
     flex-direction:column;
 }
@@ -393,14 +265,28 @@ input.menu-search{
 .input-box > div{
     background-color:white;
     border-radius:8px;
+    padding: 5px;
+
+}
+.address-block{
+    margin: 4px 0;
 }
 
 .address{
     display:flex;
     flex-direction:column;
     height:35%;
-    justify-content:space-between;
     padding:10px;
+}
+
+.address-input{
+    flex:1;
+    border: black solid 1px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    border-radius:8px;
+    padding:5px;
 }
 
 .address-lower{
@@ -427,6 +313,9 @@ input.menu-search{
     flex-direction:column;
     justify-content:space-evenly;
     height:100%;
+    border: black solid 1px;
+    padding:3px;
+    border-radius:8px;
 }
 
 .expiration{
@@ -452,6 +341,12 @@ input.menu-search{
     padding:10px;
 }
 
+.payment-cart-items-container{
+    background-color:white;
+    padding:8px;
+    border-radius:8px;
+}
+
 .payment-cart-items{
     background-color:#dbd7d7;
     display:flex;
@@ -468,10 +363,6 @@ input.menu-search{
 
 .payment-item img{
     max-width:47%;
-}
-
-.address-block{
-    margin: 4px 0;
 }
 
 /* Receipt classes will format the receipt screen*/
@@ -527,4 +418,89 @@ input.menu-search{
 
 .receipt-paragraph{
     width:60%;
+}
+
+.user-account{
+   align-items:center;
+}
+
+logout-button{
+    border-radius:12px;
+    height:15%;
+    width:10%;
+}
+
+.admin-actions{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    height:100%;
+    border:black solid 5px;
+}
+
+admin-actions-body{
+    display:flex;
+    flex-direction:column;
+    height:60%;
+    justify-content:space-between;
+}
+
+.admin-actions-body a{
+    margin: 5px 0;
+}
+
+/*  Report classes will stylize the admin reports*/
+
+.report-body{
+    display:flex;
+    align-items:center;
+    flex-direction:column;
+}
+
+.report-input{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.input-days{
+    display:flex;
+}
+
+.sales-report-body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.sales-report-window{
+    background-color:white;
+    border: solid black 10px;
+    border-radius:15px;
+    display:flex;
+    justify-content:center;
+}
+
+.report-item{
+    display:flex;
+    gap:30px;
+}
+
+.report-info{
+    display:flex;
+    flex-direction:column;
+}
+
+.report-info p{
+    margin:5px;
+}
+
+.report-items-container{
+    display:flex;
+    flex-direction:column;
+}
+
+.user-select-body{
+    display:flex;
+    flex-direction:column
 }

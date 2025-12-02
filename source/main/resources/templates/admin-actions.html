@@ -30,15 +30,23 @@
 
 </div>
 
-<div>
+<a href="/browse"></a>
 
-    <h1>Admin Actions</h1>
+<div class="admin-actions">
 
-    <a th:href="@{/display-user}">Promote User</a>
+    <h1 class="red-text">Admin Actions</h1>
 
-    <a th:href="@{/add-inventory}">Add Inventory</a>
+    <div class="admin-actions-body">
 
-    <a th:href="@{/run-report}">Run Sales Report</a>
+        <p class="red-text">Please Select an Action to Perform:</p>
+
+        <a th:href="@{/display-user}">Promote User</a>
+
+        <a th:href="@{/add-inventory}">Add Inventory</a>
+
+        <a th:href="@{/run-report}">Run Sales Report</a>
+
+    </div>
 
 </div>
 

@@ -30,7 +30,9 @@
 
 </div>
 
-<div>
+<div class="red-text flex-column user-account">
+
+    <h1>Account Overview</h1>
 
     <p th:text="'Name: ' +${userSession.name}"></p>
 
@@ -42,7 +44,7 @@
 
     <form th:action="@{/logout}" method="post">
 
-        <button type="submit">Log out</button>
+        <button type="submit" class="red-button logout-button">Log out</button>
 
     </form>
 
