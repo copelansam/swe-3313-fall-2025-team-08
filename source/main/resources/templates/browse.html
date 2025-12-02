@@ -32,6 +32,8 @@
 
 <p class="error-message" th:if="${errorMessage}" th:text="${errorMessage}"></p>
 
+<p th:if="${successMessage}" th:text="${successMessage}"></p>
+
 <div class="inventory-box">
     <div class="container" th:each="item : ${items}">
 
