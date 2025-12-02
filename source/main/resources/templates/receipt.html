@@ -31,85 +31,106 @@
 
 </div>
 
-<div class="thank-you-message">
+<h1 class="red-text">Receipt</h1>
 
-    <h2 class="thanks">Thank You For Your Order</h2>
+<div class="receipt-body">
 
-    <p class="paragraph1" th:text="'An email confirmation and a copy of this receipt have been sent to ' + ${user.email} + '. If you have not received the email in a few minutes, please refresh your inbox and check your spam/junk folder.'">
-    </p>
+    <div class="thank-you-message">
 
-    <br>
+        <h2>Thank You For Your Order</h2>
 
-    <p class="paragraph2">
-        We will provide you with a follow-up email containing
-        your tracking number when your order has been
-        handed over to the courier service.
-    </p>
+        <p class="receipt-paragraph" th:text="'An email confirmation and a copy of this receipt have been sent to ' + ${user.email} + '. If you have not received the email in a few minutes, please refresh your inbox and check your spam/junk folder.'">
+        </p>
 
-    <form th:action="@{/browse}" method="get">
+        <br>
 
-        <button class="continue-shopping" >Continue Shopping</button>
+        <p class="receipt-paragraph">
+            We will provide you with a follow-up email containing
+            your tracking number when your order has been
+            handed over to the courier service.
+        </p>
 
-    </form>
-</div>
+        <form th:action="@{/browse}" method="get">
 
-<div class="order-summary">
+            <button class="red-button" >Continue Shopping</button>
 
-    <h2 class="summary-header">Order Summary</h2>
+        </form>
 
-    <h3 class="order-number" th:text="'Order # ' + ${orderInfo.orderId}"></h3>
+    </div>
 
-    <h3 class="item-summary">Item(s)</h3>
+    <div class="order-summary-box">
 
-    <div class="item-summary-container">
+        <h2 class="summary-header">Order Summary</h2>
 
-        <div class="payment-confirmation-cart-item" th:each="item : ${cart.items}">
+        <h3 class="order-number" th:text="'Order # ' + ${orderInfo.orderId}"></h3>
 
-            <img th:src="${item.imagePath}">
+        <div class="pricing-summary">
 
-            <p th:text="${item.name}"></p>
+            <p th:text="'Subtotal: ' + ${cart.formattedSubtotal}"></p>
 
-            <p th:text="${item.formattedPrice}"></p>
+            <p th:text="'Taxes: ' + ${cart.formattedTaxes}"></p>
+
+            <hr class="partial">
+
+            <p th:text="'Estimated Grand Total: ' + ${cart.formattedGrandTotal}"></p>
 
         </div>
 
-    </div>
+        <div class="receipt-user-info">
 
-    <div class="pricing-summary">
+            <div class="shipping">
 
-        <p th:text="'Subtotal: ' + ${cart.formattedSubtotal}"></p>
-        <p th:text="'Taxes: ' + ${cart.formattedTaxes}"></p>
-        <p th:text="'Estimated Grand Total: ' + ${cart.formattedGrandTotal}"></p>
+                <h3 class="shipping-header">Shipping</h3>
 
-    </div>
+                <p th:text="${orderInfo.shippingType} + ' Shipping'"></p>
 
-    <div class="shipping">
+                <div class="address-block">
 
-        <h3 class="shipping-header">Shipping</h3>
+                    <p th:text="${orderInfo.shippingName}"></p>
 
-        <p th:text="${orderInfo.shippingType}"></p>
+                    <p th:text="${orderInfo.streetAddress}"></p>
 
-        <br>
+                    <p th:text="${orderInfo.city} + ', ' + ${orderInfo.state.toUpperCase()} + ' ' + ${orderInfo.zip}"></p>
 
-        <p th:text="${orderInfo.streetAddress}"></p>
+                </div>
 
-        <p th:text="${orderInfo.city} + ', ' + ${orderInfo.state.toUpperCase()} + ' ' + ${orderInfo.zip}"></p>
+            </div>
 
-    </div>
+            <div class="vertical-line"></div>
 
-    <div class="payment-contact">
+            <div class="payment-contact">
 
-        <h3 class="payment-header">Payment & Contact</h3>
+                <h3 class="payment-header">Payment & Contact</h3>
 
-        <p th:text="${user.name}"></p>
+                <p th:text="${user.name}"></p>
 
-        <br>
+                <br>
 
-        <p th:text="${user.email}"></p>
+                <p th:text="${user.email}"></p>
 
-        <br>
+                <br>
 
-        <p th:text="'Card ************' + ${orderInfo.creditCardNumber.substring(orderInfo.creditCardNumber.length()-4)}"></p>
+                <p th:text="'Card ************' + ${orderInfo.creditCardNumber.substring(orderInfo.creditCardNumber.length()-4)}"></p>
+            </div>
+
+        </div>
+
+        <h3 class="item-summary">Item(s)</h3>
+
+        <div class="payment-cart-items">
+
+            <div class="payment-item" th:each="item : ${cart.items}">
+
+                <img th:src="${item.imagePath}">
+
+                <p th:text="${item.name}"></p>
+
+                <p th:text="${item.formattedPrice}"></p>
+
+            </div>
+
+        </div>
+
     </div>
 
 </div>

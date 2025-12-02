@@ -48,9 +48,13 @@
 
                 <p th:text="${orderInfo.shippingName}"></p>
 
-                <p th:text="${orderInfo.streetAddress}"></p>
+                <div class="address-block">
 
-                <p th:text="${orderInfo.city} + ', ' + ${orderInfo.state} + ' ' + ${orderInfo.zip}"></p>
+                    <p th:text="${orderInfo.streetAddress}"></p>
+
+                    <p th:text="${orderInfo.city} + ', ' + ${orderInfo.state} + ' ' + ${orderInfo.zip}"></p>
+
+                </div>
 
             </div>
 
@@ -88,7 +92,7 @@
 
             <br>
 
-            <div class="place-order-button">
+            <div class="payment-button">
 
                 <button type="submit" class ="red-button">Place Order</button>
 

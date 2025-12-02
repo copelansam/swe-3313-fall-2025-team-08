@@ -12,6 +12,10 @@ body{
     background-color: var(--creamy);
 }
 
+.red-text{
+    color:var(--mahogany);
+}
+
 .red-button{
     background-color: var(--mahogany);
     color: white;
@@ -60,7 +64,7 @@ input.user-info{
     background-color: var(--mahogany);
     width:100%;
     height:10%;
-    height:75px;
+    height:50px;
     line-height:75px;
     align-items:center;
 }
@@ -232,78 +236,10 @@ input.menu-search{
     gap: 10px;
 }
 
-.headers{
-    display: flex;
-    align-items: center;
 
-    margin-top: -20px;
-    margin-bottom: -20px;
-}
 
-.page-header{
-    display: flex;
-    flex-direction: column;
 
-    margin-top: -40px;
-    margin-bottom: -10px;
-    margin-right: 40px;
 
-    font-size: 40px;
-    color: var(--mahogany);
-}
-.return-link{
-    margin-bottom: 25px;
-    font-size: 26px;
-}
-
-.shipping-address-box{
-    display: flex;
-    flex-direction: column;
-
-    width: 90%;
-    padding: 30px;
-    gap: 30px;
-
-    background: white;
-    border-radius: 10px;
-    border: 2px solid #969FAA
-}
-.shipping-info-box{
-    display: flex;
-    flex-direction: column;
-
-    font-size: 26px;
-
-    margin-top: -30px;
-    padding: 20px;
-    gap: 30px;
-    width: 100%;
-
-    background: white;
-    border: 2px solid #969FAA
-}
-.shipping-options-box{
-    display: flex;
-    flex-direction: column;
-
-    width: 90%;
-    padding: 30px;
-    gap: 30px;
-
-    font-size: 26px;
-
-    background: white;
-    border-radius: 10px;
-    border: 2px solid #969FAA
-}
-
-.shipping-options{
-    width: 360px;
-    height: 48px;
-    margin-left: 20px;
-
-    font-size: 17px;
-}
 
 .card-information-box{
     display: flex;
@@ -316,48 +252,6 @@ input.menu-search{
     background: white;
     border-radius: 10px;
     border: 2px solid #969FAA
-}
-.card-information{
-    display: flex;
-    flex-direction: column;
-
-    margin-top: -30px;
-    padding-top: 20px;
-    padding-left: 20px;
-    gap: 30px;
-    width: 100%;
-
-    font-size: 20px;
-
-    background: white;
-    border: 2px solid #969FAA
-}
-.card-number{
-    margin-left: 20px;
-
-    width: 397px;
-    height: 45px;
-}
-.exp-date-month{
-    margin-left: 20px;
-    margin-top: 10px;
-    margin-bottom: 20px;
-
-    width: 207px;
-    height: 39px;
-}
-.exp-date-year{
-    margin-top: 10px;
-
-    width: 207px;
-    height: 39px;
-}
-.security-code{
-    margin-left: 20px;
-    margin-top: 10px;
-
-    width: 168px;
-    height: 45px;
 }
 /*
 .cart-summary{
@@ -453,6 +347,7 @@ input.menu-search{
     display:flex;
     gap:15px;
     padding:20px;
+    align-items:flex-start;
 }
 
 .input-box{
@@ -460,6 +355,7 @@ input.menu-search{
     width:70%;
     flex-direction:column;
     border-radius:10px;
+    height: calc(100vh - 50px);
 }
 
 .input-box > div{
@@ -540,4 +436,63 @@ input.menu-search{
 
 .payment-item img{
     max-width:47%;
+}
+
+.address-block{
+    margin: 4px 0;
+}
+
+/* Receipt classes will format the receipt screen*/
+.receipt-body{
+    display:flex;
+    width:100%;
+}
+
+.thank-you-message{
+    padding:30px;
+    display:flex;
+    flex-direction:column;
+    justify-content:space-between;
+    align-items:flex-start;
+    max-width:60%;
+    height: calc(100vh - 50px);
+}
+
+.thank-you-message > *{
+    width:100%;
+    display:flex;
+    justify-content:center;
+}
+
+.thank-you-message > p{
+    width:100%;
+    text-align:center;
+}
+
+.payment-contact p{
+    margin: 5px 0;
+}
+
+.order-summary-box{
+    background-color:white;
+    padding:10px;
+}
+
+.partial{
+    width:90%;
+}
+
+.vertical-line{
+    width:1px;
+    align-self:stretch; /*Provided by ChatGPT*/
+    background-color:black;
+    margin:3px;
+}
+
+.receipt-user-info{
+    display:flex;
+}
+
+.receipt-paragraph{
+    width:60%;
 }
