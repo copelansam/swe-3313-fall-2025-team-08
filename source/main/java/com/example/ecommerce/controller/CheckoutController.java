@@ -49,12 +49,14 @@ public class CheckoutController {
                                  @RequestParam("expirationYear") String expirationYear,
                                  @RequestParam("securityCode") String securityCode){
 
+        // validate user input based on our requirements and perform necessary action
         Cart cart = (Cart) session.getAttribute("cart");
 
         User user = (User) session.getAttribute("userSession");
 
         ValidateOrderCredentials orderInfo = orderEntityService.validateOrderInput(city,state,zip,streetAddress,cardNumber,expirationMonth,expirationYear,securityCode,shippingName,shipping, cart, user.getUserId());
 
+        // display message if there is an issue with user input
         if (!orderInfo.isValid()){
 
             redirectAttributes.addFlashAttribute("errorMessage",orderInfo.getMessage());
@@ -63,6 +65,7 @@ public class CheckoutController {
 
         }
 
+        // store user input and wait until they confirm the order
         model.addAttribute("cart",cart);
 
         session.setAttribute("orderInfo",orderInfo.getOrderInfo());
@@ -75,6 +78,7 @@ public class CheckoutController {
     @PostMapping("/confirm-order")
     public String displayReceipt(Model model, HttpSession session){
 
+        // retrieve all information relevant to the receipt and display it
 
         OrderInfo orderInfo = (OrderInfo) session.getAttribute("orderInfo");
 

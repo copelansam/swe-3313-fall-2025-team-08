@@ -4,8 +4,6 @@ import com.example.ecommerce.model.Cart;
 import com.example.ecommerce.model.Item;
 import com.example.ecommerce.model.ValidateOrderCredentials;
 import com.example.ecommerce.model.OrderInfo;
-import com.example.ecommerce.repository.OrderAddressEntityRepository;
-import com.example.ecommerce.repository.OrderCardEntityRepository;
 import com.example.ecommerce.repository.OrderEntityRepository;
 import org.springframework.stereotype.Service;
 
@@ -25,7 +23,7 @@ public class OrderEntityService {
                                                        String creditCardNumber, String expirationMonth, String expirationYear,
                                                        String securityCode, String shippingName, String shipping, Cart cart,
                                                        int userId) {
-
+        // validate user input and create a message to display if there are any issues
         if (city.isEmpty() || state.isEmpty() || zip.isEmpty() || streetAddress.isEmpty() || shippingName.isEmpty() || creditCardNumber.isEmpty() || expirationMonth.equals("") || expirationYear.equals("") ||securityCode.isEmpty()){
 
             return new ValidateOrderCredentials(false,"Please make sure that all fields are filled out",null);

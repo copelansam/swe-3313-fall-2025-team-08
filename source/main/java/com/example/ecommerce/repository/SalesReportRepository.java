@@ -21,6 +21,7 @@ public class SalesReportRepository {
 
     public List<ReportItem> salesReport(int timeDay){
 
+        // retrieves all of the items sold within a user specified time frame, includes relevant information
         String query = "SELECT [Order].orderId," +
                                 "[Order].orderDate," +
                                 "Item.price, " +

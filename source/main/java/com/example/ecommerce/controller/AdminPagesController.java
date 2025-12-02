@@ -55,6 +55,7 @@ public class AdminPagesController {
 
         ReportResult result = salesReportService.executeSalesReport(time);
 
+        //if the user doesn't enter an integer, display a message
         if (!result.getSuccess()){
 
             model.addAttribute("errorMessage",result.getMessage());
@@ -63,6 +64,7 @@ public class AdminPagesController {
 
         }
 
+        // store the sales report results to display in the next page
         session.setAttribute("report",result.getReportItems());
 
         model.addAttribute("items",result.getReportItems());
@@ -73,6 +75,7 @@ public class AdminPagesController {
     @GetMapping("/export-report")
     public void exportReport(HttpServletResponse response, HttpSession session) throws IOException {
 
+        // download the report when the user clicks the export report button
         response.setContentType("text/plain"); // Written by ChatGPT
 
         response.setHeader("Content-Disposition", "attachment; filename=sales_report.txt"); // Written by CHatGPT

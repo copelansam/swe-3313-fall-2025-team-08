@@ -31,8 +31,11 @@ public class SalesReportService {
         System.out.println("Time: " + time + " length: " + time.length());
 
         try {
+
+            // check that the user input a number of days
             int timeDay = Integer.parseInt(time.trim());
 
+            // if so, retrieve items and pass them along
             return new ReportResult(true, null, orderTables.salesReport(timeDay));
         }
         catch (Exception e){

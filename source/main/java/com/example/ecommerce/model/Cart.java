@@ -121,9 +121,10 @@ public class Cart {
         shippingOption = null;
     }
 
+
     public String formatPrice(BigDecimal price){
 
-        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        NumberFormat currency = NumberFormat.getCurrencyInstance(); // Written by ChatGPT
 
         return currency.format(price);
 

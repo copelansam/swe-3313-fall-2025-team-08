@@ -23,7 +23,7 @@ public class OrderEntityRepository {
     }
 
     public int getLatestOrder(){
-
+        // used to retrieve the orderId of the order that was just placed
         try {
 
             String query = "SELECT orderId FROM [Order] ORDER BY orderId DESC LIMIT 1;";

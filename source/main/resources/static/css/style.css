@@ -12,6 +12,10 @@ body{
     background-color: var(--creamy);
 }
 
+p,div {
+    font-size:20px;
+}
+
 .red-text{
     color:var(--mahogany);
 }

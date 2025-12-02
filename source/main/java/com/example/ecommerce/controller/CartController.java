@@ -59,6 +59,7 @@ public class CartController {
 
         cart.removeItemById(itemId);
 
+        // return user to inventory screen if their cart becomes empty
         if (cart.getItems().isEmpty()){
 
             redirectAttributes.addFlashAttribute("errorMessage","Cart became empty. Redirected back to main page. Please add items to your cart");

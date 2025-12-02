@@ -28,6 +28,7 @@ public class InventoryCreationService {
 
         String message =" ";
 
+        // validate user input, if there is an issue create a message to display
         try{
             BigDecimal priceValue = new BigDecimal(price);
         }
@@ -52,6 +53,7 @@ public class InventoryCreationService {
         }
         else{
 
+            // if the user input is good, create a new item and save the image
             try{
 
                 final String UPLOAD_DIRECTORY = "uploads/";

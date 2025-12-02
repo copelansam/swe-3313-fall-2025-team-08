@@ -17,13 +17,15 @@ public class PromoteUserService {
         this.userTable = userTable;
     }
 
-
+    // retrieve all non admin users to display
     public List<User> displayNonAdmins(){
 
         return userTable.nonAdminUsers();
     }
 
     public void promoteUser(String username){
+
+        // promote specified user to admin
         userTable.promoteUser(username);
     }
 }

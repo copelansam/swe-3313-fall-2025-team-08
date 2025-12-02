@@ -35,7 +35,9 @@ public class UserEntityRepository {
 
         String findUserSql = "SELECT * FROM User WHERE userName = ? AND password = ?";
 
+        // see if user input username/password cominbation exist and create a user item based on results
         try{
+
             return jdbc.queryForObject(findUserSql,
                     new Object[]{userName,password},
                     (rs, rowNum) -> {

@@ -2,6 +2,7 @@ package com.example.ecommerce.model;
 
 import java.util.List;
 
+// This class will track if we were able to retrieve a sales report, and store the results
 public class ReportResult {
 
     private boolean success;

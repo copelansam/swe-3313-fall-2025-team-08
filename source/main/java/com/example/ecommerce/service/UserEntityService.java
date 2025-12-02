@@ -32,6 +32,7 @@ public class UserEntityService {
 
     public UserRegistrationResult registerUser(String name, String username, String email, String password, String passwordConfirm){
 
+        // validate user input and create a message to display if there is a problem
         if (name.length() > 100 || username.length() > 100 || email.length() > 100 || password.length() > 100 || passwordConfirm.length() > 100){
 
             return new UserRegistrationResult(false, "The character limit for each field is 100.");
