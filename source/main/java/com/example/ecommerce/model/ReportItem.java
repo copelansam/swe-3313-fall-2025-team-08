@@ -94,4 +94,16 @@ public class ReportItem {
 
         return this.purchasedBy;
     }
+
+    @Override
+    public String toString(){
+
+            return "Name: " + getName() +
+                    "\nPrice: " + getFormattedPrice() +
+                    "\nDate Sold: " + getDatePurchased() +
+                    "\nOrder Number: " + getOrderNumber() +
+                    "\nPurchased By: " + getPurchasedBy() +
+                    "\n__________________________________\n";
+
+    }
 }

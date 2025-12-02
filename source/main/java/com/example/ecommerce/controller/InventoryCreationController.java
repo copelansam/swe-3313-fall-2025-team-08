@@ -30,9 +30,11 @@ public class InventoryCreationController {
     public String addItem(@RequestParam("name") String name,
                           @RequestParam("description") String description,
                           @RequestParam("price") String price,
-                          @RequestParam("fileName") MultipartFile image,
+                          @RequestParam("fileName") MultipartFile image, // image type was suggested by ChatGPT
                           RedirectAttributes redirectAttributes){
 
+
+        // validate user input and display message regarding attempt)
         InventoryCreationResult result = inventoryCreationService.verifyItem(name,description,price,image);
 
         redirectAttributes.addFlashAttribute("inventoryMessage", result.getMessage());

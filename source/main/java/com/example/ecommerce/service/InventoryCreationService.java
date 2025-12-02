@@ -56,9 +56,16 @@ public class InventoryCreationService {
 
                 final String UPLOAD_DIRECTORY = "uploads/";
 
-                String imageName = Paths.get(image.getOriginalFilename()).getFileName().toString();
+                String imageName = Paths.get(image.getOriginalFilename()).getFileName().toString(); // Written by ChatGPT
 
                 Path uploadPath = Paths.get("uploads");
+
+                if (!Files.exists(uploadPath)){ // Logic to create the uploads path was written by ChatGPT
+
+                    Files.createDirectories(uploadPath);
+
+                }
+
 
                 Path filePath = uploadPath.resolve(imageName);
 
@@ -68,6 +75,7 @@ public class InventoryCreationService {
                 throw new RuntimeException("Failed to save image", e);
             }
 
+            // add item to available inventory
             itemTable.addRow(name,description,image.getOriginalFilename(),new BigDecimal(price),true);
 
             message = "Item successfully added to inventory!";

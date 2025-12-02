@@ -27,6 +27,9 @@ public class UserAuthActionsController {
 
         UserSignInResult signIn = userEntityService.signIn(username, password);
 
+        // check to see if username/password combination exists in the database
+        // if not, display message
+
         if (!signIn.getSuccess()){
 
             model.addAttribute("errorMessage",signIn.getMessage());
@@ -51,6 +54,8 @@ public class UserAuthActionsController {
 
         UserRegistrationResult registerUser = userEntityService.registerUser(name, username, email, password, confirmPassword);
 
+        // validate user input based on our requirements (no fields empty, password > 6 character, unique username, etc)
+        // display message if they don't
         if (!registerUser.getSuccess()) {
 
             model.addAttribute("errorMessage", registerUser.getMessage());

@@ -18,21 +18,26 @@ import java.awt.*;
 // This class was created by ChatGPT to help us get to a starting place where we could run the program
 @SpringBootApplication
 public class EcommerceApplication {
+
     public static void main(String[] args){
         SpringApplication.run(EcommerceApplication.class,args);
     }
 
     @EventListener(ApplicationReadyEvent.class)
     public void openBrowser(){
+
         try{
+
             String url = "http://localhost:8080";
+
             if (Desktop.isDesktopSupported()){
+
                 Desktop.getDesktop().browse(new URI(url));
             }
         }
         catch (IOException | URISyntaxException e) {
+
             e.printStackTrace();
         }
-
     }
 }

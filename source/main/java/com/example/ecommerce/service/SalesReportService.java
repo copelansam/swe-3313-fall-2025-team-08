@@ -2,10 +2,13 @@ package com.example.ecommerce.service;
 
 import com.example.ecommerce.model.Item;
 import com.example.ecommerce.model.Order;
+import com.example.ecommerce.model.ReportItem;
 import com.example.ecommerce.model.ReportResult;
 import com.example.ecommerce.repository.OrderEntityRepository;
 import com.example.ecommerce.repository.SalesReportRepository;
+import jakarta.servlet.http.HttpServletResponse;
 import org.springframework.stereotype.Service;
+import org.springframework.web.bind.annotation.GetMapping;
 
 import java.util.List;
 
