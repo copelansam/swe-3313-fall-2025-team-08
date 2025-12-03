@@ -471,6 +471,10 @@ logout-button{
     margin: 15px 0;
 }
 
+.add-inventory input{
+    border-color:var(--mahogany);
+}
+
 .user-select-body{
     display:flex;
     flex-direction:column;
@@ -507,6 +511,7 @@ logout-button{
     display:flex;
     flex-direction:column;
     align-items:center;
+    width:90%;
 }
 
 .sales-report-window{
@@ -515,6 +520,7 @@ logout-button{
     border-radius:15px;
     display:flex;
     justify-content:center;
+    width:100%;
 }
 
 .report-item{
