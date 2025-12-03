@@ -28,6 +28,13 @@ public class Cart {
 
     public List<Item> getItems() {return items;}
 
+    public void setItems(List<Item> items){
+
+        this.items = items;
+
+        recalculateTotals();
+    }
+
     public BigDecimal getSubtotal() {return subtotal;}
 
     public String getFormattedSubtotal(){

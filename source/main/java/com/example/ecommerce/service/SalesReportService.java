@@ -28,8 +28,6 @@ public class SalesReportService {
 
         String message = " ";
 
-        System.out.println("Time: " + time + " length: " + time.length());
-
         try {
 
             // check that the user input a number of days

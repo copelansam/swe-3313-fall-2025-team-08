@@ -14,6 +14,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
+import java.util.ArrayList;
+
 @Controller
 public class CheckoutController {
 
@@ -88,7 +90,13 @@ public class CheckoutController {
 
         orderInfo.setOrderId(orderEntityService.createOrder(orderInfo,cart));
 
-        model.addAttribute("cart",cart);
+        Cart cartCopy = new Cart();
+
+        cartCopy.setItems(new ArrayList<>(cart.getItems()));
+
+
+
+        model.addAttribute("cart",cartCopy);
 
         model.addAttribute("orderInfo",orderInfo);
 
