@@ -49,9 +49,11 @@ public class CartController {
             return "redirect:/browse";
         }
 
-        cart.addItem(itemEntityService.findItemById(itemId));
+        Item adding = itemEntityService.findItemById(itemId);
 
-        redirectAttributes.addFlashAttribute("successMessage","Item Successfully Added to Cart");
+        cart.addItem(adding);
+
+        redirectAttributes.addFlashAttribute("successMessage",adding.getName() + " Successfully Added to Cart");
 
         return "redirect:/browse";
     }
