@@ -67,6 +67,12 @@ the entities and classes present within our system, and the coding conventions t
 ***
 To view the documentation regarding the implementation of this project including how to get it set up, click [**here**](implementation/README.md)
 
+## Final Presentation 
+***
+Here you can view presentations that go over using the application and how it differs from our original idea.
+- [Compiling and Using the Application]()
+- [How it Differs from Our Original Design]()
+
 ## AI Acknowledgement
 ***
 **NOTE:** Portions of this project were made with the assistance of an AI tool (ChatGPT).
@@ -79,5 +85,5 @@ To view the documentation regarding the implementation of this project including
 
 <br>The  use of AI tools is encouraged more for assisting with the learning process and helping to explain abstract concepts than for the actual coding effort.
 <br>In the event that an AI tool is used to generate something for this project, it should be properly cited.
-The folder structure under the 'src' folder was made under the suggestion of ChatGPT after being reviewed by the team. 
+<br>**NOTE:** The folder structure under the 'source' folder was made under the suggestion of ChatGPT after being reviewed by the team. 
 Additional uses of AI will be cited in line as they occur.
