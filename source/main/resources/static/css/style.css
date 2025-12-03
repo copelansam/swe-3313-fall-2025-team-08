@@ -461,6 +461,30 @@ logout-button{
     margin: 5px 0;
 }
 
+.add-inventory{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.add-inventory > *{
+    margin: 15px 0;
+}
+
+.user-select-body{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.user-select-body > *{
+    margin: 15px 0;
+}
+
+.user-select-body form div{
+    margin:15px 0;
+}
+
 /*  Report classes will stylize the admin reports*/
 
 .report-body{

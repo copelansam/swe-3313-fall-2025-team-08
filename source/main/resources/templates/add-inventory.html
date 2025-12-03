@@ -34,9 +34,11 @@
 
 <p th:if="${inventoryMessage}" th:text="${inventoryMessage}"></p>
 
-<div class="admin-actions">
+<form th:action="@{/create-inventory}" method="post" enctype="multipart/form-data">
 
-    <form th:action="@{/create-inventory}" method="post" enctype="multipart/form-data">
+    <div class="add-inventory">
+
+        <h1 class="red-text">Add Inventory</h1>
 
         <input type="text" name="name" placeholder="Item Name">
 
@@ -46,11 +48,11 @@
 
         <input type="file" name="fileName" placeholder="Upload an Image">
 
-        <button type="submit">Add Inventory Item</button>
+        <button type="submit" class="red-button">Add Inventory Item</button>
 
-    </form>
+    </div>
 
-</div>
+</form>
 
 </body>
 

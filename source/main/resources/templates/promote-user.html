@@ -34,13 +34,15 @@
 
 <div class="user-select-body">
 
+    <h1 class="red-text">Promote User</h1>
+
     <p>Select a User to Promote:</p>
 
     <form th:action="@{/promote}" method="post">
 
         <div th:each="user : ${users}">
 
-            <input type="radio" th:value="${user.username}" name="selectedUser" th:text="'Name:' + ${user.name}">
+            <input type="radio" th:value="${user.username}" name="selectedUser" th:text="${user.name}">
 
         </div>
 

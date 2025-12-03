@@ -21,8 +21,6 @@ public class DatabaseInitializer {
         // SQLite will treat integer primary key as an alias for autoincrement. Meaning that if it is not specified
         // then it will automatically assign it an unused value
 
-        jdbc.execute("DROP TABLE User");
-
         jdbc.execute( "CREATE TABLE IF NOT EXISTS User ( " +
                 "userId    integer PRIMARY KEY, " +
                 "name      varchar(100), " +
@@ -53,8 +51,6 @@ public class DatabaseInitializer {
                 "zip           char(5) " +
                 ");");
 
-        jdbc.execute("DROP TABLE [Order]");
-
         jdbc.execute("CREATE TABLE IF NOT EXISTS [Order] ( " +
                 "orderId           integer PRIMARY KEY, " +
                 "userId            int NOT NULL, " +
@@ -66,8 +62,6 @@ public class DatabaseInitializer {
                 "shippingSelection varchar(100), " +
                 "FOREIGN KEY (userId) references User(userId) " +
                 ");");
-
-        jdbc.execute("DROP TABLE Item");
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Item( " +
                 "itemId       integer PRIMARY KEY AUTOINCREMENT, " +
@@ -97,16 +91,12 @@ public class DatabaseInitializer {
                 "VALUES ('The Birth of Venus','A painting depicting the goddess Venus just after her birth'," +
                 "'/images/venus-birth.png',12345.67,true)");
 
-        jdbc.execute("DROP TABLE Card");
-
         jdbc.execute("CREATE TABLE IF NOT EXISTS Card( " +
                 "creditCardNumber char(16) PRIMARY KEY, " +
                 "expirationMonth  char(2), " +
                 "expirationYear   char(2), " +
                 "securityCode     char(3) " +
                 ");");
-
-        jdbc.execute("DROP TABLE Order_Address");
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Order_Address ( " +
                 "orderId               integer," +
@@ -117,8 +107,6 @@ public class DatabaseInitializer {
                 "FOREIGN KEY (streetAddress) references Shipping_Address(streetAddress) " +
                 ");");
 
-        jdbc.execute("DROP TABLE Order_Card");
-
         jdbc.execute("CREATE TABLE IF NOT EXISTS Order_Card  ( " +
                 "orderId               integer," +
                 "creditCardNumber      char(16)," +
@@ -126,8 +114,6 @@ public class DatabaseInitializer {
                 "FOREIGN KEY (orderId) references [Order](orderId), " +
                 "FOREIGN KEY (creditCardNumber) references Card(creditCardNumber) " +
                 ");");
-
-        jdbc.execute("DROP TABLE Order_Line");
 
         jdbc.execute("CREATE TABLE IF NOT EXISTS Order_Line ( " +
                 "itemId      integer, " +
