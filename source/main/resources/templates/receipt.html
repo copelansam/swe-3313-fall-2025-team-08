@@ -70,9 +70,11 @@
 
             <p th:text="'Taxes: ' + ${cart.formattedTaxes}"></p>
 
+            <p th:text="'Shipping: ' +  ${orderInfo.formattedShippingCost}"></p>
+
             <hr class="partial">
 
-            <p th:text="'Estimated Grand Total: ' + ${cart.formattedGrandTotal}"></p>
+            <p th:text="'Estimated Grand Total: ' + ${orderInfo.formattedGrandTotal}"></p>
 
         </div>
 
