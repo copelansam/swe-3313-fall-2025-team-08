@@ -42,14 +42,14 @@ public class CartController {
     @PostMapping("/addToCart")
     public String addItem(@ModelAttribute("cart") Cart cart, @RequestParam int itemId, RedirectAttributes redirectAttributes){
 
-        if (cart.itemPresentInCart(itemId)){
+        Item adding = itemEntityService.findItemById(itemId);
 
-            redirectAttributes.addFlashAttribute("errorMessage","Item is already in cart");
+        if (cart.itemPresentInCart(adding.getItemId())){
+
+            redirectAttributes.addFlashAttribute("errorMessage",adding.getName() + " is already in the cart.");
 
             return "redirect:/browse";
         }
-
-        Item adding = itemEntityService.findItemById(itemId);
 
         cart.addItem(adding);
 

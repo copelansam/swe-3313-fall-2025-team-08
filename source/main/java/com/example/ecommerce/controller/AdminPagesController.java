@@ -78,16 +78,15 @@ public class AdminPagesController {
         // download the report when the user clicks the export report button
         response.setContentType("text/plain"); // Written by ChatGPT
 
-        response.setHeader("Content-Disposition", "attachment; filename=sales_report.txt"); // Written by CHatGPT
+        response.setHeader("Content-Disposition", "attachment; filename=sales_report.csv"); // Written by CHatGPT
 
         List<ReportItem> report = (List<ReportItem>) session.getAttribute("report");
 
-        String reportString = "Sales Report\n" +
-                "___________________________________\n";
+        String reportString = "Item Name,Price,Date Sold,Order Number,Purchased By\n";
 
         for (ReportItem item: report){
 
-            reportString += item.toString();
+            reportString += item.toCSV();
 
         }
 

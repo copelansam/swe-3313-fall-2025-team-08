@@ -95,15 +95,9 @@ public class ReportItem {
         return this.purchasedBy;
     }
 
-    @Override
-    public String toString(){
+    public String toCSV(){
 
-            return "Name: " + getName() +
-                    "\nPrice: " + getFormattedPrice() +
-                    "\nDate Sold: " + getDatePurchased() +
-                    "\nOrder Number: " + getOrderNumber() +
-                    "\nPurchased By: " + getPurchasedBy() +
-                    "\n__________________________________\n";
-
+        // CSV for the exported report
+        return getName() + ",\"" + getFormattedPrice() + "\"," + getDatePurchased() + "," + getOrderNumber() + "," + getPurchasedBy() + "\n";
     }
 }
