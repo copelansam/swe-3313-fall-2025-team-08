@@ -30,11 +30,17 @@
 
 </div>
 
+<!-- Display a message for an item being added to the cart, the item is already in the cart, or if the cart becomes empty  -->
+
 <p class="error-message" th:if="${errorMessage}" th:text="${errorMessage}"></p>
 
 <p th:if="${successMessage}" th:text="${successMessage}"></p>
 
+
+<!-- Display available inventory items based on the value in the search field (no value displays all items) -->
+
 <div class="inventory-box">
+
     <div class="container" th:each="item : ${items}">
 
         <div class="inventory-main">

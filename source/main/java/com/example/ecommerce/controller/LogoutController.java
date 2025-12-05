@@ -8,15 +8,17 @@ import org.springframework.web.bind.annotation.PostMapping;
 @Controller
 public class LogoutController {
 
+    // Display the account screen
     @GetMapping("/account")
     public String account(){
 
         return "account";
     }
 
+    // log the user out by removing all of their session attributes and redirect to log in screen
     @PostMapping("/logout")
     public String logout(HttpSession session) {
-        // log the user out by removing all of their attributes and redirect to log in screen
+
         session.invalidate();
 
         return "redirect:/";

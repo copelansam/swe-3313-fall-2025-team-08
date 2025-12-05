@@ -4,7 +4,6 @@ import java.math.BigDecimal;
 import java.text.NumberFormat;
 
 // Objects of this class will contain the information that we want to display in our sales reports
-
 public class ReportItem {
 
     private String name;
@@ -95,9 +94,9 @@ public class ReportItem {
         return this.purchasedBy;
     }
 
+    // CSV for the exported report
     public String toCSV(){
 
-        // CSV for the exported report
         return getName() + ",\"" + getFormattedPrice() + "\"," + getDatePurchased() + "," + getOrderNumber() + "," + getPurchasedBy() + "\n";
     }
 }

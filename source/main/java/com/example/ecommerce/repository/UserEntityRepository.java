@@ -19,6 +19,7 @@ public class UserEntityRepository {
 
     }
 
+    // Adds new user to the database
     public int addRow(String name, String userName, String email, String password) {
 
         String userSql = "INSERT INTO User(name, userName, email, password, isAdmin) VALUES (?, ?, ?, ?, FALSE)";
@@ -31,11 +32,11 @@ public class UserEntityRepository {
 
     }
 
-    public User credentailsValid(String userName, String password){
+    // see if user input username/password combination exist and create a user item based on results
+    public User credentialsValid(String userName, String password){
 
         String findUserSql = "SELECT * FROM User WHERE userName = ? AND password = ?";
 
-        // see if user input username/password cominbation exist and create a user item based on results
         try{
 
             return jdbc.queryForObject(findUserSql,
@@ -68,6 +69,7 @@ public class UserEntityRepository {
         }
     }
 
+    // Check that a username is not already in use when a user is creating an account
     public boolean usernameUnique(String userName){
 
         String usernameUniqueSql = "SELECT Count(*) FROM User WHERE userName = ?";
@@ -78,6 +80,7 @@ public class UserEntityRepository {
 
     }
 
+    // return a list of non admin users
     public List<User> nonAdminUsers(){
 
         String query = "SELECT username, name FROM User WHERE isAdmin = false";
@@ -94,6 +97,7 @@ public class UserEntityRepository {
         }));
     }
 
+    // promote a specific user to admin role
     public void promoteUser(String username){
 
         String query = "UPDATE User SET isAdmin = true WHERE userName = ?";

@@ -37,6 +37,8 @@
 
     <div class="thank-you-message">
 
+        <!-- Display a message thanking the user fpr their order -->
+
         <h2 class="red-text">Thank You For Your Order</h2>
 
         <p class="receipt-paragraph" th:text="'An email confirmation and a copy of this receipt have been sent to ' + ${user.email} + '. If you have not received the email in a few minutes, please refresh your inbox and check your spam/junk folder.'">
@@ -59,6 +61,8 @@
     </div>
 
     <div class="order-summary-box">
+
+        <!-- Display information regarding the user's order (subtotal, grand total, taxes, shipping and payment info, items ordered)-->
 
         <h2 class="summary-header">Order Summary</h2>
 
@@ -102,6 +106,8 @@
 
             <div class="payment-contact">
 
+                <!-- Payment info and contact info-->
+
                 <h3 class="payment-header">Payment & Contact</h3>
 
                 <p th:text="${user.name}"></p>
@@ -120,6 +126,8 @@
         <h3 class="item-summary">Item(s)</h3>
 
         <div class="payment-cart-items">
+
+            <!-- Items in order -->
 
             <div class="payment-item" th:each="item : ${cart.items}">
 

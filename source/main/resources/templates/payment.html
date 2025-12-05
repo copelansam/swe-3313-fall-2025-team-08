@@ -32,7 +32,7 @@
 
 <h1 class="red-text">Shopping Cart</h1>
 
-<a href="@{/browse}">Return to Shopping</a>
+<a th:href="@{/browse}">Return to Shopping</a>
 
 <p th:if="${errorMessage}" th:text="${errorMessage}" class="error-message"></p>
 
@@ -41,6 +41,8 @@
     <div class="input-screen-box">
 
         <div class="input-box">
+
+            <!-- Display input elements so that the user may input info relevant to their order when they hit the button-->
 
             <div class="address">
 
@@ -213,6 +215,8 @@
         </div>
 
         <div class="cart-summary-box">
+
+            <!-- Display info regarding their cart including subtotal, taxes, and items in cart-->
 
             <div class="cart-summary">
 

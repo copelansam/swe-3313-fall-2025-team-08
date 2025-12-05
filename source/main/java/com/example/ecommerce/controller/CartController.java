@@ -18,12 +18,14 @@ public class CartController {
         this.itemEntityService = itemEntityService;
     }
 
+    // Model Attribute annotation makes it  so that  the cart is available in all views rendered by this controller
     @ModelAttribute("cart")
     public Cart cart(){
 
         return new Cart();
     }
 
+    // Load the page that will display the cart and its items
     @GetMapping("/cart")
     public String viewCart(@ModelAttribute("cart") Cart cart, RedirectAttributes redirectAttributes){
 
@@ -39,6 +41,7 @@ public class CartController {
         return "cart";
     }
 
+    // Add item to cart
     @PostMapping("/addToCart")
     public String addItem(@ModelAttribute("cart") Cart cart, @RequestParam int itemId, RedirectAttributes redirectAttributes){
 
@@ -58,15 +61,17 @@ public class CartController {
         return "redirect:/browse";
     }
 
+    // Remove an item from the cart
     @PostMapping("/removeItemFromCart")
     public String removeItem(@ModelAttribute("cart") Cart cart, @RequestParam int itemId, RedirectAttributes redirectAttributes){
 
         cart.removeItemById(itemId);
 
-        // return user to inventory screen if their cart becomes empty
+        // Return user to inventory screen if their cart becomes empty
         if (cart.getItems().isEmpty()){
 
-            redirectAttributes.addFlashAttribute("errorMessage","Cart became empty. Redirected back to main page. Please add items to your cart");
+            redirectAttributes.addFlashAttribute("errorMessage","Cart became empty. " +
+                    "Redirected back to main page. Please add items to your cart");
 
             return "redirect:/browse";
         }

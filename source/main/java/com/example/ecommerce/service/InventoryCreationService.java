@@ -22,18 +22,21 @@ public class InventoryCreationService {
         this.itemTable = itemTable;
     }
 
+    // attempt to create new inventory item based on user input
     public InventoryCreationResult verifyItem(String name, String description, String price, MultipartFile image){
 
         boolean success = false;
 
-        String message =" ";
+        String message = " ";
 
         // validate user input, if there is an issue create a message to display
         try{
             BigDecimal priceValue = new BigDecimal(price);
         }
         catch (Exception e){
+
             message = "Price must be a number";
+
             return new InventoryCreationResult(success,message);
         }
 
@@ -53,31 +56,32 @@ public class InventoryCreationService {
         }
         else{
 
-            // if the user input is good, create a new item and save the image
+            // if the user input is good, create a new item and save the image to the uploads folder
             try{
 
                 final String UPLOAD_DIRECTORY = "uploads/";
 
+                // Retrieves the name of the file the user uploads
                 String imageName = Paths.get(image.getOriginalFilename()).getFileName().toString(); // Written by ChatGPT
 
-                Path uploadPath = Paths.get("uploads");
+                // Retrieves the file path to the uploads folder
+                Path uploadPath = Paths.get("uploads"); // Written by ChatGPT
 
-                if (!Files.exists(uploadPath)){ // Logic to create the uploads path was written by ChatGPT
+                if (!Files.exists(uploadPath)){ // Written by ChatGPT
 
                     Files.createDirectories(uploadPath);
 
                 }
 
+                Path filePath = uploadPath.resolve(imageName); // Written by ChatGPT
 
-                Path filePath = uploadPath.resolve(imageName);
-
-                Files.copy(image.getInputStream(),filePath, StandardCopyOption.REPLACE_EXISTING);
+                Files.copy(image.getInputStream(),filePath, StandardCopyOption.REPLACE_EXISTING); // Written by ChatGPT
             }
             catch (Exception e){
                 throw new RuntimeException("Failed to save image", e);
             }
 
-            // add item to available inventory
+            // Add item to available inventory in database
             itemTable.addRow(name,description,image.getOriginalFilename(),new BigDecimal(price),true);
 
             message = "Item successfully added to inventory!";

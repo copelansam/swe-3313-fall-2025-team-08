@@ -26,8 +26,7 @@ public class CheckoutController {
         this.orderEntityService = orderEntityService;
     }
 
-
-
+    // Load the payment and shipping info input screen
     @GetMapping("/payment")
     public String payment(Model model, HttpSession session){
 
@@ -38,6 +37,7 @@ public class CheckoutController {
         return "payment";
     }
 
+    // validate user input based on our requirements and perform necessary action
     @PostMapping("/process-payment")
     public String processPayment(Model model, HttpSession session, RedirectAttributes redirectAttributes,
                                  @RequestParam("name") String shippingName,
@@ -51,7 +51,6 @@ public class CheckoutController {
                                  @RequestParam("expirationYear") String expirationYear,
                                  @RequestParam("securityCode") String securityCode){
 
-        // validate user input based on our requirements and perform necessary action
         Cart cart = (Cart) session.getAttribute("cart");
 
         User user = (User) session.getAttribute("userSession");
@@ -77,10 +76,9 @@ public class CheckoutController {
         return "confirm-order";
     }
 
+    // retrieve all information relevant to the receipt and display it
     @PostMapping("/confirm-order")
     public String displayReceipt(Model model, HttpSession session){
-
-        // retrieve all information relevant to the receipt and display it
 
         OrderInfo orderInfo = (OrderInfo) session.getAttribute("orderInfo");
 
@@ -92,9 +90,8 @@ public class CheckoutController {
 
         Cart cartCopy = new Cart();
 
+        // Create a copy of the cart items before clearing the cart so they can be passed to the model
         cartCopy.setItems(new ArrayList<>(cart.getItems()));
-
-
 
         model.addAttribute("cart",cartCopy);
 

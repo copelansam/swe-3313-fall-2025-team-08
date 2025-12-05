@@ -9,14 +9,14 @@ import org.springframework.web.bind.annotation.*;
 @Controller
 public class UserAuthPagesController {
 
-    // directs the system to display the sign in screen
+    // Directs the system to display the sign in screen
     @GetMapping("/")
     public String signIn(Model model) {
 
         return "login";
     }
 
-    // directs the system to display the create account screen
+    // Directs the system to display the create account screen
     @GetMapping("/create-account")
     public String signUp() {
 

@@ -38,6 +38,7 @@ public class SalesReportService {
         }
         catch (Exception e){
 
+            // otherwise, use exception handling to avoid a crash
             System.out.println("Incorrect data type entered" + e.getMessage());
 
             message = "Please enter a whole number";

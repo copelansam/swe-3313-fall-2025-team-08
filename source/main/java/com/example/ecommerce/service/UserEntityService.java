@@ -19,13 +19,16 @@ public class UserEntityService {
 
     public UserSignInResult signIn(String username, String password){
 
-        User signInResult = userTable.credentailsValid(username,password);
+        User signInResult = userTable.credentialsValid(username,password);
 
         if (signInResult == null){
 
+            // check that the user input matches a record in the database, if not display a message
             return new UserSignInResult(false, "The provided username or password is incorrect. Please try again");
         }
         else{
+
+            // otherwise, assign a user to the session based on the info we have on file
             return new UserSignInResult(true,null,signInResult);
         }
     }
@@ -70,6 +73,8 @@ public class UserEntityService {
             return new UserRegistrationResult(false, "That username is already taken. Please choose another one", null);
         }
 
+        // if there is no problem with the user input, create a new user entity in the database and add the user to the current session
+        // return the userId to store in the user object
         int userId = userTable.addRow(name, username, email, password);
 
         User userSession = new User(userId,name, username, email,false);

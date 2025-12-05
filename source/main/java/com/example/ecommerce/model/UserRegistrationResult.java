@@ -2,7 +2,6 @@ package com.example.ecommerce.model;
 
 // This class was created under the suggestion of ChatGPT and will be used to record
 // the progress of user attempts to create an account
-
 public class UserRegistrationResult {
 
     private boolean success;

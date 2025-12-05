@@ -34,6 +34,10 @@
 
 <div class="user-select-body">
 
+    <!-- Display list of all non admin users that the user can select to promote when they click the button -->
+
+    <p th:if="${message}" th:text="${message}"></p>
+
     <h1 class="red-text">Promote User</h1>
 
     <p class="red-text">Select a User to Promote:</p>

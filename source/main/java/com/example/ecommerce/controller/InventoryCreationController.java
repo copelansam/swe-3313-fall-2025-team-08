@@ -20,12 +20,14 @@ public class InventoryCreationController {
         this.inventoryCreationService = inventoryCreationService;
     }
 
+    // Display the add inventory page
     @GetMapping("/add-inventory")
     public String displayPage(){
 
         return "add-inventory";
     }
 
+    // validate user input and display message regarding attempt
     @PostMapping("/create-inventory")
     public String addItem(@RequestParam("name") String name,
                           @RequestParam("description") String description,
@@ -33,8 +35,6 @@ public class InventoryCreationController {
                           @RequestParam("fileName") MultipartFile image, // image type was suggested by ChatGPT
                           RedirectAttributes redirectAttributes){
 
-
-        // validate user input and display message regarding attempt)
         InventoryCreationResult result = inventoryCreationService.verifyItem(name,description,price,image);
 
         redirectAttributes.addFlashAttribute("inventoryMessage", result.getMessage());

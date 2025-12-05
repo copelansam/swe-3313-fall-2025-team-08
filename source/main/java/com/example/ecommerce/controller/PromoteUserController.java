@@ -21,6 +21,7 @@ public class PromoteUserController {
         this.promoteUserService = promoteUserService;
     }
 
+    // Display the promote user screen
     @GetMapping("/display-user")
     public String displayUsers(Model model){
 
@@ -31,6 +32,7 @@ public class PromoteUserController {
         return "promote-user";
     }
 
+    // Promote the non admin user that the admin selected
     @PostMapping("/promote")
     public String promoteUser(@RequestParam("selectedUser") String username, Model model){
 

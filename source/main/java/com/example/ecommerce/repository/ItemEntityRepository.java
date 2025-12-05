@@ -18,6 +18,7 @@ public class ItemEntityRepository {
         this.jdbc = jdbc;
     }
 
+    // Add new item to the database
     public void addRow(String name, String description, String imagePath, BigDecimal price, boolean inStock) {
 
         String itemSql = "INSERT INTO Item(name, description, imagePath, price, inStock) VALUES(?, ?, ?, ?, ?)";
@@ -25,28 +26,7 @@ public class ItemEntityRepository {
         jdbc.update(itemSql, name, description, imagePath, price, inStock);
     }
 
-    public List<Item> retrieveAvailableItems() {
-
-        String query = "SELECT * FROM Item WHERE inStock = TRUE";
-
-        return jdbc.query(query,(rs,rowNum)->{
-
-            Item item = new Item();
-
-            item.setItemId(rs.getInt("itemId"));
-
-            item.setName(rs.getString("name"));
-
-            item.setDescription(rs.getString("description"));
-
-            item.setImagePath(rs.getString("imagePath"));
-
-            item.setPrice(rs.getBigDecimal("price"));
-
-            return item;
-        });
-    }
-
+    // Return a list of items based on the value that was entered into the search bar
     public List<Item> inventorySearch(String pattern){
 
         String query = "SELECT * FROM Item WHERE inStock = true " +
@@ -57,9 +37,7 @@ public class ItemEntityRepository {
 
             Item item = new Item();
 
-
             item.setItemId(rs.getInt("itemId"));
-
 
             item.setName(rs.getString("name"));
 
@@ -73,6 +51,7 @@ public class ItemEntityRepository {
         });
     }
 
+    // Return an item based on the provided itemId
     public Item findItemById(int itemId){
 
         String query = "SELECT * FROM Item WHERE itemId = ?";

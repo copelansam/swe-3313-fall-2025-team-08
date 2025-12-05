@@ -14,12 +14,14 @@ public class DatabaseInitializer {
         this.jdbc = jdbc;
     }
 
-    // initializes the database by creating all of the tables if they do not already exist
+    // initializes the database by creating all of the tables if they do not already exist and lading seed data
     @PostConstruct
     public void init() {
 
         // SQLite will treat integer primary key as an alias for autoincrement. Meaning that if it is not specified
         // then it will automatically assign it an unused value
+        // SQLite does not have a date data type, any field that is supposed to represent a date should be stored as a text data type
+        // Any field that is supposed to represent a price should be stored as a numeric in the database
 
         jdbc.execute( "CREATE TABLE IF NOT EXISTS User ( " +
                 "userId    integer PRIMARY KEY, " +
@@ -31,7 +33,6 @@ public class DatabaseInitializer {
                 ");" );
 
         // User table seed data
-
         jdbc.execute("INSERT OR IGNORE INTO User " +
                 "(userId,name,userName,email,password,isAdmin)" +
                 "VALUES (1,'PGAdmin','Admin','PGAdmin@yahoo.net','PGAdmin',true);");
@@ -73,7 +74,6 @@ public class DatabaseInitializer {
                 ");");
 
         // Item table seed data
-
         jdbc.execute("INSERT OR IGNORE INTO Item (itemId,name,description,imagePath,price,inStock)" +
                 "VALUES (1,'The Mona Lisa','The famous oil painting by Leonardo DiVinci. Her smile is the envy of the world'," +
                 "'/images/mona-lisa.png',10000.57,true)");

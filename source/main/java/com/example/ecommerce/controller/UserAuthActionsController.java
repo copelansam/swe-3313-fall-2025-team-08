@@ -19,6 +19,8 @@ public class UserAuthActionsController {
         this.userEntityService = userEntityService;
     }
 
+    // check to see if username/password combination exists in the database. If not, display a message,
+    // otherwise redirect the user to eh main inventory screen
     @PostMapping("/login")
     public String login(@RequestParam String username,
                         @RequestParam String password,
@@ -26,9 +28,6 @@ public class UserAuthActionsController {
                         HttpSession session) {
 
         UserSignInResult signIn = userEntityService.signIn(username, password);
-
-        // check to see if username/password combination exists in the database
-        // if not, display message
 
         if (!signIn.getSuccess()){
 
@@ -43,6 +42,8 @@ public class UserAuthActionsController {
 
     }
 
+    // validate user input based on our requirements (no fields empty, password > 6 character, unique username, etc)
+    // display message if they don't. If they do, redirect the user to the main inventory screen.
     @PostMapping("/register")
     public String registerUser(@RequestParam("name") String name,
                                @RequestParam("email") String email,
@@ -54,8 +55,6 @@ public class UserAuthActionsController {
 
         UserRegistrationResult registerUser = userEntityService.registerUser(name, username, email, password, confirmPassword);
 
-        // validate user input based on our requirements (no fields empty, password > 6 character, unique username, etc)
-        // display message if they don't
         if (!registerUser.getSuccess()) {
 
             model.addAttribute("errorMessage", registerUser.getMessage());

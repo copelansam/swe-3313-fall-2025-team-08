@@ -32,6 +32,8 @@
 
 <a href="/admin-actions"><- Return to Admin Actions</a>
 
+<!-- Display input fields for admins to input information for new inventory items -->
+
 <p th:if="${inventoryMessage}" th:text="${inventoryMessage}"></p>
 
 <form th:action="@{/create-inventory}" method="post" enctype="multipart/form-data">

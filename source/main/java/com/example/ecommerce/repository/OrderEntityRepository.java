@@ -16,14 +16,17 @@ public class OrderEntityRepository {
         this.jdbc = jdbc;
     }
 
+    // Creates an order record based on the info that the user inputs, will connect to other info (items, shipping, payment in another table)
     public void addOrder(int userid, BigDecimal subtotal, BigDecimal shippingPrice, BigDecimal taxes,
                        BigDecimal grandTotal, String shippingSelection) {
+
         String orderSql = "INSERT INTO 'Order'(userid, subTotal, shippingPrice, taxes, GrandTotal, shippingSelection) VALUES (?, ?, ?, ?, ?, ?)";
+
         jdbc.update(orderSql, userid, subtotal, shippingPrice, taxes, grandTotal, shippingSelection);
     }
 
+    // Retrieve the orderId of the order that was just placed
     public int getLatestOrder(){
-        // used to retrieve the orderId of the order that was just placed
         try {
 
             String query = "SELECT orderId FROM [Order] ORDER BY orderId DESC LIMIT 1;";
@@ -40,6 +43,7 @@ public class OrderEntityRepository {
         }
     }
 
+    // Connect a purchased item to the order it is in
     public void addOrderLine(int itemId, int orderId) {
 
         String orderLineSql = "INSERT INTO Order_Line(itemId, orderId) VALUES(?,?)";
@@ -47,6 +51,7 @@ public class OrderEntityRepository {
         jdbc.update(orderLineSql, itemId, orderId);
     }
 
+    // Remove a sold item from the available inventory
     public void sellItem(int itemId){
 
         String query = "UPDATE Item SET inStock = false WHERE itemId = ?";
@@ -54,6 +59,7 @@ public class OrderEntityRepository {
         jdbc.update(query,itemId);
     }
 
+    // Create address record and connect it the order
     public void setAddress(String streetAddress, String city, String state, String zip, int orderId){
 
         String addAddressQuery="INSERT OR IGNORE INTO Shipping_Address(streetAddress, city, state, zip) VALUES (?,?,?,?)";
@@ -66,6 +72,7 @@ public class OrderEntityRepository {
 
     }
 
+    // Create credit card record and connect it to the order
     public void setCreditCard(String creditCardNumber, String expirationMonth, String expirationYear, String securityCode, int orderId){
 
         String addCardQuery = "INSERT OR IGNORE INTO Card(creditCardNumber, expirationMonth, expirationYear, securityCode) VALUES (?,?,?,?)";

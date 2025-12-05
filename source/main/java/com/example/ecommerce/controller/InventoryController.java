@@ -18,10 +18,10 @@ public class InventoryController {
         this.itemEntityService = itemEntityService;
     }
 
+    // Load and display all available inventory items based on what is in the search bar
     @RequestMapping(value = "/browse", method = {RequestMethod.GET,RequestMethod.POST})
     public String browse(@RequestParam(required = false, defaultValue = "") String search, Model model) {
 
-        // load and display all available inventory items based on what is in the search bar
         List<Item> items = itemEntityService.loadInventory(search);
 
         model.addAttribute("items",items);

@@ -50,12 +50,13 @@ public class AdminPagesController {
         return "run-report";
     }
 
+    // Display a list of sold items in the time frame specified by the user
     @PostMapping("/run-report")
     public String executeReport(@RequestParam("time") String time, Model model, HttpSession session){
 
         ReportResult result = salesReportService.executeSalesReport(time);
 
-        //if the user doesn't enter an integer, display a message
+        // If the user doesn't enter an integer, display a message
         if (!result.getSuccess()){
 
             model.addAttribute("errorMessage",result.getMessage());
@@ -64,7 +65,7 @@ public class AdminPagesController {
 
         }
 
-        // store the sales report results to display in the next page
+        // Store the sales report results to display in the next page
         session.setAttribute("report",result.getReportItems());
 
         model.addAttribute("items",result.getReportItems());
@@ -72,10 +73,10 @@ public class AdminPagesController {
         return "sales-report";
     }
 
+    // Download the sales report when the user hits the export button
     @GetMapping("/export-report")
     public void exportReport(HttpServletResponse response, HttpSession session) throws IOException {
 
-        // download the report when the user clicks the export report button
         response.setContentType("text/plain"); // Written by ChatGPT
 
         response.setHeader("Content-Disposition", "attachment; filename=sales_report.csv"); // Written by CHatGPT
@@ -86,6 +87,7 @@ public class AdminPagesController {
 
         for (ReportItem item: report){
 
+            // Add each item in the report to the CSV string that will be written to the file
             reportString += item.toCSV();
 
         }

@@ -23,9 +23,9 @@ public class PromoteUserService {
         return userTable.nonAdminUsers();
     }
 
+    // promote specified user to admin
     public void promoteUser(String username){
 
-        // promote specified user to admin
         userTable.promoteUser(username);
     }
 }

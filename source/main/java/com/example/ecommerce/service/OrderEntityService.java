@@ -24,12 +24,13 @@ public class OrderEntityService {
                                                        String securityCode, String shippingName, String shipping, Cart cart,
                                                        int userId) {
         // validate user input and create a message to display if there are any issues
-        if (city.isEmpty() || state.isEmpty() || zip.isEmpty() || streetAddress.isEmpty() || shippingName.isEmpty() || creditCardNumber.isEmpty() || expirationMonth.equals("") || expirationYear.equals("") ||securityCode.isEmpty()){
+        if (city.isEmpty() || state.isEmpty() || zip.isEmpty() || streetAddress.isEmpty() || shippingName.isEmpty() ||
+                creditCardNumber.isEmpty() || expirationMonth.equals("") || expirationYear.equals("") || securityCode.isEmpty()){
 
             return new ValidateOrderCredentials(false,"Please make sure that all fields are filled out",null);
         }
 
-        if(creditCardNumber.length() != 16) {
+        if(creditCardNumber.length() != 16 || !creditCardNumber.matches("^\\d+$")) {
 
             return new ValidateOrderCredentials(false, "Please enter a valid Credit Card Number", null);
         }
@@ -41,20 +42,31 @@ public class OrderEntityService {
 
             return new ValidateOrderCredentials(false, "Please enter a valid ZipCode", null);
         }
-        if(!creditCardNumber.matches("^\\d+$")) {
+        if(streetAddress.length() > 100){
 
-            return new ValidateOrderCredentials(false, "Please enter a valid CreditCard Number", null);
+            return new ValidateOrderCredentials(false,"Character limit for street address is 100",null);
+        }
+        if(city.length() > 50){
+
+            return new ValidateOrderCredentials(false,"Character limit for city is 50",null);
+        }
+        if(securityCode.length() != 3){
+            return new ValidateOrderCredentials(false,"Please enter a valid security code",null);
         }
 
+        // parse the value of the shipping select element so that we have both the shipping type and cost
+        // it is passed as a string with the following pattern "shippingType cost"
         String[] shippingInfo = shipping.split(" ");
 
-        OrderInfo orderInfoSession = new OrderInfo(city, state.toUpperCase(), zip, streetAddress, creditCardNumber, expirationMonth, expirationYear, securityCode, shippingName, shippingInfo[0],shippingInfo[1],(cart.getSubtotal()).add(cart.getTaxes()), userId);
+        // create orderInfo object to store the user's input until they are ready to finalize their order
+        OrderInfo orderInfoSession = new OrderInfo(city, state.toUpperCase(), zip, streetAddress, creditCardNumber,
+                expirationMonth, expirationYear, securityCode, shippingName, shippingInfo[0],shippingInfo[1],
+                (cart.getSubtotal()).add(cart.getTaxes()), userId);
 
         return new ValidateOrderCredentials(true, null, orderInfoSession);
     }
 
     public int createOrder(OrderInfo orderInfo, Cart cart){
-
 
         // creates order in database
         orderTable.addOrder(orderInfo.getUserId(),cart.getSubtotal(),new BigDecimal(orderInfo.getShippingCost()),
@@ -67,13 +79,15 @@ public class OrderEntityService {
             // associates items with order
             orderTable.addOrderLine(item.getItemId(),orderId);
 
-            // remove item from available inventory
+            // removes item from available inventory
             orderTable.sellItem(item.getItemId());
 
         }
 
+        // adds user address to database
         orderTable.setAddress(orderInfo.getStreetAddress(), orderInfo.getCity(), orderInfo.getState(), orderInfo.getZip(), orderId);
 
+        // adds user credit card to the database
         orderTable.setCreditCard(orderInfo.getCreditCardNumber(),orderInfo.getExpirationMonth(),orderInfo.getExpirationYear(),orderInfo.getSecurityCode(),orderId);
 
         return orderId;

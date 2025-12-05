@@ -1,5 +1,6 @@
 package com.example.ecommerce.model;
 
+// This class will store info related to the current user
 public class User {
 
     private int userId;
