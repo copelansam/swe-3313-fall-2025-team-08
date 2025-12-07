@@ -25,6 +25,10 @@ You will need the following items to run the application:
       - If the result says that you do not have maven installed, then you will need to install maven. The steps to do this
       vary by operating system.
         - A link to the official instructions on how to install maven for each operating system can be found [**here**](https://maven.apache.org/install.html)
+        - Videos for installing maven can be found below:
+          - [Windows](https://www.youtube.com/watch?v=cIneTHgkrQw)
+          - [Mac](https://www.youtube.com/watch?v=6l6f9PTi5hE)
+          - [Linux](https://www.youtube.com/watch?v=tNqXd0gPUcs)
 ## Database Setup
 No additional work is necessary to initialize the database. The database will be automatically setup when you run the application.
 
