@@ -70,8 +70,8 @@ To view the documentation regarding the implementation of this project including
 ## Final Presentation 
 ***
 Here you can view presentations that go over using the application and how it differs from our original idea.
-- [Compiling and Using the Application]()
-- [How it Differs from Our Original Design]()
+- [Compiling and Using the Application As a User](https://www.loom.com/share/e42fbdb4f1d84b518829d06ef99fab25)
+- [Admin User Experience and How the Project Differs from Our Original Design](https://www.loom.com/share/ce727973322b4794a9af10114d168a23)
 
 ## AI Acknowledgement
 ***
