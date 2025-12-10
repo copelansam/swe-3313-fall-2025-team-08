@@ -8,6 +8,8 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
+// This repository will hold all the queries related to the user table including registering a new user, checking that
+// a username isn't taken, and promoting a user to an admin.
 @Repository
 public class UserEntityRepository {
 

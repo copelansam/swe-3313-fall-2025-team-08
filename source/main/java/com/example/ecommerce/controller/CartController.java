@@ -41,7 +41,7 @@ public class CartController {
         return "cart";
     }
 
-    // Add item to cart
+    // Add item to cart, display message regarding if the item was added
     @PostMapping("/addToCart")
     public String addItem(@ModelAttribute("cart") Cart cart, @RequestParam int itemId, RedirectAttributes redirectAttributes){
 

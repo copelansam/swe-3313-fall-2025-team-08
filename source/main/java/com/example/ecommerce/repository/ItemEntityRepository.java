@@ -8,6 +8,7 @@ import org.springframework.stereotype.Repository;
 import java.math.BigDecimal;
 import java.util.List;
 
+// This repository will hold queries related to adding and retrieving inventory items from the database
 @Repository
 public class ItemEntityRepository {
 
@@ -51,7 +52,7 @@ public class ItemEntityRepository {
         });
     }
 
-    // Return an item based on the provided itemId
+    // Return an item based on the provided itemId, used to add items to cart
     public Item findItemById(int itemId){
 
         String query = "SELECT * FROM Item WHERE itemId = ?";

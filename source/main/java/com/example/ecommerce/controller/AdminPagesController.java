@@ -26,31 +26,35 @@ public class AdminPagesController {
         this.salesReportService= salesReportService;
     }
 
+    // displays the admin actions page
     @GetMapping("/admin-actions")
     public String adminActions(){
 
         return "admin-actions";
     }
 
+    // displays the promote user page
     @GetMapping("/promote-user")
     public String promoteUser(){
 
         return "promote-user";
     }
 
+    // displays the inventory creation page
     @GetMapping("/input-inventory")
     public String inputInventory(){
 
         return "input-inventory";
     }
 
+    // displays the run sales report page
     @GetMapping("/run-report")
     public String runReport(){
 
         return "run-report";
     }
 
-    // Display a list of sold items in the time frame specified by the user
+    // retrieves and displays a list of sold items in the time frame specified by the user
     @PostMapping("/run-report")
     public String executeReport(@RequestParam("time") String time, Model model, HttpSession session){
 

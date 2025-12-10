@@ -4,7 +4,8 @@ import jakarta.annotation.PostConstruct;
 import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Component;
 
-
+// This class will run when the application is started. It will run all of these queries to initialize all fo the tables
+// and their seed data if not already present.
 @Component
 public class DatabaseInitializer {
 
@@ -14,7 +15,7 @@ public class DatabaseInitializer {
         this.jdbc = jdbc;
     }
 
-    // initializes the database by creating all of the tables if they do not already exist and lading seed data
+    // initializes the database by creating all of the tables if they do not already exist and loading seed data
     @PostConstruct
     public void init() {
 
@@ -23,6 +24,7 @@ public class DatabaseInitializer {
         // SQLite does not have a date data type, any field that is supposed to represent a date should be stored as a text data type
         // Any field that is supposed to represent a price should be stored as a numeric in the database
 
+        // User table
         jdbc.execute( "CREATE TABLE IF NOT EXISTS User ( " +
                 "userId    integer PRIMARY KEY, " +
                 "name      varchar(100), " +
@@ -45,6 +47,7 @@ public class DatabaseInitializer {
                 "(userId,name,userName,email,password,isAdmin)" +
                 "VALUES (3,'Professor Doctor','learning','1234learning@att.net','m4th1sfun',false);");
 
+        // Shipping_Address table
         jdbc.execute("CREATE TABLE IF NOT EXISTS Shipping_Address (" +
                 "streetAddress varchar(100) PRIMARY KEY, " +
                 "city          varchar(50), " +
@@ -52,6 +55,7 @@ public class DatabaseInitializer {
                 "zip           char(5) " +
                 ");");
 
+        // Order table *** Order is a reserved word, make sure to escape it with brackets [].
         jdbc.execute("CREATE TABLE IF NOT EXISTS [Order] ( " +
                 "orderId           integer PRIMARY KEY, " +
                 "userId            int NOT NULL, " +
@@ -64,6 +68,7 @@ public class DatabaseInitializer {
                 "FOREIGN KEY (userId) references User(userId) " +
                 ");");
 
+        // Item table
         jdbc.execute("CREATE TABLE IF NOT EXISTS Item( " +
                 "itemId       integer PRIMARY KEY AUTOINCREMENT, " +
                 "name         varchar(100), " +
@@ -91,6 +96,7 @@ public class DatabaseInitializer {
                 "VALUES (5,'The Birth of Venus','A painting depicting the goddess Venus just after her birth'," +
                 "'/images/venus-birth.png',12345.67,true)");
 
+        // Card table
         jdbc.execute("CREATE TABLE IF NOT EXISTS Card( " +
                 "creditCardNumber char(16) PRIMARY KEY, " +
                 "expirationMonth  char(2), " +
@@ -98,6 +104,7 @@ public class DatabaseInitializer {
                 "securityCode     char(3) " +
                 ");");
 
+        // Order_Address table
         jdbc.execute("CREATE TABLE IF NOT EXISTS Order_Address ( " +
                 "orderId               integer," +
                 "streetAddress         varchar(100), " +
@@ -107,6 +114,7 @@ public class DatabaseInitializer {
                 "FOREIGN KEY (streetAddress) references Shipping_Address(streetAddress) " +
                 ");");
 
+        // Order_Card table
         jdbc.execute("CREATE TABLE IF NOT EXISTS Order_Card  ( " +
                 "orderId               integer," +
                 "creditCardNumber      char(16)," +
@@ -115,6 +123,7 @@ public class DatabaseInitializer {
                 "FOREIGN KEY (creditCardNumber) references Card(creditCardNumber) " +
                 ");");
 
+        // Order_Line table
         jdbc.execute("CREATE TABLE IF NOT EXISTS Order_Line ( " +
                 "itemId      integer, " +
                 "orderId     integer, " +
@@ -122,6 +131,5 @@ public class DatabaseInitializer {
                 "FOREIGN KEY (itemId) references Item(itemId), " +
                 "FOREIGN KEY (orderId) references [Order](orderId) " +
                 ");");
-
     }
 }

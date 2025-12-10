@@ -6,6 +6,7 @@ import org.springframework.stereotype.Repository;
 
 import java.math.BigDecimal;
 
+// This repository will hold queries that will update tables related to placing an order
 @Repository
 public class OrderEntityRepository {
 
@@ -25,22 +26,14 @@ public class OrderEntityRepository {
         jdbc.update(orderSql, userid, subtotal, shippingPrice, taxes, grandTotal, shippingSelection);
     }
 
-    // Retrieve the orderId of the order that was just placed
+    // Retrieve the orderId of the order that was just placed, used to display the orderId after a user places an order
     public int getLatestOrder(){
-        try {
 
             String query = "SELECT orderId FROM [Order] ORDER BY orderId DESC LIMIT 1;";
 
             int orderId = jdbc.queryForObject(query, Integer.class);
 
             return orderId;
-        }
-        catch (Exception e){
-
-            System.out.println(e.getMessage());
-
-            return 0;
-        }
     }
 
     // Connect a purchased item to the order it is in

@@ -65,6 +65,7 @@ public class Cart {
         this.shippingOption = shippingOption;
     }
 
+    // recalculate various totals/prices in the cart
     private void recalculateTotals() {
 
         subtotal=BigDecimal.ZERO;
@@ -107,6 +108,7 @@ public class Cart {
         recalculateTotals();
     }
 
+    // check to see if an item is already present in the cart by comparing itemIds
     public boolean itemPresentInCart(int itemId){
 
         for (Item item : items){
@@ -120,6 +122,7 @@ public class Cart {
         return false;
     }
 
+    // remove all items from the cart
     public void clear() {
 
         items.clear();
@@ -129,7 +132,7 @@ public class Cart {
         shippingOption = null;
     }
 
-
+    // format prices to include appropriate commas, decimals, and dollar signs
     public String formatPrice(BigDecimal price){
 
         NumberFormat currency = NumberFormat.getCurrencyInstance(); // Written by ChatGPT

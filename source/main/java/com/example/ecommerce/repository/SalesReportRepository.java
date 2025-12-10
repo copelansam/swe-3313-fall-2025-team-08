@@ -9,6 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+// This repository will contain the query for retrieving sales reports
 @Repository
 public class SalesReportRepository {
 

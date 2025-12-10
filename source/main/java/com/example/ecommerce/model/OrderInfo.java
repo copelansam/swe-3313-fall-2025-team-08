@@ -1,8 +1,8 @@
 package com.example.ecommerce.model;
 
-// Object of this class will store info relevant to a user placing an order.
+// Objects of this class will store info relevant to a user placing an order.
 // They will be stored in the session upon being entered, and will be pulled to create
-// the necessary entities in the database
+// the necessary entities in the database after a user confirms their order
 import java.math.BigDecimal;
 import java.text.NumberFormat;
 

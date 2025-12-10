@@ -63,10 +63,10 @@ public class Item {
 
     public void setItemId(int itemId){this.itemId = itemId;}
 
-
+    // format prices to include appropriate commas, decimals, and dollar signs
     public String formatPrice(BigDecimal price){
 
-        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        NumberFormat currency = NumberFormat.getCurrencyInstance(); // Written by ChatGPT
 
         return currency.format(price);
 

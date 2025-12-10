@@ -57,7 +57,24 @@ In order to start this application, you will need to follow the following steps:
 
 <br>\* The admin account will be able to perform actions that regular users cannot such as adding inventory, 
    promoting users, and running sales reports.
+5. Ending the Application:
+   - When you are finished running the program, you can stop running it by returning to your CLI and inputting the copy command (`CRTL + C` / `COMMAND + C`) twice.
 
 ## Troubleshooting
 
-If maven fails to properly load the applications dependencies, you can fix this by running `mvn clean install -U` in the CLI.
+- **Maven Failing to Build Dependencies**
+  - If maven fails to properly load the applications dependencies, you can fix this by running `mvn clean install -U` in the CLI.
+
+- **Busy Port 8080**
+  - If you receive a message saying that port 8080 is busy, then you will need to kill the process that is running on it 
+  and try running the application again. Doing this varies by OS:
+    - **Windows:**
+      - Find the PID of the process running on port 8080 by running `netstat -aon | findstr :8080` in the command line. 
+      The PID will be the value in the last column.
+      - Kill the process by running `taskkill /PID <PID> /F`. Make sure to replace <PID> with the PID obtained in the previous command.
+    - **Mac:**
+      - Find the PID of the process running on port 8080 by running `lsof -i :8080` in the terminal. The PID will be under the column labelled PID.
+      - Kill the process by running `kill -9 <PID>` Make sure to replace <PID> with the PID obtained in the previous command.
+    - **Linux:**
+      - You can find and kill the process on port 8080 by running `sudo kill -9 $(sudo lsof -t -i :8080)` in the terminal
+  - This should open port 8080 up, enabling you to run the application.
